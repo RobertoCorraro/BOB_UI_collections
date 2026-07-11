@@ -492,3 +492,49 @@ Griglia 2 colonne, altezze variabili, zero testo. Gap 0.5rem, border-radius 0.62
 
 ### Fonte
 iperceramica.it — sezione Ambienti, mobile (browser iOS Safari)
+
+---
+
+## Article teaser carousel
+
+### Descrizione
+Carosello orizzontale di anteprime editoriali con immagine hero in alto e blocco testuale ampio sotto, separato visivamente dall'immagine. La card mostra un articolo, progetto o case study; la card successiva è visibile parzialmente sul lato destro per comunicare chiaramente la presenza di altri contenuti e invitare allo swipe. Non è un hero singolo né un banner stack: è un pattern di browsing editoriale.
+
+### Struttura card
+- **Immagine hero**: visual ampio, ratio landscape, full-width nella parte superiore della card
+- **Overflow laterale**: la card successiva compare parzialmente a destra; il contenuto non è centrato in una singola card isolata ma in un carousel con preview del prossimo item
+- **Titolo editoriale**: headline grande, bold, multilinea, posizionata sotto l'immagine su fondo bianco
+- **Metadati uppercase**: luogo, paese, testata, data o categoria, separati dal titolo e con tracking/weight più istituzionale
+- **Nessun bottone esplicito**: l'intera card è tappabile
+
+### Distinzione da altri pattern
+
+| Pattern | Differenza chiave |
+|---|---|
+| Hero header | Il hero è singolo, senza overflow né swipe laterale |
+| Banner stack | Il banner stack impila elementi verticalmente; qui la navigazione è orizzontale |
+| Editorial banner overlay | Nell'overlay il testo sta sopra l'immagine; qui il testo è sotto, separato |
+| Results card | La results card è più compatta e ripetitiva; qui la card è ampia, narrativa, magazine-like |
+
+### Card visibili all'avvio
+**1 card dominante + preview della successiva** sul lato destro
+
+### Ratio immagini
+~**16:9** o **3:2** landscape. L'immagine deve avere abbastanza respiro da funzionare come apertura narrativa dell'articolo.
+
+### Navigazione
+- **Touch swipe** orizzontale su mobile
+- **Overflow intenzionale** della card successiva come affordance primaria
+- Su desktop: preferibile carousel con **2 card visibili** + frecce prev/next, oppure lista editoriale verticale con immagine a sinistra e testo a destra
+
+### Target devices
+Mobile (primario). Desktop non come griglia 3-up: meglio 2-up o layout editoriale list per preservare il peso del titolo e la qualità narrativa.
+
+### Posizione tipica
+Homepage editoriale, sezione magazine, portfolio progetti, archivio case study — subito dopo hero o come blocco "storie in evidenza".
+
+### Formato compatto
+Card editoriale ampia: immagine landscape sopra, titolo grande sotto, metadati uppercase. Carousel orizzontale con 1 card dominante + prossima parziale a destra. Nessun CTA esplicito, card intera tappabile.
+
+### Fonte
+Sito editoriale/architettura — mobile (screenshot iOS)
