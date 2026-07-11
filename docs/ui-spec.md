@@ -98,13 +98,13 @@ App Instagram — mobile (iOS/Android), sezione "Suggeriti per te"
 ## Editorial stacked banner stack
 
 ### Descrizione
-Serie di banner editoriali full-width impilati verticalmente, senza gap o con gap minimo. Ogni banner è un’immagine di prodotto o ambientazione con testo sovrapposto in basso a sinistra: titolo bold (parola chiave in colore brand) e sottotitolo con eventuale link inline colorato. Il blocco è conversion-oriented: ogni banner promuove una categoria, collezione o novità specifica. A differenza dei blocchi discovery, qui il testo è parte integrante del visual e non appare sotto l’immagine.
+Serie di banner editoriali full-width impilati verticalmente, senza gap o con gap minimo. Ogni banner è un'immagine di prodotto o ambientazione con testo sovrapposto in basso a sinistra: titolo bold (parola chiave in colore brand) e sottotitolo con eventuale link inline colorato. Il blocco è conversion-oriented: ogni banner promuove una categoria, collezione o novità specifica. A differenza dei blocchi discovery, qui il testo è parte integrante del visual e non appare sotto l'immagine.
 
 ### Struttura banner
 - **Immagine di sfondo**: foto prodotto o ambientazione, full-width, edge-to-edge
-- **Titolo overlay**: testo bold, colore bianco + keyword in colore brand (es. arancio), posizionato in basso a sinistra sull’immagine
+- **Titolo overlay**: testo bold, colore bianco + keyword in colore brand (es. arancio), posizionato in basso a sinistra sull'immagine
 - **Sottotitolo overlay**: testo più piccolo, con parole chiave colorate o link inline
-- **Nessun bottone esplicito**: l’intera area del banner è tappabile (card-as-CTA)
+- **Nessun bottone esplicito**: l'intera area del banner è tappabile (card-as-CTA)
 
 ### Ratio immagini
 Ogni banner ~**5:3** o **16:9 leggermente compresso**. Altezza stimata 220–280 px su iPhone standard. Full-width senza padding laterale.
@@ -121,7 +121,7 @@ Stack verticale di banner full-width edge-to-edge. Testo overlay bottom-left con
 ### Differenza dai blocchi discovery
 | Caratteristica | Blocchi discovery (BLOCK-001/002/003/004) | Editorial banner stack |
 |---|---|---|
-| Testo sull’immagine | ❌ | ✅ overlay bottom-left |
+| Testo sull'immagine | ❌ | ✅ overlay bottom-left |
 | Scroll direction | orizzontale o griglia | verticale impilato |
 | Scopo | navigazione/esplorazione | promozione/conversione |
 | Bottone esplicito | ✅ (alcuni) | ❌ (banner intero = CTA) |
@@ -182,3 +182,45 @@ Lista verticale di sezioni: titolo uppercase + chevron / divisore / pannello esp
 
 ### Fonte
 deghi.it — footer homepage mobile (browser iOS)
+
+---
+
+## Destination detail card
+
+### Descrizione
+Card informativa per una destinazione di viaggio con immagine, dati essenziali (prezzo, codice aeroporto) e CTA primaria "Search flights". Il blocco ha due varianti di layout responsive che condividono gli stessi elementi e lo stesso scopo: **horizontal** (desktop) e **vertical** (mobile). La variazione è esclusivamente di layout, non di contenuto né di funzione — si implementa come un unico componente con prop o breakpoint CSS.
+
+### Varianti
+
+| Caratteristica | `horizontal` (desktop) | `vertical` (mobile) |
+|---|---|---|
+| Orientamento | Immagine a sinistra, testo a destra | Immagine in copertura full-card, testo overlay |
+| Sfondo card | Bianco, testo dark su sfondo chiaro | Immagine full-bleed, testo bianco in overlay |
+| Descrizione | Testo completo visibile | Troncata con "Read more" |
+| Bottone CTA | Nero, fill scuro | Bianco, fill chiaro |
+| Ratio immagine | ~1:1 o 4:5, metà larghezza card | Full-width, copre tutta la card (overlay) |
+
+### Struttura elementi (condivisi)
+- **Immagine**: foto destinazione con angoli arrotondati
+- **Titolo**: nome destinazione, bold, grande
+- **Sottotitolo**: categoria (es. "Economy"), peso leggero, muted
+- **Descrizione**: testo multi-riga, colore muted; troncata con "Read more" nella variante vertical
+- **Metadati inline**: icona tag + prezzo ("from $120") · icona aereo + codice IATA ("BAN")
+- **CTA primaria**: bottone pill "Search flights"
+- **Bottone secondario**: icona cuore (save/wishlist), separato dalla CTA
+
+### Target devices
+- `horizontal`: Desktop e tablet landscape
+- `vertical`: Mobile (primario), tablet portrait
+
+### Posizione tipica
+Listing page / sezione risultati di ricerca voli o destinazioni — card singola o in griglia/carosello.
+
+### Formato compatto
+Card con immagine + titolo + sottotitolo + descrizione + metadati prezzo/IATA + CTA pill + cuore. Layout orizzontale su desktop (immagine sinistra), verticale con overlay su mobile.
+
+### Note di implementazione
+Un solo componente con breakpoint CSS o prop `orientation="horizontal|vertical"`. Nessun motivo di duplicare il blocco a livello di collezione.
+
+### Fonte
+UI concept — app viaggi/voli (stile Skyscanner/Google Flights mobile)
