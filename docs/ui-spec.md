@@ -65,8 +65,8 @@ Carosello orizzontale di card persone con overflow intenzionale: la card success
 ### Struttura card
 - **Avatar**: immagine circolare, grande, centrata nella parte superiore della card
 - **Titolo**: nome utente, testo bold, centrato
-- **Sottotitolo**: avatar secondario piccolo (circolare) + testo contestuale breve (es. “1 in comune”), allineati in riga, centrati
-- **Bottone CTA**: full-width, colore primario, testo breve e diretto (es. “Segui”), posizionato in fondo alla card
+- **Sottotitolo**: avatar secondario piccolo (circolare) + testo contestuale breve (es. "1 in comune"), allineati in riga, centrati
+- **Bottone CTA**: full-width, colore primario, testo breve e diretto (es. "Segui"), posizionato in fondo alla card
 - **Close button**: icona × in alto a destra per ignorare il suggerimento
 
 ### Ratio immagini
@@ -79,4 +79,38 @@ Mobile. Tablet e desktop non consigliati nella versione carosello; valutare layo
 Carosello orizzontale con 1 card visibile + metà della successiva. Card con avatar circolare grande, nome, sottotitolo contestuale e bottone CTA full-width.
 
 ### Fonte
-App Instagram — mobile (iOS/Android), sezione “Suggeriti per te”
+App Instagram — mobile (iOS/Android), sezione "Suggeriti per te"
+
+---
+
+## Editorial stacked banner stack
+
+### Descrizione
+Serie di banner editoriali full-width impilati verticalmente, senza gap o con gap minimo. Ogni banner è un'immagine di prodotto o ambientazione con testo sovrapposto in basso a sinistra: titolo bold (parola chiave in colore brand) e sottotitolo con eventuale link inline colorato. Il blocco è conversion-oriented: ogni banner promuove una categoria, collezione o novità specifica. A differenza dei blocchi discovery, qui il testo è parte integrante del visual e non appare sotto l'immagine.
+
+### Struttura banner
+- **Immagine di sfondo**: foto prodotto o ambientazione, full-width, edge-to-edge
+- **Titolo overlay**: testo bold, colore bianco + keyword in colore brand (es. arancio), posizionato in basso a sinistra sull'immagine
+- **Sottotitolo overlay**: testo più piccolo, con parole chiave colorate o link inline
+- **Nessun bottone esplicito**: l'intera area del banner è tappabile (card-as-CTA)
+
+### Ratio immagini
+Ogni banner ~**5:3** o **16:9 leggermente compresso**. Altezza stimata 220–280 px su iPhone standard. Full-width senza padding laterale.
+
+### Target devices
+Mobile (primario). Desktop richiede adattamento: limitare la larghezza massima o aumentare il ratio per evitare immagini eccessivamente basse.
+
+### Formato compatto
+Stack verticale di banner full-width edge-to-edge. Testo overlay bottom-left con titolo bianco + keyword brand-color. Nessun bottone, intera area tappabile.
+
+### Differenza dai blocchi discovery
+| Caratteristica | Blocchi discovery (BLOCK-001/002/003/004) | Editorial banner stack |
+|---|---|---|
+| Testo sull'immagine | ❌ | ✅ overlay bottom-left |
+| Scroll direction | orizzontale o griglia | verticale impilato |
+| Scopo | navigazione/esplorazione | promozione/conversione |
+| Bottone esplicito | ✅ (alcuni) | ❌ (banner intero = CTA) |
+| Metadati commerciali | ❌ | keyword prodotto + link |
+
+### Fonte
+deghi.it — homepage mobile (browser iOS, Safari/Chrome)
