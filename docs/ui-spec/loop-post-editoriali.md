@@ -122,15 +122,23 @@ Sito editoriale/architettura — mobile (screenshot iOS)
 ## BLOCK-019 — Asymmetric editorial project grid
 
 ### Descrizione
-Griglia desktop a tre colonne con pesi visivi diversi, pensata per mostrare un portfolio di progetti recenti o case study. La colonna sinistra ha una card grande verticale; la colonna centrale impila due card di altezze diverse; la colonna destra è stretta con una sola card verticale e CTA esplicita. Il pattern bilancia scoperta visiva e conversione: ogni progetto ha un titolo leggibile, e la colonna centrale include un badge azione freccia diagonale ↗ per stimolare il click.
+Griglia desktop a tre colonne con pesi visivi diversi, adatta a contenuti discreti con forte identità visiva: **portfolio di progetti**, **categorie prodotto** (es. Bathroom, Chair, Decor, Lamp) o **sezioni editoriali tematiche**. Il pattern è agnostico rispetto al contenuto — ciò che lo definisce è la struttura asimmetrica `38/38/24`, con la colonna sinistra dominante, quella centrale impilata in due slot e quella destra stretta con CTA. Bilancia scoperta visiva e conversione: ogni card ha un'etichetta leggibile e la colonna destra guida verso un'azione.
+
+### Varianti d'uso
+
+| Uso | Titolo card | Label secondaria | CTA |
+|---|---|---|---|
+| **Portfolio / progetti** | Nome progetto | Cliente o categoria | "See more" |
+| **Categorie prodotto** | Nome categoria | N. articoli (es. "17 ITEMS") | Link implicito |
+| **Contenuti editoriali** | Titolo articolo | Autore o data | Badge ↗ |
 
 ### Struttura card
-- **Colonna sinistra** (~`38%`): card grande verticale, immagine dominante, titolo + sottotitolo sotto — nessun overlay, leggibilità diretta
+- **Colonna sinistra** (~`38%`): card grande verticale, immagine dominante, titolo + label sotto — nessun overlay, leggibilità diretta
 - **Colonna centrale** (~`38%`): due card impilate verticalmente
   - Card superiore: immagine + titolo overlay in basso + badge freccia diagonale ↗ in alto a destra
   - Card inferiore: immagine + label testuale sotto — più compatta
-- **Colonna destra** (~`20%–24%`): card stretta verticale, immagine, titolo + metadato sotto, CTA pill "See more" in basso
-- **Heading sezione**: titolo testuale "Latest Projects" o equivalente, posizionato sopra la griglia, flush-left
+- **Colonna destra** (~`20%–24%`): card stretta verticale, immagine, titolo + label sotto, CTA pill in basso
+- **Heading sezione**: titolo testuale flush-left sopra la griglia (es. "Latest Projects", "Categorie", "Collezioni")
 
 ### Geometrie precise
 
@@ -150,7 +158,7 @@ Griglia desktop a tre colonne con pesi visivi diversi, pensata per mostrare un p
 | Border-radius card | `0.75rem–1rem` |
 | Badge freccia ↗ | `2rem–2.25rem` · cerchio · top-right della card |
 | Titolo card | `0.875rem–1.125rem` · bold · max 2 righe |
-| Metadato / categoria | `0.75rem` · muted · 1 riga |
+| Label secondaria | `0.75rem` · muted · 1 riga |
 | CTA pill | `auto` larghezza · altezza `2rem–2.25rem` · border-radius `9999px` · bordo sottile |
 | Padding testo sotto card | `0.5rem–0.75rem` verticale |
 
@@ -159,25 +167,25 @@ Griglia desktop a tre colonne con pesi visivi diversi, pensata per mostrare un p
 | | BLOCK-001 | BLOCK-019 |
 |---|---|---|
 | Colonne | 2 simmetriche `50/50` | 3 con pesi diversi `38/38/24` |
-| Testo | Nessuno | Titolo, metadato, CTA |
+| Testo | Nessuno | Titolo, label, CTA |
 | Badge azione ↗ | ❌ | ✅ colonna centrale |
 | CTA esplicita | ❌ | ✅ colonna destra |
-| Scopo | Media discovery | Portfolio showcase con conversione |
+| Contenuto | Immagini pure | Progetti, categorie, editoriale |
 | Target device | Mobile | Desktop (primario) |
 
 ### Comportamento hover (desktop)
-- Card con badge ↗: scala leggera `scale(1.02)` o overlay scuro al passaggio del mouse
-- CTA "See more": cambio stato su hover (es. fill del bottone)
-- Titoli: restano sempre leggibili, nessun effetto di nascondimento
+- Card con badge ↗: scala leggera `scale(1.02)` o overlay scuro lieve
+- CTA pill: cambio stato su hover (fill o colore invertito)
+- Titoli e label: sempre leggibili, nessun effetto di nascondimento
 
 ### Target devices
-Desktop (primario). Su tablet: semplificare a 2 colonne con la colonna destra che cade sotto. Su mobile: stack verticale di card singole.
+Desktop (primario). Su tablet: 2 colonne con la destra che scende sotto. Su mobile: stack verticale di card singole.
 
 ### Posizione tipica
-Sezione "Latest Projects", "Case studies", "Portfolio" — tipicamente nella seconda metà di una homepage agency, studio creativo o freelance designer.
+Sezione showcase nella seconda metà della homepage: "Latest Projects", "Categorie", "Collezioni" — su siti agency, e-commerce, portfolio, brand editoriali.
 
 ### Formato compatto
-Griglia desktop 3 colonne asimmetriche `38/38/24`, gap `0.75rem–1rem`. Sinistra: card grande portrait con titolo sotto. Centro: 2 card impilate, superiore con badge ↗. Destra: card stretta con CTA pill "See more".
+Griglia desktop 3 colonne asimmetriche `38/38/24`, gap `0.75rem–1rem`. Sinistra: card grande portrait. Centro: 2 card impilate, superiore con badge ↗. Destra: card stretta con CTA pill.
 
 ### Fonte
-Sito agency / studio design — desktop (screenshot)
+Sito agency / e-commerce / studio design — desktop (screenshot)
