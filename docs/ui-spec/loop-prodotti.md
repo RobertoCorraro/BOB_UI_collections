@@ -141,43 +141,57 @@ iperceramica.it — sezione Ambienti, mobile (browser iOS Safari)
 
 ---
 
-## BLOCK-016 — Product detail card con specifiche tecniche (PDP mobile)
+## BLOCK-016 — Brand mini bar
 
 ### Descrizione
-Scheda prodotto verticale a due zone: immagine ambientazione full-width sopra e scheda tecnica su sfondo bianco sotto. L'immagine ambientazione mostra il prodotto in contesto reale; un'immagine campione sovrapposta in basso a destra mostra la texture ravvicinata del materiale. La zona bianca presenta le specifiche in modo editoriale con tipografia compatta e strutturata. È la versione mobile di una PDP (Product Detail Page) o di una scheda catalogo digitale.
+Blocco orizzontale compatto a due zone affiancate verticalmente: zona visiva sopra (immagine landscape a tutto bordo + immagine campione quadrata sovrapposta) e zona dati sotto (sfondo bianco, testo strutturato in colonne). L'altezza totale è volutamente contenuta — il blocco è una "striscia" che comunica identità, materiale e specifiche senza occupare più di una frazione dello schermo. Riutilizzabile in qualsiasi contesto: sito brand, catalogo, SERP locale, landing di prodotto, scheda in loop.
 
-### Struttura
-**Zona immagine (superiore)**
-- Immagine ambientazione full-width, ratio ~16:9 o 3:2 landscape
-- **Immagine campione sovrapposta**: foto texture ravvicinata, posizionata bottom-right sull'ambientazione, ratio ~3:4 portrait, sfondo bianco o neutro — mostra la superficie reale del materiale
+### Geometrie precise
 
-**Zona scheda tecnica (inferiore, sfondo bianco)**
-- **Badge "NEW"**: label uppercase bold, piccola, posizionata sopra il nome prodotto
-- **Nome prodotto**: display extra-large, sans-serif bold/black, colore dark — voce dominante della scheda
-- **SIZE**: lista orizzontale di misure in cm + conversione in pollici (es. `60x120 · 80x80 · 60x60`), due righe tipografiche sovrapposte (cm sopra, pollici sotto), uppercase compatto
-- **FINISHES**: lista di finiture con icona quadrata/strutturata a sinistra + nome finitura bold + nome tecnico inglese muted a destra
-- **COLORS**: lista orizzontale di nomi colore uppercase separati da `|` (es. `CREMA | TAUPE | GRIS`)
-- Tutte le sezioni usano label uppercase bold come header di sezione (`SIZE`, `FINISHES`, `COLORS`)
+#### Zona visiva (superiore)
+| Elemento | Geometria |
+|---|---|
+| Immagine ambientazione | Full-width × altezza fissa ~55–60% del blocco totale · ratio **16:9** o **3:2** landscape · nessun bordo |
+| Immagine campione sovrapposta | Quadrata **1:1** · larghezza ~40–45% della zona visiva · posizionata **bottom-right** con offset negativo verso il basso che sfora nella zona dati · sfondo bianco o neutro · nessun border-radius o border-radius minimo (2–4px) |
+| Overlap campione su zona dati | Il campione scende di ~30–40% della propria altezza nella zona bianca sotto — crea continuità visiva tra le due zone |
 
-### Tipografia
-- Nome prodotto: sans-serif black/extrabold, display size, dark
-- Badge NEW: uppercase bold, piccolo, dark
-- Label sezione: uppercase bold, piccolo, tracking ampio, dark
-- Valori: mix bold (nome finitura) + regular muted (nome tecnico inglese)
-- Misure: uppercase compatto, due righe sovrapposte cm/pollici
+#### Zona dati (inferiore, sfondo bianco)
+| Elemento | Geometria |
+|---|---|
+| Altezza zona dati | ~40–45% del blocco totale |
+| Padding interno | `1rem` laterale · `0.75rem` verticale |
+| Badge (es. "NEW") | Uppercase bold · font-size ~0.625rem · lettera-spacing ampio · posizione top-left della zona |
+| Nome / titolo | Sans-serif black o extrabold · font-size **display** (~2–2.5rem su mobile) · occupa ~30–35% della larghezza della zona testo (sinistra), il campione sovrapposto occupa la destra |
+| Sezioni dati (SIZE, FINISHES, COLORS…) | Label uppercase bold ~0.6rem + valori regular ~0.75rem · disposte in **colonna verticale** · gap tra sezioni ~0.5rem |
+| Valori con due livelli (es. cm + pollici) | Due righe sovrapposte: riga superiore bold dark · riga inferiore regular muted · interlinea stretta (~1.1) |
+| Lista colori inline | Nomi uppercase separati da `·` o `|` · regular muted · stessa riga |
 
-### Ratio immagini
-- Ambientazione: ~16:9 o 3:2 landscape, full-width
-- Campione sovrapposto: ~3:4 portrait, ~45% larghezza card, angoli retti o leggermente arrotondati
+### Proporzioni complessive
+- **Altezza totale su mobile**: ~420–500px (dipende dal contenuto della zona dati)
+- **Larghezza**: full-width, edge-to-edge, nessun padding laterale esterno
+- **Ratio visivo percepito**: orizzontale dominante — la zona visiva è più larga che alta, la zona dati è compatta
+
+### Variante desktop
+Su desktop le due zone si affiancano orizzontalmente invece di impilare:
+- **Zona visiva**: colonna sinistra ~55–60% larghezza, altezza fissa
+- **Zona dati**: colonna destra ~40–45% larghezza, allineata verticalmente al centro
+- Il campione sovrapposto mantiene la stessa logica ma sfora verso destra nella zona dati
+
+### Contenuto intercambiabile
+Il blocco non è legato a nessun settore. La zona dati può contenere qualsiasi combinazione di:
+- Specifiche tecniche (misure, finiture, materiali)
+- Attributi di prodotto (taglia, colore, peso)
+- Dati brand (anno, collezione, origine)
+- Microcopy editoriale (claim, tagline, categoria)
 
 ### Target devices
-Mobile + tablet (primario). Desktop: zona immagine a sinistra + scheda tecnica a destra in layout split 50/50 o 60/40.
+Mobile + tablet + desktop. Geometrie identiche su tutti i device, solo la direzione di impilamento cambia (verticale su mobile, orizzontale su desktop).
 
 ### Posizione tipica
-PDP (Product Detail Page) — blocco principale sopra la fold. Oppure scheda catalogo in loop su pagina collezione.
+Ovunque sia necessario comunicare identità + dati in poco spazio verticale: scheda prodotto, banner brand, risultato SERP arricchito, listing catalogo, sezione "chi siamo" compatta.
 
 ### Formato compatto
-Immagine ambientazione landscape + campione texture sovrapposto bottom-right. Sotto: badge NEW + nome prodotto display + SIZE (misure cm/pollici) + FINISHES (icona + nome) + COLORS (lista inline). Sfondo bianco, tipografia compatta uppercase.
+Striscia orizzontale full-width. Zona visiva: immagine landscape 16:9 + campione 1:1 sovrapposto bottom-right con overflow nella zona dati. Zona dati sfondo bianco: badge + titolo display + sezioni dati uppercase compatte. Altezza totale ~420–500px mobile.
 
 ### Fonte
 Sito ceramiche/piastrelle — scheda prodotto mobile (screenshot iOS)
