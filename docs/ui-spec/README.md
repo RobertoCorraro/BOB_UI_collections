@@ -2,6 +2,10 @@
 
 Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pattern.
 
+> **Nota sulle misure:** tutte le geometrie nei file di spec usano unità relative (`rem`, `%`, `vw`, `vh`). I pixel fissi non sono usati. Vedi le convenzioni complete nel [README radice](../../README.md#convenzioni-di-misura).
+
+---
+
 ## File
 
 | File | Contenuto |
@@ -9,10 +13,12 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 | [hero.md](./hero.md) | Hero fullscreen: categoria con breadcrumb, collezione con CTA |
 | [navigation.md](./navigation.md) | Pattern di navigazione: footer accordion, sliding panel drill-down |
 | [loop-categorie.md](./loop-categorie.md) | Loop e caroselli di categorie: discovery rail, filtered carousel, category showcase |
-| [loop-prodotti.md](./loop-prodotti.md) | Loop e griglie di prodotti: two-column grid, masonry, destination card, product detail card |
+| [loop-prodotti.md](./loop-prodotti.md) | Loop e griglie di prodotti: two-column grid, masonry, destination card, brand mini bar |
 | [loop-post-editoriali.md](./loop-post-editoriali.md) | Loop di post, contenuti e profili: collage, people carousel, article teaser |
-| [banner-promo.md](./banner-promo.md) | Banner promozionali e carousel servizi: editorial banner stack, service card carousel |
-| [serp-e-ads.md](./serp-e-ads.md) | SERP e formati pubblicitari: Google Local Pack, riferimento per SEO e Google Ads |
+| [banner-promo.md](./banner-promo.md) | Banner promozionali e carousel servizi |
+| [serp-e-ads.md](./serp-e-ads.md) | SERP e formati pubblicitari: Google Local Pack |
+
+---
 
 ## Blocchi per numero
 
@@ -33,5 +39,5 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 | BLOCK-013 | Article teaser carousel | loop-post-editoriali.md |
 | BLOCK-014 | Hero categoria con overlay, breadcrumb e immagine secondaria | hero.md |
 | BLOCK-015 | Hero collezione con CTA pill | hero.md |
-| BLOCK-016 | Product detail card con specifiche tecniche (PDP mobile) | loop-prodotti.md |
+| BLOCK-016 | Brand mini bar | loop-prodotti.md |
 | BLOCK-017 | Local Business SERP card (Google Maps Local Pack) | serp-e-ads.md |
