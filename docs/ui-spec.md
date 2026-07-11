@@ -11,6 +11,9 @@ Card principale 3:4 o 4:5; card secondarie 1:1.
 ### Target devices
 Mobile + tablet. Desktop solo se inserito in un contenitore più ampio o come modulo editoriale.
 
+### Posizione tipica
+Top of feed / apertura sezione contenuti — prima schermata dopo hero o navbar.
+
 ### Formato compatto
 2 colonne uguali: una con 1 card verticale, l'altra con 2 card quadrate sovrapposte. Spacing ridotto, composizione compatta, lettura immediata da mobile.
 
@@ -30,6 +33,9 @@ Card del rail 1:1.
 ### Target devices
 Mobile + tablet. Desktop opzionale, ma non prioritario.
 
+### Posizione tipica
+Mid-page / sezione discovery — dopo un risultato principale o come blocco esplorativo secondario.
+
 ### Formato compatto
 1 riga scrollabile di card 1:1 con titolo sotto, seguita da lista di righe tappabili con divisori sottili e icona trailing a destra.
 
@@ -48,6 +54,9 @@ Griglia simmetrica a 2 colonne con card uniformi, media sopra e testo sotto. Il 
 
 ### Target devices
 Mobile + tablet + desktop.
+
+### Posizione tipica
+Pagina risultati / listing page — corpo centrale della pagina, dopo filtri o header di sezione.
 
 ### Formato compatto
 Griglia 2 colonne con card uniformi, immagini 1:1 o 4:5, titolo troncato e metadati sotto. Layout ripetitivo, ordinato e facilmente scalabile.
@@ -75,6 +84,9 @@ Avatar principale 1:1 con clip circolare; avatar secondario nel sottotitolo 1:1 
 ### Target devices
 Mobile. Tablet e desktop non consigliati nella versione carosello; valutare layout a griglia su schermi larghi.
 
+### Posizione tipica
+Feed / home page — inserito inline nel flusso dei contenuti, tipicamente dopo i primi post o come blocco dedicato nella sezione esplora.
+
 ### Formato compatto
 Carosello orizzontale con 1 card visibile + metà della successiva. Card con avatar circolare grande, nome, sottotitolo contestuale e bottone CTA full-width.
 
@@ -99,6 +111,9 @@ Ogni banner ~**5:3** o **16:9 leggermente compresso**. Altezza stimata 220–280
 
 ### Target devices
 Mobile (primario). Desktop richiede adattamento: limitare la larghezza massima o aumentare il ratio per evitare immagini eccessivamente basse.
+
+### Posizione tipica
+Homepage / landing page — corpo centrale dopo l'hero, usato come sezione promozionale editoriale.
 
 ### Formato compatto
 Stack verticale di banner full-width edge-to-edge. Testo overlay bottom-left con titolo bianco + keyword brand-color. Nessun bottone, intera area tappabile.
@@ -126,7 +141,7 @@ Navigazione da footer mobile strutturata come lista di sezioni a fisarmonica (ac
 **Accordion** (detto anche: collapsible footer nav, expandable footer sections, footer accordion). In HTML/CSS si implementa tipicamente con `<details>` + `<summary>` oppure con JavaScript toggle su classi CSS.
 
 ### Struttura sezione
-- **Header row**: titolo sezione in MAIUSCOLO, bold, allineato a sinistra + icona chevron (\u2228 chiuso / \u2227 aperto) allineata a destra — row full-width tappabile
+- **Header row**: titolo sezione in MAIUSCOLO, bold, allineato a sinistra + icona chevron (∨ chiuso / ∧ aperto) allineata a destra — row full-width tappabile
 - **Divisore**: linea orizzontale sottile (1 px) tra ogni sezione
 - **Pannello espanso**: lista verticale di link testuali, stile muted/grigio, spacing generoso tra le voci (min 44 px touch target per voce)
 - **Evidenziazione item attivo**: peso del font aumentato (semibold o bold) per indicare la pagina/sezione corrente
@@ -134,11 +149,11 @@ Navigazione da footer mobile strutturata come lista di sezioni a fisarmonica (ac
 ### Stati
 | Stato | Chevron | Pannello |
 |---|---|---|
-| Chiuso (default) | \u2228 (freccia gi\u00f9) | nascosto |
-| Aperto | \u2227 (freccia su) | visibile, espanso |
+| Chiuso (default) | ∨ (freccia giù) | nascosto |
+| Aperto | ∧ (freccia su) | visibile, espanso |
 
 ### Comportamento
-- **Uno o pi\u00f9 pannelli aperti contemporaneamente**: entrambi i comportamenti sono validi; Deghi mostra pi\u00f9 sezioni aperte in simultanea
+- **Uno o più pannelli aperti contemporaneamente**: entrambi i comportamenti sono validi; Deghi mostra più sezioni aperte in simultanea
 - **Animazione**: slide-down consigliata (max 200ms ease-out) per non rallentare la navigazione
 - **Touch target**: l'intera header row è tappabile, non solo il testo o l'icona
 
@@ -158,6 +173,9 @@ Nessuna immagine. Blocco puramente testuale e navigazionale.
 
 ### Target devices
 **Mobile (esclusivo)**. Su tablet e desktop il footer torna alla versione a colonne affiancate — l'accordion non serve su schermi larghi dove lo spazio verticale non è un vincolo.
+
+### Posizione tipica
+Footer — fondo pagina, dopo i contenuti principali e prima del copyright/note legali.
 
 ### Formato compatto
 Lista verticale di sezioni: titolo uppercase + chevron / divisore / pannello espandibile con link muted. Dark background, zero immagini, puro testo navigazionale.
