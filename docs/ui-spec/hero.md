@@ -89,3 +89,60 @@ Fullscreen dark ambientazione + brand name + nome collezione display + sottotito
 
 ### Fonte
 Sito ceramiche/piastrelle — landing collezione, mobile (screenshot iOS)
+
+---
+
+## BLOCK-018 — Sliding feature carousel
+
+### Descrizione
+Carosello orizzontale con una card principale dominante e due pannelli laterali più stretti che anticipano altri contenuti. Il blocco funziona come hero di scelta tra segmenti, piani o categorie, con forte gerarchia visiva e chiara affordance di navigazione laterale. La card attiva comunica il messaggio principale (titolo, sottotitolo, UI preview o immagine editoriale), mentre le sezioni laterali agiscono da reveal contestuale e invitano alla navigazione.
+
+### Struttura
+- **Card principale**: occupa il `60%–68%` della larghezza — immagine o contenuto editoriale dominante, titolo, sottotitolo, eventuale CTA o widget preview
+- **Pannelli laterali**: `16%–20%` ciascuno — anteprime parziali delle card adiacenti, sempre visibili per comunicare la presenza di altri contenuti
+- **CTA / action chip**: pill circolare o rettangolare in basso al centro o in basso a destra della card attiva — unica azione primaria visibile
+- **Gap tra pannelli**: costante e stretto, segnala la separazione senza interrompere il flusso visivo
+
+### Geometrie precise
+
+| Elemento | Misura relativa |
+|---|---|
+| Larghezza totale blocco | Full-width, edge-to-edge |
+| Card principale | `60%–68%` della larghezza disponibile |
+| Pannello laterale visibile | `16%–20%` ciascuno |
+| Gap tra pannelli | `0.5rem–0.75rem` |
+| Altezza blocco | `24rem–30rem` oppure `min(70vh, 32rem)` |
+| Border-radius card | `1rem–1.5rem` |
+| Ratio immagine card principale | `3:4` o `4:5` |
+| Titolo card | `1.5rem–2rem` |
+| Sottotitolo / body card | `0.875rem–1rem` |
+| CTA / action chip | `2.25rem–2.75rem` alto, pill |
+| Padding interno card | `1rem–1.25rem` |
+
+### Comportamento
+- Swipe orizzontale su mobile (touch-native).
+- Click/tap sui pannelli laterali per portare la card in focus su desktop.
+- Frecce prev/next opzionali su desktop.
+- Una sola card deve risultare chiaramente attiva alla volta — le laterali restano visibili ma con scala o opacità ridotta se necessario.
+
+### Differenza da BLOCK-002 (Discovery rail)
+
+| | BLOCK-002 Discovery rail | BLOCK-018 Sliding feature carousel |
+|---|---|---|
+| Scopo | Navigazione orizzontale di categorie | Hero di scelta tra segmenti macro |
+| Dimensione card | Piccola, uniforme | Grande dominante + laterali ridotti |
+| Contenuto card | Icona/label | Immagine + titolo + sottotitolo + CTA |
+| Posizione | Mid-page | Top / hero |
+| Suggestion list sotto | ✅ | ❌ |
+
+### Target devices
+Mobile e desktop. Su mobile ottimale se i pannelli laterali restano visibili almeno per `15%–18%`. Su desktop la card principale può espandersi ulteriormente.
+
+### Posizione tipica
+Hero di onboarding/scelta piano, landing con segmenti di prodotto (Personal / Business / Freelance), apertura di sezione con macro-categorie.
+
+### Formato compatto
+Carousel full-width con card attiva ampia (`~65%`) + due side panels stretti (`~18%` ciascuno) che anticipano le alternative. Swipe o click per cambiare focus. Forte gerarchia visiva, zero ambiguità su cosa è attivo.
+
+### Fonte
+App fintech / finanza personale — hero onboarding scelta piano, desktop (screenshot)
