@@ -11,46 +11,45 @@ Navigazione da footer mobile strutturata come lista di sezioni a fisarmonica (ac
 
 ### Geometrie precise
 
-| Elemento | Misura |
+| Elemento | Misura relativa |
 |---|---|
 | Larghezza | Full-width, edge-to-edge |
-| Padding laterale interno | **16–20px** |
-| Altezza header row (sezione chiusa) | **48–56px** (touch target generoso) |
-| Titolo sezione | Font-size **0.875rem** · uppercase · font-weight **700** · colore bianco |
-| Icona chevron | **16–20px** · colore bianco/grigio chiaro · allineata destra |
-| Divisore tra sezioni | Linea **1px** grigio scuro (~#333–#444) · full-width |
-| Altezza riga link (pannello espanso) | **44px** (touch target minimo) |
-| Font link interni | Font-size **0.875rem** · regular · colore grigio muted (~#999) |
-| Indent link interni | **0** aggiuntivo — stessa x del titolo sezione |
-| Padding pannello espanso | **0** superiore · **8px** inferiore (prima del divisore) |
-| Gap tra link nel pannello | **0** — altezza riga fissa 44px gestisce la spaziatura |
-| Item attivo | Font-weight **600–700** · colore bianco pieno |
-| Sfondo footer | Dark ~**#1a1a1a** |
+| Padding laterale interno | `1rem–1.25rem` |
+| Altezza header row | `3rem–3.5rem` |
+| Titolo sezione | `0.875rem` · uppercase · bold |
+| Icona chevron | `1rem–1.25rem` |
+| Divisore tra sezioni | `1px` full-width |
+| Altezza riga link | `2.75rem` |
+| Font link interni | `0.875rem` · regular |
+| Indent link interni | `0` |
+| Padding pannello espanso | `0 0 0.5rem 0` |
+| Item attivo | font-weight `600–700` |
+| Sfondo footer | dark |
 
 ### Stati accordion
 | Stato | Chevron | Pannello |
 |---|---|---|
-| Chiuso (default) | ∨ (freccia giù) | nascosto |
-| Aperto | ∧ (freccia su) | visibile, espanso |
+| Chiuso | ∨ | nascosto |
+| Aperto | ∧ | visibile |
 
 ### Comportamento
-- Animazione: slide-down **200ms ease-out**
-- Più sezioni aperte contemporaneamente: ✅ supportato
+- Animazione: slide-down `200ms ease-out`
+- Più sezioni aperte contemporaneamente: ✅
 - Touch target: intera header row tappabile
 
 ### Tipografia
-- Titolo sezione: uppercase bold 0.875rem bianco
-- Link interni: regular 0.875rem grigio muted
-- Item attivo: semibold/bold bianco
+- Titolo sezione: uppercase bold `0.875rem`
+- Link interni: regular `0.875rem`
+- Item attivo: semibold/bold
 
 ### Target devices
-**Mobile (esclusivo)**. Su tablet/desktop: footer a colonne affiancate.
+Mobile esclusivo. Su tablet/desktop: footer a colonne affiancate.
 
 ### Posizione tipica
 Footer — fondo pagina, dopo i contenuti e prima del copyright.
 
 ### Formato compatto
-Full-width, padding 16–20px. Header row 48–56px: titolo uppercase bold bianco + chevron destra. Divisore 1px grigio scuro. Pannello espanso: righe 44px, link regular muted. Sfondo #1a1a1a. Animazione 200ms.
+Full-width, padding `1rem–1.25rem`. Header row alta `3rem–3.5rem`, titolo uppercase bold + chevron a destra. Divisori 1px. Pannello espanso con righe link alte `2.75rem`.
 
 ### Fonte
 deghi.it — footer homepage mobile (browser iOS)
@@ -64,40 +63,40 @@ Pattern di navigazione mobile a pannelli sovrapposti: ogni tap su una voce di li
 
 ### Geometrie precise
 
-| Elemento | Misura |
+| Elemento | Misura relativa |
 |---|---|
-| Larghezza pannello | **100% viewport** (full-screen, non drawer parziale) |
+| Larghezza pannello | `100vw` |
 | Sfondo pannello | Bianco o grigio molto chiaro |
-| Altezza riga voce L1/L2 | **48–56px** (touch target generoso) |
-| Padding riga | **16–20px** laterale |
-| Font voci L1 | Font-size **0.875–1rem** · bold · colore dark |
-| Font voci L2 | Font-size **0.875–1rem** · bold · colore dark |
-| Font voci L3 (accordion espanso) | Font-size **0.875rem** · regular · colore muted · indent +**16px** |
-| Chevron `>` (drill-down) | **16–20px** · colore muted · allineato destra |
-| `+` / `−` (accordion L3) | **20–24px** · colore dark · allineato destra |
-| Divisore tra voci | Linea **1px** grigio chiaro · full-width |
-| Header pannello L2 | Altezza **44–56px** · freccia `←` back 24px sinistra · titolo bold centrato |
-| Animazione L1 → L2 | Slide orizzontale · **300ms ease-in-out** |
-| Animazione accordion L3 | Slide-down verticale · **200ms ease-out** |
-| Navbar superiore fissa | Altezza **44–56px** · sempre visibile in tutti i pannelli · contiene logo, search, account, cart, × |
-| Footer fisso | Altezza **44–48px** · link secondari · sfondo grigio chiaro separato |
+| Altezza riga voce L1/L2 | `3rem–3.5rem` |
+| Padding riga | `1rem–1.25rem` laterale |
+| Font voci L1 | `0.875rem–1rem` · bold |
+| Font voci L2 | `0.875rem–1rem` · bold |
+| Font voci L3 | `0.875rem` · regular · indent `1rem` |
+| Chevron `>` | `1rem–1.25rem` |
+| `+` / `−` | `1.25rem–1.5rem` |
+| Divisore tra voci | `1px` full-width |
+| Header pannello L2 | Altezza `2.75rem–3.5rem` · freccia back `1.5rem` · titolo centrato |
+| Animazione L1 → L2 | Slide orizzontale `300ms ease-in-out` |
+| Animazione accordion L3 | Slide-down `200ms ease-out` |
+| Navbar superiore fissa | Altezza `2.75rem–3.5rem` |
+| Footer fisso | Altezza `2.75rem–3rem` |
 
 ### Struttura a 3 livelli
 
 | Livello | Contenuto | Animazione |
 |---|---|---|
-| **L1 — Root** | Categorie bold + chevron `>` o link diretto | Nessuna |
-| **L2 — Sub** | ← back + titolo centrato + lista voci | Slide-in da destra 300ms |
-| **L3 — Accordion** | Voci espandibili con `+`/`−` inline | Expand verticale 200ms |
+| L1 — Root | Categorie bold + chevron o link diretto | Nessuna |
+| L2 — Sub | Back + titolo + lista voci | Slide-in da destra |
+| L3 — Accordion | Voci espandibili inline | Expand verticale |
 
 ### Target devices
-**Mobile (esclusivo)**. Desktop: mega-menu orizzontale a colonne.
+Mobile esclusivo. Desktop: mega-menu orizzontale a colonne.
 
 ### Posizione tipica
-Menu principale — si attiva da hamburger. Copre 100% viewport come overlay.
+Menu principale — si attiva da hamburger. Copre il viewport come overlay.
 
 ### Formato compatto
-100% viewport. Navbar fissa 50px top. Righe 48–56px, padding 16–20px, divisori 1px. L1: bold + chevron/link. L2: ← back + titolo centrato + voci. L3: accordion +/− indent 16px. Animazione slide 300ms. Footer fisso 44px.
+Overlay `100vw`. Navbar fissa alta `2.75rem–3.5rem`. Righe navigazione alte `3rem–3.5rem`, padding laterale `1rem–1.25rem`, divisori 1px. L3 con indent `1rem`. Footer fisso `2.75rem–3rem`.
 
 ### Fonte
 knoll.com — menu mobile (browser iOS Safari)
