@@ -9,8 +9,31 @@ Caroselli e loop di navigazione per macro-categorie, discovery e browsing per ti
 ### Descrizione
 Rail orizzontale di card con immagine e label, seguita da una lista verticale di query tappabili. Il blocco guida la scoperta con browsing visuale sopra e azione rapida sotto.
 
-### Ratio immagini
-Card del rail 1:1.
+### Geometrie precise
+
+#### Rail orizzontale (zona superiore)
+
+| Elemento | Misura |
+|---|---|
+| Altezza card | **80–96px** (card compatta, quasi quadrata) |
+| Larghezza card | **80–96px** — ratio **1:1** |
+| Gap tra card | **8–12px** |
+| Padding laterale rail | **12–16px** da sinistra |
+| Immagine | Full-card, ratio 1:1 · border-radius **8–10px** |
+| Label testo | Sotto l'immagine · font-size **0.7–0.75rem** · centrata · 1 riga troncata · colore dark |
+| Gap immagine → label | **4–6px** |
+| Card visibili | **4–5 card intere** + overflow parziale a destra |
+
+#### Suggestion list (zona inferiore)
+
+| Elemento | Misura |
+|---|---|
+| Altezza riga | **44–52px** (touch target minimo 44px) |
+| Padding riga | **12–16px** laterale · **0** verticale (altezza fissa) |
+| Testo query | Font-size **0.875–1rem** · regular · colore dark |
+| Icona trailing | Freccia `→` o chevron `>` · **16–20px** · colore muted · allineata destra |
+| Divisore | Linea 1px grigio chiaro · full-width |
+| Numero righe visibili | **4–6 righe** dipende dal viewport |
 
 ### Target devices
 Mobile + tablet. Desktop opzionale, ma non prioritario.
@@ -19,7 +42,7 @@ Mobile + tablet. Desktop opzionale, ma non prioritario.
 Mid-page / sezione discovery — dopo un risultato principale o come blocco esplorativo secondario.
 
 ### Formato compatto
-1 riga scrollabile di card 1:1 con titolo sotto, seguita da lista di righe tappabili con divisori sottili e icona trailing a destra.
+Rail: card 1:1 ~88px, gap 8–12px, padding-left 16px, label sotto 0.75rem. List: righe 44–52px, divisori 1px, icona trailing destra.
 
 ### Fonte
 Google — sito mobile (google.com su browser mobile)
@@ -29,86 +52,95 @@ Google — sito mobile (google.com su browser mobile)
 ## BLOCK-008 — Filtered category carousel con frecce prev/next
 
 ### Descrizione
-Carosello orizzontale di card categoria con filtro inline (segmented control) nell'header e navigazione esplicita tramite frecce prev/next in basso. Il blocco combina tre livelli: header con titolo + filtro, griglia di card con overflow intenzionale, e controlli di navigazione separati. È pensato per la navigazione per categoria in contesti editoriali o di prodotto.
+Carosello orizzontale di card categoria con filtro inline (segmented control) nell'header e navigazione esplicita tramite frecce prev/next in basso.
 
-### Struttura (3 livelli)
-- **Header row**: titolo sezione (display, bold, allineato a sinistra) + segmented control pill a destra (es. "EFFETTI" inattivo / "AMBIENTI" attivo con pill scura filled). Il filtro cambia il set di card senza navigare altrove
-- **Griglia card**: 2 colonne asimmetriche — colonna sinistra ~62% (card intera visibile), colonna destra overflow oltre il bordo (~65% visibile). Overflow intenzionale che comunica la presenza di altri item e invita allo swipe/click
-- **Navigazione prev/next**: due bottoni circolari ghost/outline (bordo grigio sottile, sfondo trasparente, icona chevron ← →), posizionati in basso a sinistra sotto le card, non sovrapposti al contenuto
+### Geometrie precise
 
-### Card
-- **Struttura**: immagine ambientazione con angoli arrotondati + label testuale grande sotto (es. "Outdoor", "Cucina"), stile editoriale pulito
-- **Nessun overlay, bottone o metadato** sull'immagine — la card è tappabile nella sua interezza
-- **Ratio immagine**: ~3:4 (portrait), immagine alta e dominante
+#### Header row
 
-### Card visibili all'avvio
-**1 card intera + 1 card parziale** (~65% visibile) — totale 2 elementi percepiti, 1 completo
+| Elemento | Misura |
+|---|---|
+| Altezza header row | **40–48px** |
+| Titolo sezione | Font-size **1.25–1.5rem** · bold · allineato sinistra |
+| Segmented control | Altezza **32–36px** · border-radius **20px** (pill) · padding interno **8–12px** laterale |
+| Voce inattiva | Testo dark · nessuno sfondo |
+| Voce attiva | Pill filled scura (dark/nero) · testo bianco bold |
+| Posizione segmented control | Allineato a destra nella header row |
 
-### Navigazione
-| Metodo | Tipo | Posizione |
-|---|---|---|
-| Touch swipe | Gesture orizzontale | Sull'area card |
-| Freccia → | Tap bottone ghost circolare | Bottom-left, sotto le card |
-| Freccia ← | Tap bottone ghost circolare | Bottom-left, accanto alla → |
+#### Griglia card (carousel)
 
-### Segmented control (filtro)
-- 2 voci: voce inattiva = solo testo, voce attiva = pill scura filled con testo bianco bold
-- Cambia la categoria del carousel (es. da "Ambienti" a "Effetti") senza page reload
-- Posizionato in alto a destra, allineato con il titolo sezione
+| Elemento | Misura |
+|---|---|
+| Colonna sinistra (card intera) | **~62% viewport** |
+| Colonna destra (card overflow) | **~28–30% viewport** visibile (card destra tronca ~65% nascosta) |
+| Gap tra card | **8–12px** |
+| Padding laterale sinistro | **16px** |
+| Ratio immagine card | **3:4** portrait |
+| Altezza immagine su mobile | ~**220–280px** |
+| Border-radius immagine | **12–16px** |
+| Label sotto immagine | Font-size **1–1.125rem** · bold · colore dark · margin-top **8px** |
+| Altezza card totale | ~**260–320px** (immagine + label) |
+
+#### Navigazione prev/next (sotto le card)
+
+| Elemento | Misura |
+|---|---|
+| Bottone circolare | Diametro **36–44px** · border 1px grigio · sfondo trasparente (ghost) |
+| Icona chevron | **16–20px** · colore dark |
+| Gap tra i due bottoni | **8–12px** |
+| Posizione | Bottom-left, sotto le card · margin-top **12–16px** |
 
 ### Target devices
-Mobile (primario). Su desktop le frecce diventano il metodo principale; lo swipe rimane disponibile su touch screen.
+Mobile (primario). Su desktop frecce diventano metodo principale.
 
 ### Posizione tipica
-Mid-page / sezione categoria — dopo l'hero o come blocco di navigazione per macro-categorie di prodotto o contenuto editoriale.
+Mid-page / sezione categoria — dopo l'hero o come blocco di navigazione per macro-categorie.
 
 ### Formato compatto
-Header: titolo display bold + segmented control pill. Carousel: 1 card intera + 1 parziale, immagini portrait 3:4, label sotto. Navigazione: frecce ghost circolari bottom-left.
+Header: titolo bold + segmented control pill 32px destra. Carousel: card sinistra 62% + destra overflow 28%, ratio 3:4, border-radius 12–16px, label bold sotto. Prev/next ghost circolari 40px bottom-left.
 
 ### Fonte
-sito web piastrelle/ceramica — mobile (browser iOS), sezione Ambienti
+Sito web piastrelle/ceramica — mobile (browser iOS), sezione Ambienti
 
 ---
 
 ## BLOCK-009 — Category showcase numerato
 
 ### Descrizione
-Carosello orizzontale di card che rappresentano le **macro-categorie** principali di un portfolio o servizio. Ogni card mostra un'immagine di copertina rappresentativa della categoria, con un numero gigante sovrapposto che ne indica l'ordine/ranking visivo. Il numero funge simultaneamente da elemento grafico decorativo e da wayfinding — l'utente sa sempre a che posizione si trova senza dots o indicatori separati. È un blocco ad alto impatto editoriale, tipico di portfolio creativi, architettura e design.
+Carosello orizzontale di card che rappresentano le macro-categorie principali di un portfolio o servizio. Ogni card mostra un'immagine di copertina con un numero gigante sovrapposto in basso al centro.
 
-### Struttura card
-- **Immagine di copertina**: foto editorial/progetto emblematico della categoria, full-height della card, angoli arrotondati in alto
-- **Numero overlay**: cifra gigante (display extrabold/black, bianca, semi-trasparente), posizionata in basso al centro sull'immagine — dimensione ~40–50% dell'altezza card, stile puramente decorativo/wayfinding
-- **Nome categoria**: titolo bold centrato sotto l'immagine, 1–2 righe (es. "House of Culture & Art")
-- **2 tag descrittivi**: testo muted/grigio sotto il nome — tipo progetto + sotto-categoria (es. "Graduation Project / Cultural Design")
-- **Nessun bottone esplicito**: intera card tappabile → porta all'archivio filtrato per quella categoria
+### Geometrie precise
 
-### Differenza da BLOCK-008 (Filtered category carousel)
+| Elemento | Misura |
+|---|---|
+| Numero card visibili | **5 card intere** contemporaneamente su mobile (375px) |
+| Larghezza card | ~**64–68px** (375px ÷ 5 card − gap) |
+| Gap tra card | **4–6px** |
+| Padding laterale blocco | **8–12px** |
+| Ratio immagine | **2:5** o **1:3** portrait stretto |
+| Altezza immagine | ~**160–200px** · border-radius top **8–10px** |
+| Numero overlay | Font-size ~**40–60% altezza card** · sans-serif extrabold/black · bianco · opacity **0.85–1** · centrato bottom |
+| Nome categoria | Font-size **0.6–0.7rem** · bold · centrato · sotto l'immagine · max 2 righe |
+| Tag descrittivi | Font-size **0.55–0.6rem** · regular · muted/grigio · centrati · sotto il nome · max 2 righe |
+| Altezza zona testo | ~**48–60px** |
+| Altezza card totale | ~**220–260px** |
+| Border-radius card | **8–10px** in alto · **0** o **4px** in basso |
 
-| | BLOCK-008 | BLOCK-009 |
-|---|---|---|
-| Contenuto card | Singolo prodotto/item | Categoria intera |
-| CTA | Arrow prev/next + filtro segmented | Tap → pagina categoria |
-| Navigazione | Filtro per tipo | Browse categorizzato |
-| Numero overlay | Indicatore posizione nel carousel | Ranking/ordine della categoria |
-| Card visibili | 1 intera + 1 parziale | 5 intere (layout stretto) |
-
-### Card visibili all'avvio
-**5 card intere** — layout a card strette (ratio ~1:3 o 2:5 portrait), tutte visibili contemporaneamente su mobile senza overflow
-
-### Ratio immagine
-~**2:5** o **1:3** portrait stretto — card molto alte e sottili, ottimizzate per mostrare più categorie insieme
-
-### Navigazione
-Touch swipe orizzontale. Nessun prev/next esplicito (a differenza di BLOCK-008).
+### Schema visivo (5 card su 375px)
+```
+[  ][  ][  ][  ][  ]
+ 1    2    3    4    5
+~65px ciascuna + gap 5px
+```
 
 ### Target devices
 Mobile (primario). Su desktop valutare layout a griglia fissa o carousel con card più larghe.
 
 ### Posizione tipica
-Homepage / pagina portfolio — sezione di navigazione per macro-aree, dopo l'hero o come entry point alle categorie principali.
+Homepage / pagina portfolio — sezione navigazione per macro-aree, dopo l'hero.
 
 ### Formato compatto
-Carosello orizzontale, 5 card portrait strette (ratio ~1:3). Ogni card: immagine full-height + numero gigante overlay bottom-center + nome categoria bold + 2 tag muted sotto. Nessun bottone, card intera tappabile.
+5 card visibili ~65px wide, gap 4–6px. Immagine portrait 1:3, ~180px alta, border-radius 8px top. Numero overlay bold bianco 50% altezza card, centrato bottom. Nome bold 0.65rem + 2 tag muted 0.6rem sotto.
 
 ### Fonte
 App/sito portfolio architettura — mobile (screenshot iOS)

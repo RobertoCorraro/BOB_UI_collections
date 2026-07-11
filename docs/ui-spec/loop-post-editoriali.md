@@ -9,8 +9,34 @@ Caroselli e layout per post, articoli, profili utente e contenuti editoriali.
 ### Descrizione
 Layout a due colonne 50/50; una colonna contiene un blocco verticale dominante, l'altra due blocchi quadrati impilati. Il blocco è pensato per aprire una sezione con forte gerarchia visiva e preview compatta.
 
+### Geometrie precise
+
+| Elemento | Misura |
+|---|---|
+| Larghezza totale | Full-width, edge-to-edge, 0 padding laterale esterno |
+| Colonne | 2 colonne simmetriche, **50% / 50%** larghezza viewport ciascuna |
+| Gap tra colonne | **4–6px** (gap visivo minimo, quasi assente) |
+| Gap tra card nella colonna destra | **4–6px** (stesso gap del gap tra colonne) |
+| Card sinistra (verticale dominante) | Altezza = **100% dell'altezza del blocco** · ratio **3:4** o **4:5** portrait |
+| Card destra superiore (quadrata) | Altezza = **50% dell'altezza del blocco** − metà gap · ratio **1:1** |
+| Card destra inferiore (quadrata) | Altezza = **50% dell'altezza del blocco** − metà gap · ratio **1:1** |
+| Altezza totale blocco su mobile | ~**340–400px** su iPhone standard (375px wide) |
+| Border-radius | **0** — nessun arrotondamento, immagini a bordo vivo |
+| Testo | Nessun testo sovrapposto sulle card — immagini pure |
+| Padding interno blocco | **0** laterale · **0** verticale — blocco completamente edge-to-edge |
+
+### Schema visivo (ASCII)
+```
+┌──────────┬──────────┐
+│          │  [1:1]   │
+│  [3:4]   ├──────────┤
+│          │  [1:1]   │
+└──────────┴──────────┘
+  50%         50%
+```
+
 ### Ratio immagini
-Card principale 3:4 o 4:5; card secondarie 1:1.
+Card principale: **3:4** o **4:5** portrait. Card secondarie: **1:1** quadrate.
 
 ### Target devices
 Mobile + tablet. Desktop solo se inserito in un contenitore più ampio o come modulo editoriale.
@@ -19,7 +45,7 @@ Mobile + tablet. Desktop solo se inserito in un contenitore più ampio o come mo
 Top of feed / apertura sezione contenuti — prima schermata dopo hero o navbar.
 
 ### Formato compatto
-2 colonne uguali: una con 1 card verticale, l'altra con 2 card quadrate sovrapposte. Spacing ridotto, composizione compatta, lettura immediata da mobile.
+2 colonne 50/50, gap 4–6px, edge-to-edge. Colonna sinistra: 1 card portrait 3:4, altezza intera. Colonna destra: 2 card quadrate 1:1 impilate. Nessun testo, nessun border-radius.
 
 ### Fonte
 App Facebook — mobile (iOS/Android)
@@ -29,17 +55,27 @@ App Facebook — mobile (iOS/Android)
 ## BLOCK-004 — People suggestion carousel
 
 ### Descrizione
-Carosello orizzontale di card persone con overflow intenzionale: la card successiva è visibile a metà per comunicare la presenza di altri elementi e invitare allo scroll. Ogni card contiene un avatar circolare grande, titolo (nome utente), sottotitolo con avatar piccolo e testo contestuale (es. amici in comune), e un bottone CTA primario full-width in fondo alla card. Il blocco è progettato per stimolare connessioni sociali o suggerire profili rilevanti.
+Carosello orizzontale di card persone con overflow intenzionale: la card successiva è visibile a metà per comunicare la presenza di altri elementi e invitare allo scroll. Ogni card contiene un avatar circolare grande, titolo (nome utente), sottotitolo con avatar piccolo e testo contestuale (es. amici in comune), e un bottone CTA primario full-width in fondo alla card.
 
-### Struttura card
-- **Avatar**: immagine circolare, grande, centrata nella parte superiore della card
-- **Titolo**: nome utente, testo bold, centrato
-- **Sottotitolo**: avatar secondario piccolo (circolare) + testo contestuale breve (es. "1 in comune"), allineati in riga, centrati
-- **Bottone CTA**: full-width, colore primario, testo breve e diretto (es. "Segui"), posizionato in fondo alla card
-- **Close button**: icona × in alto a destra per ignorare il suggerimento
+### Geometrie precise
 
-### Ratio immagini
-Avatar principale 1:1 con clip circolare; avatar secondario nel sottotitolo 1:1 piccolo (24–32 px).
+| Elemento | Misura |
+|---|---|
+| Larghezza card | ~**160–180px** (circa 45–48% viewport mobile 375px) |
+| Altezza card | ~**220–260px** |
+| Card visibili | **1 card intera + metà della successiva** (overflow ~50% card destra) |
+| Gap tra card | **8–12px** |
+| Padding interno card | **12–16px** laterale · **16px** verticale |
+| Avatar principale | Circolare **1:1** · diametro ~**72–80px** · centrato in cima alla card · margin-top ~16px |
+| Avatar secondario (sottotitolo) | Circolare **1:1** · diametro **24–28px** · inline a sinistra del testo contestuale |
+| Titolo nome | Font-weight bold · font-size ~**0.875rem** · centrato · 1 riga, troncato |
+| Sottotitolo | Avatar piccolo inline + testo ~**0.75rem** regular muted · centrato |
+| Gap titolo → sottotitolo | **4–6px** |
+| Bottone CTA | Full-width (100% larghezza card − padding) · altezza **36–40px** · border-radius **20px** (pill) · colore primario filled |
+| Gap sottotitolo → bottone | **auto** (bottone pinned al fondo con margin-top: auto o flexbox) |
+| Close button × | **20–24px** · posizione top-right · padding **8px** |
+| Background card | Bianco o grigio molto chiaro · border-radius card **12–16px** |
+| Sfondo sezione | Grigio chiaro o bianco |
 
 ### Target devices
 Mobile. Tablet e desktop non consigliati nella versione carosello; valutare layout a griglia su schermi larghi.
@@ -48,7 +84,7 @@ Mobile. Tablet e desktop non consigliati nella versione carosello; valutare layo
 Feed / home page — inserito inline nel flusso dei contenuti, tipicamente dopo i primi post o come blocco dedicato nella sezione esplora.
 
 ### Formato compatto
-Carosello orizzontale con 1 card visibile + metà della successiva. Card con avatar circolare grande, nome, sottotitolo contestuale e bottone CTA full-width.
+Carosello orizzontale, gap 8–12px. Card ~160×240px, border-radius 12–16px: avatar circolare 72–80px centrato in cima + nome bold centrato + avatar 24px + testo contestuale + CTA pill full-width bottom pinned. Overflow 50% card successiva. Close × top-right.
 
 ### Fonte
 App Instagram — mobile (iOS/Android), sezione "Suggeriti per te"
@@ -58,43 +94,37 @@ App Instagram — mobile (iOS/Android), sezione "Suggeriti per te"
 ## BLOCK-013 — Article teaser carousel
 
 ### Descrizione
-Carosello orizzontale di anteprime editoriali con immagine hero in alto e blocco testuale ampio sotto, separato visivamente dall'immagine. La card mostra un articolo, progetto o case study; la card successiva è visibile parzialmente sul lato destro per comunicare chiaramente la presenza di altri contenuti e invitare allo swipe. Non è un hero singolo né un banner stack: è un pattern di browsing editoriale.
+Carosello orizzontale di anteprime editoriali con immagine hero in alto e blocco testuale ampio sotto, separato visivamente dall'immagine. La card mostra un articolo, progetto o case study; la card successiva è visibile parzialmente sul lato destro.
 
-### Struttura card
-- **Immagine hero**: visual ampio, ratio landscape, full-width nella parte superiore della card
-- **Overflow laterale**: la card successiva compare parzialmente a destra; il contenuto non è centrato in una singola card isolata ma in un carousel con preview del prossimo item
-- **Titolo editoriale**: headline grande, bold, multilinea, posizionata sotto l'immagine su fondo bianco
-- **Metadati uppercase**: luogo, paese, testata, data o categoria, separati dal titolo e con tracking/weight più istituzionale
-- **Nessun bottone esplicito**: l'intera card è tappabile
+### Geometrie precise
 
-### Distinzione da altri pattern
-
-| Pattern | Differenza chiave |
+| Elemento | Misura |
 |---|---|
-| Hero header | Il hero è singolo, senza overflow né swipe laterale |
-| Banner stack | Il banner stack impila elementi verticalmente; qui la navigazione è orizzontale |
-| Editorial banner overlay | Nell'overlay il testo sta sopra l'immagine; qui il testo è sotto, separato |
-| Results card | La results card è più compatta e ripetitiva; qui la card è ampia, narrativa, magazine-like |
+| Larghezza card | ~**85–90% viewport** — card dominante con overflow destro visibile |
+| Overflow card successiva | ~**10–15% viewport** visibile a destra |
+| Gap tra card | **12–16px** |
+| Padding laterale esterno blocco | **16px** da sinistra (la card non è edge-to-edge) |
+| Immagine hero | Ratio **16:9** o **3:2** landscape · full-width della card · border-radius top **12px** |
+| Altezza immagine su mobile | ~**180–220px** |
+| Zona testo (sotto immagine) | Sfondo bianco · padding **12–16px** · border-radius bottom **12px** |
+| Titolo editoriale | Font-weight bold/extrabold · font-size **1.25–1.5rem** · max 3 righe · colore dark |
+| Metadati uppercase | Font-size **0.625–0.75rem** · uppercase · lettera-spacing ampio · colore muted · sopra o sotto il titolo |
+| Gap metadati → titolo | **6–8px** |
+| Altezza zona testo | ~**100–140px** dipende dalle righe del titolo |
+| Altezza card totale | ~**300–360px** su mobile |
+| Background card | Bianco · border-radius **12px** · ombra leggera o bordo grigio sottile |
 
 ### Card visibili all'avvio
-**1 card dominante + preview della successiva** sul lato destro
-
-### Ratio immagini
-~**16:9** o **3:2** landscape. L'immagine deve avere abbastanza respiro da funzionare come apertura narrativa dell'articolo.
-
-### Navigazione
-- **Touch swipe** orizzontale su mobile
-- **Overflow intenzionale** della card successiva come affordance primaria
-- Su desktop: preferibile carousel con **2 card visibili** + frecce prev/next, oppure lista editoriale verticale con immagine a sinistra e testo a destra
+**1 card dominante + preview della successiva** sul lato destro (~10–15% visibile)
 
 ### Target devices
-Mobile (primario). Desktop non come griglia 3-up: meglio 2-up o layout editoriale list per preservare il peso del titolo e la qualità narrativa.
+Mobile (primario). Desktop: 2-up carousel o lista editoriale verticale con immagine a sinistra.
 
 ### Posizione tipica
-Homepage editoriale, sezione magazine, portfolio progetti, archivio case study — subito dopo hero o come blocco "storie in evidenza".
+Homepage editoriale, sezione magazine, portfolio progetti — dopo hero o come blocco "storie in evidenza".
 
 ### Formato compatto
-Card editoriale ampia: immagine landscape sopra, titolo grande sotto, metadati uppercase. Carousel orizzontale con 1 card dominante + prossima parziale a destra. Nessun CTA esplicito, card intera tappabile.
+Card ~88% viewport, padding-left 16px, gap 12–16px. Immagine 16:9 border-radius top 12px, altezza ~200px. Zona testo bianca padding 12–16px: metadati uppercase 0.75rem + titolo bold 1.375rem max 3 righe. Altezza totale ~330px.
 
 ### Fonte
 Sito editoriale/architettura — mobile (screenshot iOS)
