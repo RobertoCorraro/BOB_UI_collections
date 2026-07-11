@@ -14,6 +14,9 @@ Mobile + tablet. Desktop solo se inserito in un contenitore più ampio o come mo
 ### Formato compatto
 2 colonne uguali: una con 1 card verticale, l'altra con 2 card quadrate sovrapposte. Spacing ridotto, composizione compatta, lettura immediata da mobile.
 
+### Fonte
+App Facebook — mobile (iOS/Android)
+
 ---
 
 ## Horizontal discovery rail + suggestion list
@@ -30,6 +33,9 @@ Mobile + tablet. Desktop opzionale, ma non prioritario.
 ### Formato compatto
 1 riga scrollabile di card 1:1 con titolo sotto, seguita da lista di righe tappabili con divisori sottili e icona trailing a destra.
 
+### Fonte
+Google — sito mobile (google.com su browser mobile)
+
 ---
 
 ## Two-column results grid
@@ -45,3 +51,6 @@ Mobile + tablet + desktop.
 
 ### Formato compatto
 Griglia 2 colonne con card uniformi, immagini 1:1 o 4:5, titolo troncato e metadati sotto. Layout ripetitivo, ordinato e facilmente scalabile.
+
+### Fonte
+Google — sito mobile (google.com su browser mobile)
