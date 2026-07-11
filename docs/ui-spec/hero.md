@@ -146,3 +146,59 @@ Carousel full-width con card attiva ampia (`~65%`) + due side panels stretti (`~
 
 ### Fonte
 App fintech / finanza personale — hero onboarding scelta piano, desktop (screenshot)
+
+---
+
+## BLOCK-020 — Split hero: testo su sfondo bianco + immagine full-width sotto
+
+### Descrizione
+Hero desktop a due bande orizzontali impilate che insieme formano il viewport iniziale. La banda superiore è bianca con navbar integrata e contenuto testuale; la banda inferiore è un’immagine fotografica full-width edge-to-edge senza overlay. Il taglio netto tra sfondo bianco e immagine crea un effetto di reveal potente — la foto emerge come un paesaggio da sotto il testo. Tono corporate/istituzionale, alta respirabilità tipografica.
+
+### Struttura
+- **Banda superiore** (~`45%–50%` del viewport): sfondo bianco
+  - Navbar con logo sinistra, voci di menu centrate, CTA pill destra
+  - Label descrittiva breve flush-left (es. "Who we are?") + corpo piccolo sotto
+  - Headline display grande a destra o centro-destra — sans-serif bold, molto grande
+  - Elemento decorativo grafico centrato in muted (es. simbolo brand, watermark leggero)
+- **Banda inferiore** (~`50%–55%` del viewport): immagine fotografica
+  - Full-width, edge-to-edge, nessun padding laterale
+  - Nessun overlay, nessun testo sovrapposto
+  - Logo o elemento brand sovrapposto in basso a sinistra (opzionale)
+  - Nessuna CTA — il blocco è puramente narrativo/identitario
+
+### Geometrie precise
+
+| Elemento | Misura relativa |
+|---|---|
+| Altezza totale blocco | `100vh` o `min(100vh, 56rem)` |
+| Banda superiore | `45%–50%` dell’altezza totale |
+| Banda inferiore | `50%–55%` dell’altezza totale |
+| Separazione tra bande | Taglio netto, `0` gap, nessun divisore visibile |
+| Padding laterale banda superiore | `1.5rem–3rem` (allineato al contenitore) |
+| Headline display | `3rem–5rem` · font-weight 700–900 |
+| Label descrittiva sinistra | `0.75rem–0.875rem` · regular · max 2 righe |
+| Elemento decorativo | `30%–40%` della larghezza · opacità `5%–15%` · centrato |
+| Immagine inferiore | Full-width · `object-fit: cover` · nessun border-radius |
+| Logo brand sovrapposto | Bottom-left · `2rem–3rem` di altezza |
+
+### Differenza da BLOCK-015 (Hero collezione)
+
+| | BLOCK-015 Hero collezione | BLOCK-020 Split hero |
+|---|---|---|
+| Testo | Overlay su immagine | Sfondo bianco separato |
+| Immagine | Fullscreen sotto tutto | Banda inferiore autonoma |
+| Navbar | Su immagine o trasparente | Su sfondo bianco |
+| Tono | Campaign / moody | Corporate / istituzionale |
+| CTA | ✅ pill outline | ❌ (solo navbar) |
+
+### Target devices
+Desktop (primario). Su tablet: le proporzioni si mantengono con font leggermente ridotto. Su mobile: le due bande si impilano, la foto diventa un blocco a sé con ratio `16:9` o `4:3`.
+
+### Posizione tipica
+Homepage corporate, sito istituzionale, landing brand — primo blocco dopo la navbar, occupa il 100% del viewport iniziale.
+
+### Formato compatto
+Viewport diviso in due bande orizzontali ~50/50: superiore bianca con navbar + headline display + label descrittiva + watermark decorativo; inferiore foto full-width edge-to-edge senza overlay. Taglio netto tra le due zone.
+
+### Fonte
+Sito corporate / agritech / istituzionale — desktop (screenshot)
