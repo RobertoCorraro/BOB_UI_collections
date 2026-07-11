@@ -54,3 +54,29 @@ Griglia 2 colonne con card uniformi, immagini 1:1 o 4:5, titolo troncato e metad
 
 ### Fonte
 Google — sito mobile (google.com su browser mobile)
+
+---
+
+## People suggestion carousel
+
+### Descrizione
+Carosello orizzontale di card persone con overflow intenzionale: la card successiva è visibile a metà per comunicare la presenza di altri elementi e invitare allo scroll. Ogni card contiene un avatar circolare grande, titolo (nome utente), sottotitolo con avatar piccolo e testo contestuale (es. amici in comune), e un bottone CTA primario full-width in fondo alla card. Il blocco è progettato per stimolare connessioni sociali o suggerire profili rilevanti.
+
+### Struttura card
+- **Avatar**: immagine circolare, grande, centrata nella parte superiore della card
+- **Titolo**: nome utente, testo bold, centrato
+- **Sottotitolo**: avatar secondario piccolo (circolare) + testo contestuale breve (es. “1 in comune”), allineati in riga, centrati
+- **Bottone CTA**: full-width, colore primario, testo breve e diretto (es. “Segui”), posizionato in fondo alla card
+- **Close button**: icona × in alto a destra per ignorare il suggerimento
+
+### Ratio immagini
+Avatar principale 1:1 con clip circolare; avatar secondario nel sottotitolo 1:1 piccolo (24–32 px).
+
+### Target devices
+Mobile. Tablet e desktop non consigliati nella versione carosello; valutare layout a griglia su schermi larghi.
+
+### Formato compatto
+Carosello orizzontale con 1 card visibile + metà della successiva. Card con avatar circolare grande, nome, sottotitolo contestuale e bottone CTA full-width.
+
+### Fonte
+App Instagram — mobile (iOS/Android), sezione “Suggeriti per te”
