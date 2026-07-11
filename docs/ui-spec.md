@@ -268,3 +268,48 @@ Header: titolo display bold + segmented control pill. Carousel: 1 card intera + 
 
 ### Fonte
 sito web piastrelle/ceramica — mobile (browser iOS), sezione Ambienti
+
+---
+
+## Category showcase numerato
+
+### Descrizione
+Carosello orizzontale di card che rappresentano le **macro-categorie** principali di un portfolio o servizio. Ogni card mostra un'immagine di copertina rappresentativa della categoria, con un numero gigante sovrapposto che ne indica l'ordine/ranking visivo. Il numero funge simultaneamente da elemento grafico decorativo e da wayfinding — l'utente sa sempre a che posizione si trova senza dots o indicatori separati. È un blocco ad alto impatto editoriale, tipico di portfolio creativi, architettura e design.
+
+### Struttura card
+- **Immagine di copertina**: foto editorial/progetto emblematico della categoria, full-height della card, angoli arrotondati in alto
+- **Numero overlay**: cifra gigante (display extrabold/black, bianca, semi-trasparente), posizionata in basso al centro sull'immagine — dimensione ~40–50% dell'altezza card, stile puramente decorativo/wayfinding
+- **Nome categoria**: titolo bold centrato sotto l'immagine, 1–2 righe (es. "House of Culture & Art")
+- **2 tag descrittivi**: testo muted/grigio sotto il nome — tipo progetto + sotto-categoria (es. "Graduation Project / Cultural Design")
+- **Nessun bottone esplicito**: intera card tappabile → porta all'archivio filtrato per quella categoria
+
+### Differenza da BLOCK-008 (Filtered category carousel)
+
+| | BLOCK-008 | BLOCK-009 |
+|---|---|---|
+| Contenuto card | Singolo prodotto/item | Categoria intera |
+| CTA | Arrow prev/next + filtro segmented | Tap → pagina categoria |
+| Navigazione | Filtro per tipo | Browse categorizzato |
+| Numero overlay | Indicatore posizione nel carousel | Ranking/ordine della categoria |
+| Card visibili | 1 intera + 1 parziale | 5 intere (layout stretto) |
+
+### Card visibili all'avvio
+**5 card intere** — layout a card strette (ratio ~1:3 o 2:5 portrait), tutte visibili contemporaneamente su mobile senza overflow
+
+### Ratio immagine
+~**2:5** o **1:3** portrait stretto — card molto alte e sottili, ottimizzate per mostrare più categorie insieme
+
+### Navigazione
+Touch swipe orizzontale. Nessun prev/next esplicito (a differenza di BLOCK-008).
+
+### Target devices
+Mobile (primario). Su desktop valutare layout a griglia fissa o carousel con card più larghe.
+
+### Posizione tipica
+Homepage / pagina portfolio — sezione di navigazione per macro-aree, dopo l'hero o come entry point alle categorie principali.
+
+### Formato compatto
+Carosello orizzontale, 5 card portrait strette (ratio ~1:3). Ogni card: immagine full-height + numero gigante overlay bottom-center + nome categoria bold + 2 tag muted sotto. Nessun bottone, card intera tappabile.
+
+### Fonte
+App/sito portfolio architettura — mobile (screenshot iOS)
