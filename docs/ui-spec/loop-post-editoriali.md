@@ -116,3 +116,68 @@ Card larga `85%–90vw`, gap `0.75rem–1rem`. Immagine `16:9` alta `11rem–13.
 
 ### Fonte
 Sito editoriale/architettura — mobile (screenshot iOS)
+
+---
+
+## BLOCK-019 — Asymmetric editorial project grid
+
+### Descrizione
+Griglia desktop a tre colonne con pesi visivi diversi, pensata per mostrare un portfolio di progetti recenti o case study. La colonna sinistra ha una card grande verticale; la colonna centrale impila due card di altezze diverse; la colonna destra è stretta con una sola card verticale e CTA esplicita. Il pattern bilancia scoperta visiva e conversione: ogni progetto ha un titolo leggibile, e la colonna centrale include un badge azione freccia diagonale ↗ per stimolare il click.
+
+### Struttura card
+- **Colonna sinistra** (~`38%`): card grande verticale, immagine dominante, titolo + sottotitolo sotto — nessun overlay, leggibilità diretta
+- **Colonna centrale** (~`38%`): due card impilate verticalmente
+  - Card superiore: immagine + titolo overlay in basso + badge freccia diagonale ↗ in alto a destra
+  - Card inferiore: immagine + label testuale sotto — più compatta
+- **Colonna destra** (~`20%–24%`): card stretta verticale, immagine, titolo + metadato sotto, CTA pill "See more" in basso
+- **Heading sezione**: titolo testuale "Latest Projects" o equivalente, posizionato sopra la griglia, flush-left
+
+### Geometrie precise
+
+| Elemento | Misura relativa |
+|---|---|
+| Larghezza totale blocco | Full-width con padding contenitore `1.5rem–3rem` |
+| Colonna sinistra | `~38%` della larghezza disponibile |
+| Colonna centrale | `~38%` della larghezza disponibile |
+| Colonna destra | `~20%–24%` della larghezza disponibile |
+| Gap tra colonne | `0.75rem–1rem` |
+| Altezza card sinistra | `100%` del blocco · ratio `3:4` o `4:5` |
+| Altezza card centrale superiore | `55%–60%` del blocco · ratio `4:3` o `16:9` |
+| Altezza card centrale inferiore | `38%–42%` del blocco · ratio `16:9` |
+| Altezza card destra | `100%` del blocco · ratio `2:3` |
+| Gap tra card impilate (colonna centrale) | `0.5rem–0.75rem` |
+| Altezza totale blocco | `22rem–30rem` su desktop |
+| Border-radius card | `0.75rem–1rem` |
+| Badge freccia ↗ | `2rem–2.25rem` · cerchio · top-right della card |
+| Titolo card | `0.875rem–1.125rem` · bold · max 2 righe |
+| Metadato / categoria | `0.75rem` · muted · 1 riga |
+| CTA pill | `auto` larghezza · altezza `2rem–2.25rem` · border-radius `9999px` · bordo sottile |
+| Padding testo sotto card | `0.5rem–0.75rem` verticale |
+
+### Differenza da BLOCK-001 (Asymmetric media collage)
+
+| | BLOCK-001 | BLOCK-019 |
+|---|---|---|
+| Colonne | 2 simmetriche `50/50` | 3 con pesi diversi `38/38/24` |
+| Testo | Nessuno | Titolo, metadato, CTA |
+| Badge azione ↗ | ❌ | ✅ colonna centrale |
+| CTA esplicita | ❌ | ✅ colonna destra |
+| Scopo | Media discovery | Portfolio showcase con conversione |
+| Target device | Mobile | Desktop (primario) |
+
+### Comportamento hover (desktop)
+- Card con badge ↗: scala leggera `scale(1.02)` o overlay scuro al passaggio del mouse
+- CTA "See more": cambio stato su hover (es. fill del bottone)
+- Titoli: restano sempre leggibili, nessun effetto di nascondimento
+
+### Target devices
+Desktop (primario). Su tablet: semplificare a 2 colonne con la colonna destra che cade sotto. Su mobile: stack verticale di card singole.
+
+### Posizione tipica
+Sezione "Latest Projects", "Case studies", "Portfolio" — tipicamente nella seconda metà di una homepage agency, studio creativo o freelance designer.
+
+### Formato compatto
+Griglia desktop 3 colonne asimmetriche `38/38/24`, gap `0.75rem–1rem`. Sinistra: card grande portrait con titolo sotto. Centro: 2 card impilate, superiore con badge ↗. Destra: card stretta con CTA pill "See more".
+
+### Fonte
+Sito agency / studio design — desktop (screenshot)
