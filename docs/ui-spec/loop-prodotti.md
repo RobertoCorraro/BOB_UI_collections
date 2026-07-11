@@ -138,3 +138,46 @@ Griglia 2 colonne, altezze variabili, zero testo. Gap 0.5rem, border-radius 0.62
 
 ### Fonte
 iperceramica.it — sezione Ambienti, mobile (browser iOS Safari)
+
+---
+
+## BLOCK-016 — Product detail card con specifiche tecniche (PDP mobile)
+
+### Descrizione
+Scheda prodotto verticale a due zone: immagine ambientazione full-width sopra e scheda tecnica su sfondo bianco sotto. L'immagine ambientazione mostra il prodotto in contesto reale; un'immagine campione sovrapposta in basso a destra mostra la texture ravvicinata del materiale. La zona bianca presenta le specifiche in modo editoriale con tipografia compatta e strutturata. È la versione mobile di una PDP (Product Detail Page) o di una scheda catalogo digitale.
+
+### Struttura
+**Zona immagine (superiore)**
+- Immagine ambientazione full-width, ratio ~16:9 o 3:2 landscape
+- **Immagine campione sovrapposta**: foto texture ravvicinata, posizionata bottom-right sull'ambientazione, ratio ~3:4 portrait, sfondo bianco o neutro — mostra la superficie reale del materiale
+
+**Zona scheda tecnica (inferiore, sfondo bianco)**
+- **Badge "NEW"**: label uppercase bold, piccola, posizionata sopra il nome prodotto
+- **Nome prodotto**: display extra-large, sans-serif bold/black, colore dark — voce dominante della scheda
+- **SIZE**: lista orizzontale di misure in cm + conversione in pollici (es. `60x120 · 80x80 · 60x60`), due righe tipografiche sovrapposte (cm sopra, pollici sotto), uppercase compatto
+- **FINISHES**: lista di finiture con icona quadrata/strutturata a sinistra + nome finitura bold + nome tecnico inglese muted a destra
+- **COLORS**: lista orizzontale di nomi colore uppercase separati da `|` (es. `CREMA | TAUPE | GRIS`)
+- Tutte le sezioni usano label uppercase bold come header di sezione (`SIZE`, `FINISHES`, `COLORS`)
+
+### Tipografia
+- Nome prodotto: sans-serif black/extrabold, display size, dark
+- Badge NEW: uppercase bold, piccolo, dark
+- Label sezione: uppercase bold, piccolo, tracking ampio, dark
+- Valori: mix bold (nome finitura) + regular muted (nome tecnico inglese)
+- Misure: uppercase compatto, due righe sovrapposte cm/pollici
+
+### Ratio immagini
+- Ambientazione: ~16:9 o 3:2 landscape, full-width
+- Campione sovrapposto: ~3:4 portrait, ~45% larghezza card, angoli retti o leggermente arrotondati
+
+### Target devices
+Mobile + tablet (primario). Desktop: zona immagine a sinistra + scheda tecnica a destra in layout split 50/50 o 60/40.
+
+### Posizione tipica
+PDP (Product Detail Page) — blocco principale sopra la fold. Oppure scheda catalogo in loop su pagina collezione.
+
+### Formato compatto
+Immagine ambientazione landscape + campione texture sovrapposto bottom-right. Sotto: badge NEW + nome prodotto display + SIZE (misure cm/pollici) + FINISHES (icona + nome) + COLORS (lista inline). Sfondo bianco, tipografia compatta uppercase.
+
+### Fonte
+Sito ceramiche/piastrelle — scheda prodotto mobile (screenshot iOS)

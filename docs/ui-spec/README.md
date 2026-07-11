@@ -6,11 +6,13 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 
 | File | Contenuto |
 |---|---|
+| [hero.md](./hero.md) | Hero fullscreen: categoria con breadcrumb, collezione con CTA |
 | [navigation.md](./navigation.md) | Pattern di navigazione: footer accordion, sliding panel drill-down |
 | [loop-categorie.md](./loop-categorie.md) | Loop e caroselli di categorie: discovery rail, filtered carousel, category showcase |
-| [loop-prodotti.md](./loop-prodotti.md) | Loop e griglie di prodotti: two-column grid, masonry, destination card |
+| [loop-prodotti.md](./loop-prodotti.md) | Loop e griglie di prodotti: two-column grid, masonry, destination card, product detail card |
 | [loop-post-editoriali.md](./loop-post-editoriali.md) | Loop di post, contenuti e profili: collage, people carousel, article teaser |
 | [banner-promo.md](./banner-promo.md) | Banner promozionali e carousel servizi: editorial banner stack, service card carousel |
+| [serp-e-ads.md](./serp-e-ads.md) | SERP e formati pubblicitari: Google Local Pack, riferimento per SEO e Google Ads |
 
 ## Blocchi per numero
 
@@ -29,3 +31,7 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 | BLOCK-011 | Service card carousel | banner-promo.md |
 | BLOCK-012 | Masonry inspiration grid | loop-prodotti.md |
 | BLOCK-013 | Article teaser carousel | loop-post-editoriali.md |
+| BLOCK-014 | Hero categoria con overlay, breadcrumb e immagine secondaria | hero.md |
+| BLOCK-015 | Hero collezione con CTA pill | hero.md |
+| BLOCK-016 | Product detail card con specifiche tecniche (PDP mobile) | loop-prodotti.md |
+| BLOCK-017 | Local Business SERP card (Google Maps Local Pack) | serp-e-ads.md |
