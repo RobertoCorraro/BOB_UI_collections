@@ -86,13 +86,13 @@ App Instagram — mobile (iOS/Android), sezione "Suggeriti per te"
 ## Editorial stacked banner stack
 
 ### Descrizione
-Serie di banner editoriali full-width impilati verticalmente, senza gap o con gap minimo. Ogni banner è un'immagine di prodotto o ambientazione con testo sovrapposto in basso a sinistra: titolo bold (parola chiave in colore brand) e sottotitolo con eventuale link inline colorato. Il blocco è conversion-oriented: ogni banner promuove una categoria, collezione o novità specifica. A differenza dei blocchi discovery, qui il testo è parte integrante del visual e non appare sotto l'immagine.
+Serie di banner editoriali full-width impilati verticalmente, senza gap o con gap minimo. Ogni banner è un’immagine di prodotto o ambientazione con testo sovrapposto in basso a sinistra: titolo bold (parola chiave in colore brand) e sottotitolo con eventuale link inline colorato. Il blocco è conversion-oriented: ogni banner promuove una categoria, collezione o novità specifica. A differenza dei blocchi discovery, qui il testo è parte integrante del visual e non appare sotto l’immagine.
 
 ### Struttura banner
 - **Immagine di sfondo**: foto prodotto o ambientazione, full-width, edge-to-edge
-- **Titolo overlay**: testo bold, colore bianco + keyword in colore brand (es. arancio), posizionato in basso a sinistra sull'immagine
+- **Titolo overlay**: testo bold, colore bianco + keyword in colore brand (es. arancio), posizionato in basso a sinistra sull’immagine
 - **Sottotitolo overlay**: testo più piccolo, con parole chiave colorate o link inline
-- **Nessun bottone esplicito**: l'intera area del banner è tappabile (card-as-CTA)
+- **Nessun bottone esplicito**: l’intera area del banner è tappabile (card-as-CTA)
 
 ### Ratio immagini
 Ogni banner ~**5:3** o **16:9 leggermente compresso**. Altezza stimata 220–280 px su iPhone standard. Full-width senza padding laterale.
@@ -106,7 +106,7 @@ Stack verticale di banner full-width edge-to-edge. Testo overlay bottom-left con
 ### Differenza dai blocchi discovery
 | Caratteristica | Blocchi discovery (BLOCK-001/002/003/004) | Editorial banner stack |
 |---|---|---|
-| Testo sull'immagine | ❌ | ✅ overlay bottom-left |
+| Testo sull’immagine | ❌ | ✅ overlay bottom-left |
 | Scroll direction | orizzontale o griglia | verticale impilato |
 | Scopo | navigazione/esplorazione | promozione/conversione |
 | Bottone esplicito | ✅ (alcuni) | ❌ (banner intero = CTA) |
@@ -114,3 +114,53 @@ Stack verticale di banner full-width edge-to-edge. Testo overlay bottom-left con
 
 ### Fonte
 deghi.it — homepage mobile (browser iOS, Safari/Chrome)
+
+---
+
+## Accordion footer nav
+
+### Descrizione
+Navigazione da footer mobile strutturata come lista di sezioni a fisarmonica (accordion). Ogni sezione ha un titolo in maiuscolo con icona chevron (^ o v) a destra che indica lo stato aperto/chiuso. Tappando il titolo, il pannello si espande mostrando i link interni; tappando di nuovo si chiude. Un divisore orizzontale separa ogni sezione. Lo sfondo è scuro (dark mode), i titoli sono bianchi e in grassetto, i link sono grigi/muted per creare gerarchia visiva immediata. Il pattern sostituisce su mobile la classica colonna di link del footer desktop, comprimendo lo spazio verticale e rendendo la navigazione esplorabile su richiesta.
+
+### Nome tecnico del pattern
+**Accordion** (detto anche: collapsible footer nav, expandable footer sections, footer accordion). In HTML/CSS si implementa tipicamente con `<details>` + `<summary>` oppure con JavaScript toggle su classi CSS.
+
+### Struttura sezione
+- **Header row**: titolo sezione in MAIUSCOLO, bold, allineato a sinistra + icona chevron (\u2228 chiuso / \u2227 aperto) allineata a destra — row full-width tappabile
+- **Divisore**: linea orizzontale sottile (1 px) tra ogni sezione
+- **Pannello espanso**: lista verticale di link testuali, stile muted/grigio, spacing generoso tra le voci (min 44 px touch target per voce)
+- **Evidenziazione item attivo**: peso del font aumentato (semibold o bold) per indicare la pagina/sezione corrente
+
+### Stati
+| Stato | Chevron | Pannello |
+|---|---|---|
+| Chiuso (default) | \u2228 (freccia gi\u00f9) | nascosto |
+| Aperto | \u2227 (freccia su) | visibile, espanso |
+
+### Comportamento
+- **Uno o pi\u00f9 pannelli aperti contemporaneamente**: entrambi i comportamenti sono validi; Deghi mostra pi\u00f9 sezioni aperte in simultanea
+- **Animazione**: slide-down consigliata (max 200ms ease-out) per non rallentare la navigazione
+- **Touch target**: l'intera header row è tappabile, non solo il testo o l'icona
+
+### Tipografia
+- Titolo sezione: uppercase, font-weight 700, colore bianco o quasi-bianco
+- Link interni: sentence case, font-weight 400, colore grigio muted (es. #999 o simile)
+- Item attivo: font-weight 600–700, colore bianco pieno
+
+### Colori (da screenshot Deghi)
+- Sfondo: dark (#1a1a1a o simile)
+- Titolo sezione: bianco
+- Link: grigio chiaro/muted
+- Divisori: grigio scuro sottile
+
+### Ratio immagini
+Nessuna immagine. Blocco puramente testuale e navigazionale.
+
+### Target devices
+**Mobile (esclusivo)**. Su tablet e desktop il footer torna alla versione a colonne affiancate — l'accordion non serve su schermi larghi dove lo spazio verticale non è un vincolo.
+
+### Formato compatto
+Lista verticale di sezioni: titolo uppercase + chevron / divisore / pannello espandibile con link muted. Dark background, zero immagini, puro testo navigazionale.
+
+### Fonte
+deghi.it — footer homepage mobile (browser iOS)
