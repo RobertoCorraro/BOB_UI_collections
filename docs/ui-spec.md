@@ -224,3 +224,47 @@ Un solo componente con breakpoint CSS o prop `orientation="horizontal|vertical"`
 
 ### Fonte
 UI concept — app viaggi/voli (stile Skyscanner/Google Flights mobile)
+
+---
+
+## Filtered category carousel con frecce prev/next
+
+### Descrizione
+Carosello orizzontale di card categoria con filtro inline (segmented control) nell'header e navigazione esplicita tramite frecce prev/next in basso. Il blocco combina tre livelli: header con titolo + filtro, griglia di card con overflow intenzionale, e controlli di navigazione separati. È pensato per la navigazione per categoria in contesti editoriali o di prodotto.
+
+### Struttura (3 livelli)
+- **Header row**: titolo sezione (display, bold, allineato a sinistra) + segmented control pill a destra (es. "EFFETTI" inattivo / "AMBIENTI" attivo con pill scura filled). Il filtro cambia il set di card senza navigare altrove
+- **Griglia card**: 2 colonne asimmetriche — colonna sinistra ~62% (card intera visibile), colonna destra overflow oltre il bordo (~65% visibile). Overflow intenzionale che comunica la presenza di altri item e invita allo swipe/click
+- **Navigazione prev/next**: due bottoni circolari ghost/outline (bordo grigio sottile, sfondo trasparente, icona chevron ← →), posizionati in basso a sinistra sotto le card, non sovrapposti al contenuto
+
+### Card
+- **Struttura**: immagine ambientazione con angoli arrotondati + label testuale grande sotto (es. "Outdoor", "Cucina"), stile editoriale pulito
+- **Nessun overlay, bottone o metadato** sull'immagine — la card è tappabile nella sua interezza
+- **Ratio immagine**: ~3:4 (portrait), immagine alta e dominante
+
+### Card visibili all'avvio
+**1 card intera + 1 card parziale** (~65% visibile) — totale 2 elementi percepiti, 1 completo
+
+### Navigazione
+| Metodo | Tipo | Posizione |
+|---|---|---|
+| Touch swipe | Gesture orizzontale | Sull'area card |
+| Freccia → | Tap bottone ghost circolare | Bottom-left, sotto le card |
+| Freccia ← | Tap bottone ghost circolare | Bottom-left, accanto alla → |
+
+### Segmented control (filtro)
+- 2 voci: voce inattiva = solo testo, voce attiva = pill scura filled con testo bianco bold
+- Cambia la categoria del carousel (es. da "Ambienti" a "Effetti") senza page reload
+- Posizionato in alto a destra, allineato con il titolo sezione
+
+### Target devices
+Mobile (primario). Su desktop le frecce diventano il metodo principale; lo swipe rimane disponibile su touch screen.
+
+### Posizione tipica
+Mid-page / sezione categoria — dopo l'hero o come blocco di navigazione per macro-categorie di prodotto o contenuto editoriale.
+
+### Formato compatto
+Header: titolo display bold + segmented control pill. Carousel: 1 card intera + 1 parziale, immagini portrait 3:4, label sotto. Navigazione: frecce ghost circolari bottom-left.
+
+### Fonte
+sito web piastrelle/ceramica — mobile (browser iOS), sezione Ambienti
