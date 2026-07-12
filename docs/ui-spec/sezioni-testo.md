@@ -104,3 +104,79 @@ Tabella testuale 3 colonne `~11/28/61%`, righe separate da divisore `1px`. Colon
 
 ### Fonte
 Sito agency / studio design — desktop (screenshot)
+
+---
+
+## BLOCK-023 — Stats & media bento grid
+
+### Descrizione
+Bento grid 2×3 asimmetrica che alterna stat card numeriche, blocchi fotografici e un blocco testuale descrittivo. Due palette di cella: dark (grigio scuro, quasi nero) per le stat e light (grigio chiarissimo/bianco) per testo e foto. Ogni stat card include un badge freccia ↗ bottom-right. Il pattern comunica risultati misurabili e credibilità con forte impatto visivo, senza bisogno di grafici o infografiche.
+
+### Struttura celle
+
+**Riga superiore** (3 colonne):
+- **Cella 1** (~`25%`, dark): stat numerica grande + label descrittiva sotto + badge ↗ bottom-right
+- **Cella 2** (~`47%`, foto): immagine fotografica full-fill, border-radius, nessun testo
+- **Cella 3** (~`28%`, dark): stat numerica grande + label descrittiva + badge ↗ bottom-right
+
+**Riga inferiore** (3 colonne):
+- **Cella 4** (~`25%`, light): testo descrittivo con parole chiave bold e testo regular muted in mix (stesso pattern BLOCK-021)
+- **Cella 5** (~`28%`, dark): stat numerica grande + label descrittiva + badge ↗ bottom-right
+- **Cella 6** (~`47%`, foto): immagine fotografica full-fill, border-radius, nessun testo
+
+**Pattern di alternanza colori**: dark/foto/dark — light/dark/foto. Le foto e il blocco testuale rompono la monotonia delle stat card.
+
+### Geometrie precise
+
+| Elemento | Misura relativa |
+|---|---|
+| Larghezza totale blocco | Full-width con padding contenitore `1.5rem–3rem` |
+| Gap tra celle | `0.5rem–0.75rem` |
+| Altezza riga | `12rem–16rem` per riga · entrambe le righe uguali |
+| Cella stretta (stat/testo) | `~25%–28%` larghezza |
+| Cella larga (foto) | `~45%–50%` larghezza |
+| Border-radius celle | `1rem–1.25rem` |
+| Stat numerica | `2.5rem–3.5rem` · font-weight 700–900 · bianco |
+| Label stat | `0.75rem–0.875rem` · regular · bianco/muted chiaro · max 2 righe |
+| Gap stat → label | `0.25rem–0.375rem` |
+| Badge ↗ | Cerchio `1.75rem–2rem` · bottom-right della cella · sfondo scuro leggermente più chiaro o bordo |
+| Padding interno celle stat | `1rem–1.25rem` |
+| Cella testo padding | `1rem–1.25rem` |
+| Testo cella descrittiva | `0.75rem–0.875rem` · mix bold nero + regular muted |
+| Sfondo celle dark | `#1a1a1a`–`#2d2d2d` o colore brand scuro |
+| Sfondo celle light | `#f5f5f5`–`#ebebeb` o bianco |
+| Immagine foto | `object-fit: cover` · full-fill della cella · nessun overlay |
+
+### Heading sezione
+Titolo flush-left sopra la griglia (es. `About Us`) — sans-serif regular/medium, dimensione `1.25rem–1.5rem`, margin-bottom `1rem–1.5rem`.
+
+### Differenza da layout a sole stat
+
+| | Solo stat grid | BLOCK-023 Bento grid |
+|---|---|---|
+| Celle | Tutte numeriche | Miste: stat + foto + testo |
+| Ritmo visivo | Uniforme | Variato per forma e colore |
+| Informazione | Solo dati | Dati + contesto visivo + narrativa |
+| Impatto | Dati freddi | Dati + brand storytelling |
+
+### Varianti d’uso
+- **About Us**: stat di business (x2 conversion, 90% retention) + foto prodotto/team
+- **Social proof**: stat clienti + foto ambiente + testo testimonial
+- **Risultati campagna**: KPI + foto before/after + testo insight
+
+### Comportamento hover (desktop)
+- Celle stat: leggero `scale(1.01)` o cambio opacità badge ↗
+- Celle foto: lieve zoom `scale(1.03)` dell’immagine interna
+- Badge ↗: cambio colore/fill su hover — segnala navigabilità
+
+### Target devices
+Desktop (primario). Su tablet: griglia 2×2 con celle foto full-width. Su mobile: stack verticale, celle stat a piena larghezza, foto con ratio `16:9`.
+
+### Posizione tipica
+Sezione “About Us”, “I nostri risultati”, “Perché sceglierci” — nella metà inferiore della homepage, dopo i servizi o prima dei testimonial.
+
+### Formato compatto
+Bento grid 2×3, gap `0.5rem–0.75rem`, border-radius `1rem`. Alternanza dark (stat + badge ↗) / foto / light (testo bold+muted). Stat numerica `2.5rem–3.5rem` bold bianca + label small.
+
+### Fonte
+Sito agency / studio design — sezione About Us, desktop (screenshot)
