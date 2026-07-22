@@ -1,0 +1,50 @@
+<!--
+  Demo HTML — BLOCK-020 Split hero: testo su bianco + immagine full-width sotto
+  Derivata da: docs/ui-spec/hero.md
+  Due bande orizzontali ~50/50: superiore bianca con navbar + headline,
+  inferiore foto full-width edge-to-edge senza overlay.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-020 — Split hero · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/hero.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-020 — Split hero: testo su bianco + immagine full-width</h1>
+    <p class="bob__demo_intro_desc">
+      Hero desktop a due bande: superiore bianca con navbar e headline display, inferiore foto
+      full-width edge-to-edge senza overlay né testo.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito corporate / agritech / istituzionale — desktop</p>
+  </header>
+
+  <main class="bob__split_hero">
+    <div class="bob__split_hero_top">
+      <nav class="bob__split_hero_navbar">
+        <span class="bob__split_hero_navbar_logo">Meridiana</span>
+        <ul class="bob__split_hero_navbar_menu">
+          <li>Chi siamo</li>
+          <li>Progetti</li>
+          <li>Contatti</li>
+        </ul>
+        <a class="bob__cta_pill bob__cta_pill_filled" href="#">Contattaci</a>
+      </nav>
+      <p class="bob__split_hero_label">Who we are?</p>
+      <h1 class="bob__split_hero_headline">Coltiviamo il futuro dell'agricoltura</h1>
+      <span class="bob__split_hero_watermark" aria-hidden="true">M</span>
+    </div>
+    <div class="bob__split_hero_bottom">
+      <img class="bob__split_hero_bottom_img" src="https://picsum.photos/seed/splithero1/1200/500" alt="Campi coltivati all'alba" loading="lazy" />
+      <span class="bob__split_hero_bottom_logo">Meridiana</span>
+    </div>
+  </main>
+
+</body>
+</html>
