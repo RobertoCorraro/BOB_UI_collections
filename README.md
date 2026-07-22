@@ -10,6 +10,7 @@ Raccolta di blocchi UI di riferimento ispirati a pattern reali trovati su app e 
 BOB_UI_collections/
 ├── README.md
 ├── agent.md                # Skills di web design e UI/UX per l'utilizzo dei blocchi
+├── CLAUDE.md                # Regole per agenti AI sul foglio di stile condiviso delle demo
 ├── docs/
 │   └── ui-spec/
 │       ├── README.md           # Indice dei blocchi per numero e file
@@ -21,7 +22,10 @@ BOB_UI_collections/
 │       ├── banner-promo.md
 │       └── serp-e-ads.md
 └── assets/
-    └── screenshots/            # Screenshot di riferimento per ogni blocco
+    ├── screenshots/            # Screenshot di riferimento per ogni blocco
+    └── demo/                   # Demo HTML standalone dei blocchi
+        ├── bob__demo.css           # Stylesheet condiviso da tutte le demo
+        └── BLOCK-003_two-column-results-grid.html
 ```
 
 ---
@@ -61,6 +65,24 @@ Le specifiche geometriche usano esclusivamente **unità relative**. I pixel fiss
 
 ---
 
+## Demo HTML dei blocchi
+
+Ogni blocco documentato in `docs/ui-spec/` può avere una demo HTML standalone in `assets/demo/`, per rendere la specifica immediatamente previewabile (es. via GitHub Pages) senza affidarsi solo a uno screenshot.
+
+**Tutte le demo condividono un unico foglio di stile**: [`assets/demo/bob__demo.css`](assets/demo/bob__demo.css). Nessuna demo ha CSS inline o un file `.css` proprio, e non vengono usati framework esterni (Bootstrap, Tailwind, ecc.).
+
+Le classi seguono la naming convention:
+
+```
+bob__{nome_classe}_{modificatore}
+```
+
+Es. `.bob__product_card`, `.bob__product_card_img_wrap`, `.bob__product_card_badge_discount`.
+
+Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`CLAUDE.md`](CLAUDE.md).
+
+---
+
 ## Screenshot di riferimento
 
 > ⚠️ **Work in progress** — La cartella `assets/screenshots/` è predisposta per gli screenshot di ogni blocco. Naming convention:
@@ -80,4 +102,5 @@ Le specifiche geometriche usano esclusivamente **unità relative**. I pixel fiss
 2. Aggiungi la scheda con tutti i campi obbligatori
 3. Usa **solo unità relative** nelle geometrie
 4. Carica lo screenshot in `assets/screenshots/` con la naming convention
-5. Aggiorna l'indice in `docs/ui-spec/README.md`
+5. Se aggiungi anche una demo HTML, seguine le regole in [`CLAUDE.md`](CLAUDE.md): stesso `bob__demo.css`, naming `bob__{nome_classe}_{modificatore}`
+6. Aggiorna l'indice in `docs/ui-spec/README.md`
