@@ -1,0 +1,98 @@
+<!--
+  Demo HTML — BLOCK-007 Destination detail card
+  Derivata da: docs/ui-spec/loop-prodotti.md
+  Due varianti: vertical (mobile, immagine full-card + overlay testo bianco)
+  e horizontal (desktop, immagine a sinistra + testo a destra su sfondo bianco).
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-007 — Destination detail card · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-prodotti.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-007 — Destination detail card</h1>
+    <p class="bob__demo_intro_desc">
+      Card informativa per una destinazione di viaggio con immagine, dati essenziali e CTA primaria.
+      Variante <strong>vertical</strong> (mobile): immagine full-card, testo overlay bianco.
+      Variante <strong>horizontal</strong> (desktop): immagine a sinistra, testo a destra su sfondo bianco.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: UI concept app viaggi/voli (stile Skyscanner/Google Flights mobile)</p>
+  </header>
+
+  <main>
+    <div class="bob__dest_grid" style="padding: 1rem;">
+
+      <!-- Vertical variant -->
+      <article class="bob__dest_card bob__dest_card_vertical">
+        <div class="bob__dest_card_media">
+          <img class="bob__dest_card_img" src="https://picsum.photos/seed/dest1/600/750" alt="Vista panoramica di Lisbona al tramonto" loading="lazy" />
+          <div class="bob__dest_card_gradient"></div>
+        </div>
+        <button class="bob__dest_card_heart" aria-label="Salva destinazione">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+        </button>
+        <div class="bob__dest_card_body">
+          <p class="bob__dest_card_subtitle">Portogallo</p>
+          <h2 class="bob__dest_card_title">Lisbona</h2>
+          <p class="bob__dest_card_meta"><span>4 notti</span><span>Voli da € 89</span></p>
+          <a class="bob__cta_pill bob__cta_pill_outline_light bob__dest_card_cta" href="#">Scopri di più</a>
+        </div>
+      </article>
+
+      <!-- Vertical variant -->
+      <article class="bob__dest_card bob__dest_card_vertical">
+        <div class="bob__dest_card_media">
+          <img class="bob__dest_card_img" src="https://picsum.photos/seed/dest2/600/750" alt="Costiera amalfitana vista dall'alto" loading="lazy" />
+          <div class="bob__dest_card_gradient"></div>
+        </div>
+        <button class="bob__dest_card_heart" aria-label="Salva destinazione">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg>
+        </button>
+        <div class="bob__dest_card_body">
+          <p class="bob__dest_card_subtitle">Italia</p>
+          <h2 class="bob__dest_card_title">Costiera Amalfitana</h2>
+          <p class="bob__dest_card_meta"><span>7 notti</span><span>Voli da € 64</span></p>
+          <a class="bob__cta_pill bob__cta_pill_outline_light bob__dest_card_cta" href="#">Scopri di più</a>
+        </div>
+      </article>
+
+      <!-- Horizontal variant -->
+      <article class="bob__dest_card bob__dest_card_horizontal">
+        <div class="bob__dest_card_media">
+          <img class="bob__dest_card_img" src="https://picsum.photos/seed/dest3/500/500" alt="Canali di Amsterdam in autunno" loading="lazy" />
+        </div>
+        <div class="bob__dest_card_body">
+          <p class="bob__dest_card_subtitle">Paesi Bassi</p>
+          <h2 class="bob__dest_card_title">Amsterdam</h2>
+          <p class="bob__dest_card_desc">Canali storici, musei di fama mondiale e la miglior scena ciclabile d'Europa, a due passi dal centro.</p>
+          <p class="bob__dest_card_meta"><span>3 notti</span><span>Voli da € 45</span></p>
+          <a class="bob__cta_pill bob__cta_pill_outline bob__dest_card_cta" href="#">Scopri di più</a>
+        </div>
+      </article>
+
+      <!-- Horizontal variant -->
+      <article class="bob__dest_card bob__dest_card_horizontal">
+        <div class="bob__dest_card_media">
+          <img class="bob__dest_card_img" src="https://picsum.photos/seed/dest4/500/500" alt="Skyline di Tokyo al crepuscolo" loading="lazy" />
+        </div>
+        <div class="bob__dest_card_body">
+          <p class="bob__dest_card_subtitle">Giappone</p>
+          <h2 class="bob__dest_card_title">Tokyo</h2>
+          <p class="bob__dest_card_desc">Tra quartieri iper moderni e templi secolari, una città che non smette mai di sorprendere.</p>
+          <p class="bob__dest_card_meta"><span>9 notti</span><span>Voli da € 520</span></p>
+          <a class="bob__cta_pill bob__cta_pill_outline bob__dest_card_cta" href="#">Scopri di più</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+</body>
+</html>
