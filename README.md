@@ -10,6 +10,7 @@ Raccolta di blocchi UI di riferimento ispirati a pattern reali trovati su app e 
 BOB_UI_collections/
 ├── README.md
 ├── agent.md                # Skills di web design e UI/UX, incluse le regole per le demo HTML
+├── index.html               # Indice di tutti i blocchi, servito da GitHub Pages
 ├── docs/
 │   └── ui-spec/
 │       ├── README.md           # Indice dei blocchi per numero e file
@@ -19,7 +20,8 @@ BOB_UI_collections/
 │       ├── loop-prodotti.md
 │       ├── loop-post-editoriali.md
 │       ├── banner-promo.md
-│       └── serp-e-ads.md
+│       ├── serp-e-ads.md
+│       └── sezioni-testo.md
 └── assets/
     ├── screenshots/            # Screenshot di riferimento per ogni blocco
     └── demo/                   # Demo HTML standalone dei blocchi
@@ -64,11 +66,22 @@ Le specifiche geometriche usano esclusivamente **unità relative**. I pixel fiss
 
 ---
 
+## Indice dei blocchi (`index.html`)
+
+La repo ha un **indice unico** in [`index.html`](index.html), servito da GitHub Pages come home page. Elenca tutti i blocchi documentati, raggruppati per file di spec (`docs/ui-spec/*.md`), con lo stato di ciascuno:
+
+- **Demo** (verde) — la card è cliccabile e apre la demo HTML in `assets/demo/`
+- **In arrivo** (grigio) — il blocco è documentato ma non ha ancora una demo HTML
+
+`index.html` va tenuto allineato con `assets/demo/` ad ogni modifica: la regola operativa per l'agente è in [`agent.md`](agent.md#demo-html--indice-indexhtml).
+
+---
+
 ## Demo HTML dei blocchi
 
 Ogni blocco documentato in `docs/ui-spec/` può avere una demo HTML standalone in `assets/demo/`, per rendere la specifica immediatamente previewabile (es. via GitHub Pages) senza affidarsi solo a uno screenshot.
 
-**Tutte le demo condividono un unico foglio di stile**: [`assets/demo/bob__demo.css`](assets/demo/bob__demo.css). Nessuna demo ha CSS inline o un file `.css` proprio, e non vengono usati framework esterni (Bootstrap, Tailwind, ecc.).
+**Tutte le demo condividono un unico foglio di stile**: [`assets/demo/bob__demo.css`](assets/demo/bob__demo.css). Nessuna demo ha CSS inline o un file `.css` proprio, e non vengono usati framework esterni (Bootstrap, Tailwind, ecc.) — fa eccezione Swiper.js per i soli blocchi carousel che lo richiedono.
 
 Le classi seguono la naming convention:
 
@@ -78,7 +91,7 @@ bob__{nome_classe}_{modificatore}
 
 Es. `.bob__product_card`, `.bob__product_card_img_wrap`, `.bob__product_card_badge_discount`.
 
-Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso).
+Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` (inclusi i primitivi condivisi come `bob__cta_pill`, `bob__nav_arrow`, `bob__avatar`, `bob__rail`) se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso).
 
 ---
 
@@ -102,4 +115,5 @@ Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob
 3. Usa **solo unità relative** nelle geometrie
 4. Carica lo screenshot in `assets/screenshots/` con la naming convention
 5. Se aggiungi anche una demo HTML, seguine le regole in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso): stesso `bob__demo.css`, naming `bob__{nome_classe}_{modificatore}`
-6. Aggiorna l'indice in `docs/ui-spec/README.md`
+6. Aggiorna la card corrispondente in [`index.html`](index.html) da "In arrivo" a "Demo" (o creala se il blocco è nuovo)
+7. Aggiorna l'indice in `docs/ui-spec/README.md`
