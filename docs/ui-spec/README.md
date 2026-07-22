@@ -10,13 +10,14 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 
 | File | Contenuto |
 |---|---|
-| [hero.md](./hero.md) | Hero fullscreen: categoria con breadcrumb, collezione con CTA |
+| [hero.md](./hero.md) | Hero fullscreen: categoria con breadcrumb, collezione con CTA, sliding feature carousel, split hero |
 | [navigation.md](./navigation.md) | Pattern di navigazione: footer accordion, sliding panel drill-down |
 | [loop-categorie.md](./loop-categorie.md) | Loop e caroselli di categorie: discovery rail, filtered carousel, category showcase |
 | [loop-prodotti.md](./loop-prodotti.md) | Loop e griglie di prodotti: two-column grid, masonry, destination card, brand mini bar |
-| [loop-post-editoriali.md](./loop-post-editoriali.md) | Loop di post, contenuti e profili: collage, people carousel, article teaser |
+| [loop-post-editoriali.md](./loop-post-editoriali.md) | Loop di post, contenuti e profili: collage, people carousel, article teaser, project grid |
 | [banner-promo.md](./banner-promo.md) | Banner promozionali e carousel servizi |
 | [serp-e-ads.md](./serp-e-ads.md) | SERP e formati pubblicitari: Google Local Pack |
+| [sezioni-testo.md](./sezioni-testo.md) | Blocchi a dominanza testuale: mission block, tabella servizi, stats bento grid |
 
 ---
 
@@ -41,3 +42,9 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 | BLOCK-015 | Hero collezione con CTA pill | hero.md |
 | BLOCK-016 | Brand mini bar | loop-prodotti.md |
 | BLOCK-017 | Local Business SERP card (Google Maps Local Pack) | serp-e-ads.md |
+| BLOCK-018 | Sliding feature carousel | hero.md |
+| BLOCK-019 | Asymmetric editorial project grid | loop-post-editoriali.md |
+| BLOCK-020 | Split hero: testo su bianco + immagine full-width | hero.md |
+| BLOCK-021 | Editorial mission block con video embed e social proof card | sezioni-testo.md |
+| BLOCK-022 | Tabella servizi testuale a tre colonne | sezioni-testo.md |
+| BLOCK-023 | Stats & media bento grid | sezioni-testo.md |
