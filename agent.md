@@ -72,7 +72,7 @@ Tutte le demo HTML devono importare **lo stesso file CSS**: [`assets/demo/bob__d
 
 - Non creare un file `.css` per singolo blocco.
 - Non usare blocchi `<style>` inline nell'HTML.
-- Non introdurre framework CSS esterni (Bootstrap, Tailwind, ecc.): il CSS è scritto a mano, coerente con le unità relative descritte sopra.
+- Non introdurre framework CSS esterni (Bootstrap, Tailwind, ecc.): il CSS è scritto a mano, coerente con le unità relative descritte sopra. Fa eccezione **Swiper.js** per i soli blocchi carousel che lo richiedono — vedi sotto.
 
 Nel file HTML del blocco, lo stylesheet va importato così (percorso relativo, dato che HTML e CSS vivono entrambi in `assets/demo/`):
 
@@ -92,15 +92,39 @@ bob__{nome_classe}_{modificatore}
 - `modificatore`: opzionale, per varianti di stato o stile (es. `old`, `discount`, `new`)
 - Esempi reali già in uso: `.bob__product_card`, `.bob__product_card_img_wrap`, `.bob__product_card_badge_discount`
 
+`bob__demo.css` include anche un set di **primitivi condivisi** (cerca la sezione `PRIMITIVI CONDIVISI` nel file) pensati per essere riusati tra blocchi diversi: `bob__cta_pill` (+ `_filled` / `_outline` / `_outline_light` / `_ghost`), `bob__nav_arrow` (+ `_ghost`), `bob__avatar` (+ `_sm` / `_md` / `_lg`), `bob__rail` / `bob__rail_item` (scroll orizzontale con `scroll-snap`, senza JS), `bob__chip` (+ `_active`), `bob__divider` (+ `_light`).
+
 ### Prima di aggiungere un nuovo blocco demo
 
-1. **Controlla prima le classi già presenti** in `bob__demo.css` (es. `bob__product_card`, `bob__section_header`, `bob__demo_intro`).
-2. Se una classe esistente copre già il bisogno, **riusala** — non duplicarla con un nome diverso o un valore leggermente differente.
-3. Se non esiste una classe adatta al nuovo blocco, **aggiungi la nuova classe direttamente a `bob__demo.css`**, seguendo la naming convention sopra e mantenendo il file ordinato per sezione (usa i separatori a commento `/* ─── Nome sezione ─── */` come già presente nel file).
-4. Non creare un secondo file CSS, nemmeno per una demo isolata o sperimentale: `bob__demo.css` resta l'unico foglio di stile per tutte le demo HTML della collezione.
-5. Se una classe esistente va bene solo in parte, preferisci aggiungere un **modificatore** (`bob__{nome_classe}_{nuovo_modificatore}`) piuttosto che riscrivere la classe base o crearne una parallela.
+1. **Controlla prima le classi già presenti** in `bob__demo.css`, inclusi i primitivi condivisi sopra — riusale se coprono il bisogno, non duplicarle con un nome diverso o un valore leggermente differente.
+2. Se non esiste una classe adatta al nuovo blocco, **aggiungi la nuova classe direttamente a `bob__demo.css`**, seguendo la naming convention e mantenendo il file ordinato per sezione (usa i separatori a commento `/* ─── Nome sezione ─── */` come già presente nel file).
+3. Non creare un secondo file CSS, nemmeno per una demo isolata o sperimentale: `bob__demo.css` resta l'unico foglio di stile per tutte le demo HTML della collezione.
+4. Se una classe esistente va bene solo in parte, preferisci aggiungere un **modificatore** (`bob__{nome_classe}_{nuovo_modificatore}`) piuttosto che riscrivere la classe base o crearne una parallela.
 
-**Perché:** evita di duplicare stili tra blocchi simili (card, badge, griglie ricorrono spesso tra i pattern raccolti), garantisce coerenza visiva tra le demo (stessi colori, spaziature, radius, breakpoint) e mantiene le demo leggere — un solo file CSS cacheable dal browser invece di N copie inline o N file separati.
+### Carousel: CSS scroll-snap prima, Swiper.js solo se serve
+
+Per rail semplici (scroll orizzontale libero, nessun controllo prev/next) usa `bob__rail` / `bob__rail_item` con `scroll-snap` — zero JS, zero dipendenze.
+
+Usa **Swiper.js** (via CDN, solo JS/CSS della libreria, nessun altro framework) solo quando la spec richiede funzionalità che il puro CSS non copre in modo pulito: frecce prev/next con stato disabled, progress bar/pagination sincronizzata, coverflow o card centrale dominante con pannelli laterali. Importa Swiper via CDN direttamente nell'HTML del blocco che lo richiede (non va aggiunto a `bob__demo.css` né reso una dipendenza globale delle altre demo).
+
+---
+
+## Demo HTML — indice (`index.html`)
+
+La repo ha un **indice unico** in `index.html` (root, servito da GitHub Pages) che elenca tutti i blocchi raggruppati per file di spec, con lo stato di ciascuno (`bob__catalog_card_status_ready` se la demo esiste ed è linkata, `bob__catalog_card_status_pending` se manca ancora).
+
+**Ogni volta che si aggiunge, rimuove o sposta una demo HTML in `assets/demo/`, `index.html` va aggiornato nella stessa modifica**:
+
+1. Trova la card del blocco in `index.html` (cercare il numero `BLOCK-0XX`).
+2. Se la demo è nuova: cambia il tag da `<span class="bob__catalog_card bob__catalog_card_pending">` ad `<a class="bob__catalog_card bob__catalog_card_ready" href="assets/demo/BLOCK-0XX_nome-file.html">`, e lo stato interno da `bob__catalog_card_status_pending` (testo "In arrivo") a `bob__catalog_card_status_ready` (testo "Demo").
+3. Se un blocco nuovo non era ancora presente nell'indice (perché aggiunto ex novo, non dai 23 blocchi già documentati), crea una nuova card nella sezione corretta (o crea una nuova `<section class="bob__catalog_section">` se è un nuovo file di spec).
+4. Non lasciare mai `index.html` disallineato con lo stato reale di `assets/demo/`: è l'unico punto di ingresso per vedere le demo via GitHub Pages.
+
+---
+
+## Analisi di nuovi layout → nuovo blocco
+
+Per analizzare un nuovo layout (da descrizione testuale o screenshot) e trasformarlo in un blocco completo (scheda in `docs/ui-spec/`, entry in `docs/ui-spec/README.md`, demo HTML + eventuali classi CSS, voce in `index.html`), usa la skill **layout-capture** (vedi `.claude/skills/layout-capture/SKILL.md` in questa repo). Non improvvisare un formato diverso: la skill applica lo stesso schema a campi fissi già in uso in tutti i blocchi esistenti, cross-referenziando pattern e classi già disponibili prima di introdurne di nuovi.
 
 ---
 
@@ -134,6 +158,7 @@ bob__{nome_classe}_{modificatore}
 - [ ] Lo screenshot è disponibile o segnato come TODO in `assets/screenshots/`
 - [ ] Il blocco è stato testato visivamente su mobile
 - [ ] Se è presente una demo HTML, usa `assets/demo/bob__demo.css` e la naming convention `bob__{nome_classe}_{modificatore}`
+- [ ] `index.html` riflette lo stato reale della demo (ready/pending)
 
 ---
 
