@@ -364,6 +364,26 @@ a { color: inherit; }
 }
 .bob__chip_active { background: #1a1a1a; color: #fff; }
 
+/* ─── Badge freccia ↗ (angolo card) ──────────────────────── */
+.bob__badge_arrow {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.bob__badge_arrow_dark { background: rgba(255, 255, 255, 0.15); color: #fff; }
+
+/* ─── Testo muted generico ───────────────────────────────── */
+.bob__text_muted { color: #888; font-weight: 400; }
+
 /* ══════════════════════════════════════════════════════════
    CATALOGO — index.html
    ══════════════════════════════════════════════════════════ */
@@ -1665,4 +1685,234 @@ a { color: inherit; }
   .bob__split_hero_navbar_menu { display: flex; }
   .bob__split_hero_top { padding: 2rem 3rem; display: flex; flex-direction: column; }
   .bob__split_hero_bottom { aspect-ratio: 21 / 9; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-019 — Asymmetric editorial project grid
+   ══════════════════════════════════════════════════════════ */
+
+.bob__project_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.bob__project_card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 0.875rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bob__project_card_left { aspect-ratio: 4 / 5; }
+.bob__project_grid_center { display: flex; flex-direction: column; gap: 0.625rem; }
+.bob__project_card_center_top { aspect-ratio: 16 / 9; }
+.bob__project_card_center_bottom { aspect-ratio: 16 / 9; }
+.bob__project_card_right { aspect-ratio: 2 / 3; background: #fff; border: 1px solid #e5e5e5; }
+
+.bob__project_card_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__project_card_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.875rem;
+}
+.bob__project_card_overlay_title { color: #fff; font-size: 1rem; font-weight: 700; margin: 0; }
+
+.bob__project_card_footer { padding: 0.625rem 0.25rem 0; }
+.bob__project_card_title { font-size: 0.9375rem; font-weight: 700; margin: 0 0 0.125rem; }
+.bob__project_card_label { font-size: 0.75rem; color: #888; margin: 0; }
+
+.bob__project_card_cta_wrap { padding: 0.875rem; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+
+@media (min-width: 60rem) {
+  .bob__project_grid {
+    display: grid;
+    grid-template-columns: 38fr 38fr 24fr;
+    gap: 0.875rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    height: 26rem;
+  }
+  .bob__project_card_left { aspect-ratio: auto; height: 100%; }
+  .bob__project_grid_center { height: 100%; }
+  .bob__project_card_center_top { aspect-ratio: auto; flex: 0 0 58%; }
+  .bob__project_card_center_bottom { aspect-ratio: auto; flex: 1; }
+  .bob__project_card_right { aspect-ratio: auto; height: 100%; display: flex; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-021 — Editorial mission block con video embed
+   ══════════════════════════════════════════════════════════ */
+
+.bob__mission_block { max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem; }
+
+.bob__mission_label {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.bob__mission_headline {
+  text-align: center;
+  font-size: clamp(1.375rem, 4vw, 2rem);
+  line-height: 1.4;
+  font-weight: 400;
+  color: #888;
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+}
+.bob__mission_headline strong { color: #1a1a1a; font-weight: 700; }
+
+.bob__mission_media { display: flex; flex-direction: column; gap: 1rem; }
+
+.bob__mission_video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.875rem;
+  overflow: hidden;
+}
+.bob__mission_video_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bob__mission_video_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+}
+.bob__mission_video_speaker {
+  position: absolute;
+  left: 1rem;
+  bottom: 2.5rem;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.bob__mission_video_caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.875rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.bob__mission_proof_card {
+  background: #fff;
+  border-radius: 0.875rem;
+  padding: 1.25rem;
+  border: 1px solid #eee;
+}
+.bob__mission_proof_brand { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: #999; margin: 0 0 0.75rem; }
+.bob__mission_proof_name { font-size: 1.625rem; font-weight: 700; margin: 0 0 0.75rem; }
+.bob__mission_proof_waveform { height: 1.5rem; display: flex; align-items: flex-end; gap: 0.125rem; margin-bottom: 1rem; }
+.bob__mission_proof_waveform span { width: 0.1875rem; background: #ddd; border-radius: 9999px; }
+.bob__mission_proof_person { display: flex; align-items: center; gap: 0.625rem; }
+.bob__mission_proof_text { font-size: 0.75rem; color: #666; line-height: 1.4; }
+
+@media (min-width: 56rem) {
+  .bob__mission_media { flex-direction: row; align-items: flex-end; }
+  .bob__mission_video { flex: 0 0 63%; }
+  .bob__mission_proof_card { flex: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-022 — Tabella servizi testuale a tre colonne
+   ══════════════════════════════════════════════════════════ */
+
+.bob__services_table { max-width: 56rem; margin: 0 auto; padding: 2rem 1.25rem; }
+
+.bob__services_table_heading { font-size: 1.125rem; font-weight: 500; margin: 0 0 1.25rem; }
+
+.bob__services_table_row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bob__services_table_number { font-size: 0.8125rem; color: #999; grid-column: 1; grid-row: 1; }
+.bob__services_table_name { font-size: 1.25rem; font-weight: 700; margin: 0; grid-column: 2; grid-row: 1; }
+.bob__services_table_desc {
+  font-size: 0.8125rem;
+  color: #777;
+  line-height: 1.5;
+  margin: 0.375rem 0 0;
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 48rem) {
+  .bob__services_table_row {
+    grid-template-columns: 11% 27% 1fr;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+  .bob__services_table_number { grid-column: 1; }
+  .bob__services_table_name { grid-column: 2; }
+  .bob__services_table_desc { grid-column: 3; margin-top: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-023 — Stats & media bento grid
+   ══════════════════════════════════════════════════════════ */
+
+.bob__bento_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.625rem;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.bob__bento_cell {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  min-height: 10rem;
+  padding: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bob__bento_cell_dark { background: #1a1a1a; color: #fff; }
+.bob__bento_cell_light { background: #ececec; color: #1a1a1a; }
+.bob__bento_cell_photo { padding: 0; }
+.bob__bento_cell_photo img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+
+.bob__bento_stat_value { font-size: 2.5rem; font-weight: 800; line-height: 1; margin: 0 0 0.375rem; }
+.bob__bento_stat_label { font-size: 0.8125rem; margin: 0; opacity: 0.85; max-width: 12rem; }
+
+.bob__bento_text { font-size: 0.875rem; line-height: 1.5; margin: 0; }
+.bob__bento_text strong { font-weight: 700; color: #1a1a1a; }
+
+@media (min-width: 56rem) {
+  .bob__bento_grid {
+    grid-template-columns: 25% 47% 1fr;
+    grid-template-rows: 12rem 12rem;
+  }
+  .bob__bento_cell_photo_1 { grid-row: 1; grid-column: 2; }
+  .bob__bento_cell_photo_2 { grid-row: 2; grid-column: 3; }
 }
