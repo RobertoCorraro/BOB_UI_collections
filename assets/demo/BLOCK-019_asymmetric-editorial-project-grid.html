@@ -1,0 +1,58 @@
+<!--
+  Demo HTML — BLOCK-019 Asymmetric editorial project grid
+  Derivata da: docs/ui-spec/loop-post-editoriali.md
+  Griglia desktop 3 colonne asimmetriche 38/38/24. Su mobile: stack verticale.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-019 — Asymmetric editorial project grid · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-post-editoriali.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-019 — Asymmetric editorial project grid</h1>
+    <p class="bob__demo_intro_desc">
+      Griglia desktop a tre colonne con pesi diversi (38/38/24): colonna sinistra dominante,
+      colonna centrale con due card impilate, colonna destra stretta con CTA.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito agency / e-commerce / studio design — desktop</p>
+  </header>
+
+  <main class="bob__project_grid">
+
+    <a class="bob__project_card bob__project_card_left" href="#">
+      <img class="bob__project_card_img" src="https://picsum.photos/seed/project1/700/900" alt="Progetto Villa Serena" loading="lazy" />
+      <div class="bob__project_card_overlay">
+        <p class="bob__project_card_overlay_title">Villa Serena</p>
+      </div>
+    </a>
+
+    <div class="bob__project_grid_center">
+      <a class="bob__project_card bob__project_card_center_top" href="#">
+        <img class="bob__project_card_img" src="https://picsum.photos/seed/project2/700/500" alt="Progetto Loft Torino" loading="lazy" />
+        <span class="bob__badge_arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </span>
+      </a>
+      <a class="bob__project_card bob__project_card_center_bottom" href="#">
+        <img class="bob__project_card_img" src="https://picsum.photos/seed/project3/700/400" alt="Progetto Uffici Meridiana" loading="lazy" />
+      </a>
+    </div>
+
+    <a class="bob__project_card bob__project_card_right" href="#">
+      <img class="bob__project_card_img" src="https://picsum.photos/seed/project4/400/700" alt="Progetto Showroom Nord" loading="lazy" />
+      <div class="bob__project_card_cta_wrap">
+        <a class="bob__cta_pill bob__cta_pill_outline_light" href="#">See more</a>
+      </div>
+    </a>
+
+  </main>
+
+</body>
+</html>
