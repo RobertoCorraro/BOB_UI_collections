@@ -1,0 +1,112 @@
+<!--
+  Demo HTML — BLOCK-011 Service card carousel
+  Derivata da: docs/ui-spec/banner-promo.md
+  Carosello di card servizio senza foto: icona + titolo + descrizione + CTA
+  ghost circolare. Frecce prev/next filled + progress bar sincronizzata:
+  usa Swiper.js (CDN) perché il puro CSS non copre bene questa combinazione.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-011 — Service card carousel · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/banner-promo.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-011 — Service card carousel</h1>
+    <p class="bob__demo_intro_desc">
+      Carosello di card servizio senza immagini: icona pictogram, titolo display, descrizione breve, CTA ghost circolare.
+      Frecce prev/next e progress bar lineare sincronizzata.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: ikea.com — sezione "Servizi e supporto", mobile</p>
+  </header>
+
+  <main style="background: #f0f0f0;">
+    <div class="swiper bob__service_swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide" style="width: 78%; max-width: 18rem; padding: 0.5rem 0.5rem 0;">
+          <article class="bob__service_card">
+            <svg class="bob__service_card_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z"/></svg>
+            <h2 class="bob__service_card_title">Consulenza in negozio</h2>
+            <p class="bob__service_card_desc">Prenota un appuntamento gratuito con un nostro consulente per progettare i tuoi spazi.</p>
+            <button class="bob__service_card_cta" type="button" aria-label="Scopri di più">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </article>
+        </div>
+
+        <div class="swiper-slide" style="width: 78%; max-width: 18rem; padding: 0.5rem 0.5rem 0;">
+          <article class="bob__service_card">
+            <svg class="bob__service_card_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v14H3zM8 21h8M12 17v4"/></svg>
+            <h2 class="bob__service_card_title">Progettazione 3D</h2>
+            <p class="bob__service_card_desc">Visualizza la tua cucina o il tuo bagno in 3D prima di acquistare.</p>
+            <button class="bob__service_card_cta" type="button" aria-label="Scopri di più">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </article>
+        </div>
+
+        <div class="swiper-slide" style="width: 78%; max-width: 18rem; padding: 0.5rem 0.5rem 0;">
+          <article class="bob__service_card">
+            <svg class="bob__service_card_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+            <h2 class="bob__service_card_title">Consegna a domicilio</h2>
+            <p class="bob__service_card_desc">Fai consegnare i tuoi acquisti direttamente a casa, con montaggio incluso.</p>
+            <button class="bob__service_card_cta" type="button" aria-label="Scopri di più">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </article>
+        </div>
+
+        <div class="swiper-slide" style="width: 78%; max-width: 18rem; padding: 0.5rem 0.5rem 0;">
+          <article class="bob__service_card">
+            <svg class="bob__service_card_icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-1.5z"/></svg>
+            <h2 class="bob__service_card_title">Finanziamenti su misura</h2>
+            <p class="bob__service_card_desc">Dividi il pagamento dei tuoi acquisti in comode rate senza interessi.</p>
+            <button class="bob__service_card_cta" type="button" aria-label="Scopri di più">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination-progressbar" style="margin: 0 1rem; position: relative; top: auto; bottom: 0.5rem;"></div>
+    </div>
+
+    <a class="bob__service_footer_link" href="#">
+      Visualizza tutti i servizi
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.bob__service_swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination-progressbar',
+        type: 'progressbar',
+      },
+      breakpoints: {
+        768: { slidesPerView: 2.4 },
+        1200: { slidesPerView: 3.2 },
+      },
+    });
+  </script>
+
+</body>
+</html>
