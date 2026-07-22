@@ -1,0 +1,57 @@
+<!--
+  Demo HTML — BLOCK-005 Editorial stacked banner stack
+  Derivata da: docs/ui-spec/banner-promo.md
+  Banner full-width impilati edge-to-edge, testo overlay bottom-left,
+  nessun bottone esplicito: l'intero banner è la CTA.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-005 — Editorial stacked banner stack · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/banner-promo.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-005 — Editorial stacked banner stack</h1>
+    <p class="bob__demo_intro_desc">
+      Banner editoriali full-width impilati verticalmente. Titolo bianco con keyword in colore brand
+      e sottotitolo overlay in basso a sinistra. Nessun bottone: l'intero banner è tappabile.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: deghi.it — homepage mobile</p>
+  </header>
+
+  <main class="bob__banner_stack">
+
+    <a class="bob__banner_stack_item" href="#">
+      <img class="bob__banner_stack_img" src="https://picsum.photos/seed/banner1/1000/600" alt="Collezione divani primavera" loading="lazy" />
+      <div class="bob__banner_stack_overlay">
+        <h2 class="bob__banner_stack_title">Nuova collezione <span class="bob__banner_stack_title_accent">Divani</span></h2>
+        <p class="bob__banner_stack_subtitle">Scopri le forme morbide della primavera — <span class="bob__banner_stack_subtitle_link">vedi tutto</span></p>
+      </div>
+    </a>
+
+    <a class="bob__banner_stack_item" href="#">
+      <img class="bob__banner_stack_img" src="https://picsum.photos/seed/banner2/1000/600" alt="Illuminazione da esterno" loading="lazy" />
+      <div class="bob__banner_stack_overlay">
+        <h2 class="bob__banner_stack_title"><span class="bob__banner_stack_title_accent">Outdoor</span> living</h2>
+        <p class="bob__banner_stack_subtitle">Illuminazione e complementi per il giardino — <span class="bob__banner_stack_subtitle_link">esplora</span></p>
+      </div>
+    </a>
+
+    <a class="bob__banner_stack_item" href="#">
+      <img class="bob__banner_stack_img" src="https://picsum.photos/seed/banner3/1000/600" alt="Novità cucine componibili" loading="lazy" />
+      <div class="bob__banner_stack_overlay">
+        <h2 class="bob__banner_stack_title">Cucine <span class="bob__banner_stack_title_accent">su misura</span></h2>
+        <p class="bob__banner_stack_subtitle">Progetta la tua in 3D — <span class="bob__banner_stack_subtitle_link">inizia ora</span></p>
+      </div>
+    </a>
+
+  </main>
+
+</body>
+</html>
