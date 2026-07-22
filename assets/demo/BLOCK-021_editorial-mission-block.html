@@ -1,0 +1,63 @@
+<!--
+  Demo HTML — BLOCK-021 Editorial mission block con video embed e social proof card
+  Derivata da: docs/ui-spec/sezioni-testo.md
+  Headline a peso misto (bold + muted nello stesso paragrafo) centrata,
+  video embed bottom-left, social proof card bottom-right.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-021 — Editorial mission block · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/sezioni-testo.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-021 — Editorial mission block con video embed e social proof card</h1>
+    <p class="bob__demo_intro_desc">
+      Headline a peso misto (bold nero + regular grigio nello stesso paragrafo), video embed con play
+      e caption testimonial, social proof card con speaker, waveform e avatar.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito agency / studio design — desktop</p>
+  </header>
+
+  <main class="bob__mission_block">
+    <span class="bob__mission_label">/Features</span>
+    <p class="bob__mission_headline">
+      <strong>Siamo un team di designer, strateghi e innovatori visionari</strong> dedicati a creare
+      esperienze digitali eccezionali. La nostra missione è unire creatività e funzionalità.
+    </p>
+
+    <div class="bob__mission_media">
+      <div class="bob__mission_video">
+        <img class="bob__mission_video_img" src="https://picsum.photos/seed/mission1/900/500" alt="Frame video intervista al team" loading="lazy" />
+        <span class="bob__mission_video_play" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <p class="bob__mission_video_speaker">Elena Ferri — Creative Director</p>
+        <p class="bob__mission_video_caption">"Ogni progetto nasce da un ascolto attento del brand."|</p>
+      </div>
+
+      <div class="bob__mission_proof_card">
+        <p class="bob__mission_proof_brand">Insights</p>
+        <p class="bob__mission_proof_name">Marco Levi</p>
+        <div class="bob__mission_proof_waveform" aria-hidden="true">
+          <span style="height:40%"></span><span style="height:70%"></span><span style="height:100%"></span>
+          <span style="height:55%"></span><span style="height:85%"></span><span style="height:35%"></span>
+          <span style="height:65%"></span><span style="height:95%"></span><span style="height:45%"></span>
+          <span style="height:75%"></span>
+        </div>
+        <div class="bob__mission_proof_person">
+          <img class="bob__avatar bob__avatar_sm" src="https://i.pravatar.cc/60?img=52" alt="" />
+          <p class="bob__mission_proof_text">"Un team che ascolta davvero e trasforma le idee in prodotti concreti."</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
