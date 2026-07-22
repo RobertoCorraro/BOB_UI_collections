@@ -11,6 +11,10 @@ BOB_UI_collections/
 ├── README.md
 ├── agent.md                # Skills di web design e UI/UX, incluse le regole per le demo HTML
 ├── index.html               # Indice di tutti i blocchi, servito da GitHub Pages
+├── .claude/
+│   └── skills/
+│       └── layout-capture/     # Skill: cattura nuovi layout (testo/screenshot) come blocchi
+│           └── SKILL.md
 ├── docs/
 │   └── ui-spec/
 │       ├── README.md           # Indice dei blocchi per numero e file
@@ -24,9 +28,9 @@ BOB_UI_collections/
 │       └── sezioni-testo.md
 └── assets/
     ├── screenshots/            # Screenshot di riferimento per ogni blocco
-    └── demo/                   # Demo HTML standalone dei blocchi
+    └── demo/                   # Demo HTML standalone dei blocchi (23/23, una per blocco)
         ├── bob__demo.css           # Stylesheet condiviso da tutte le demo
-        └── BLOCK-003_two-column-results-grid.html
+        └── BLOCK-0XX_slug.html     # Una demo per ogni BLOCK-0XX documentato
 ```
 
 ---
@@ -73,7 +77,7 @@ La repo ha un **indice unico** in [`index.html`](index.html), servito da GitHub 
 - **Demo** (verde) — la card è cliccabile e apre la demo HTML in `assets/demo/`
 - **In arrivo** (grigio) — il blocco è documentato ma non ha ancora una demo HTML
 
-`index.html` va tenuto allineato con `assets/demo/` ad ogni modifica: la regola operativa per l'agente è in [`agent.md`](agent.md#demo-html--indice-indexhtml).
+Ad oggi tutti i 23 blocchi documentati hanno una demo live. `index.html` va tenuto allineato con `assets/demo/` ad ogni modifica: la regola operativa per l'agente è in [`agent.md`](agent.md#demo-html--indice-indexhtml).
 
 ---
 
@@ -81,7 +85,7 @@ La repo ha un **indice unico** in [`index.html`](index.html), servito da GitHub 
 
 Ogni blocco documentato in `docs/ui-spec/` può avere una demo HTML standalone in `assets/demo/`, per rendere la specifica immediatamente previewabile (es. via GitHub Pages) senza affidarsi solo a uno screenshot.
 
-**Tutte le demo condividono un unico foglio di stile**: [`assets/demo/bob__demo.css`](assets/demo/bob__demo.css). Nessuna demo ha CSS inline o un file `.css` proprio, e non vengono usati framework esterni (Bootstrap, Tailwind, ecc.) — fa eccezione Swiper.js per i soli blocchi carousel che lo richiedono.
+**Tutte le demo condividono un unico foglio di stile**: [`assets/demo/bob__demo.css`](assets/demo/bob__demo.css). Nessuna demo ha CSS inline o un file `.css` proprio, e non vengono usati framework esterni (Bootstrap, Tailwind, ecc.) — fa eccezione **Swiper.js** per i soli blocchi carousel che richiedono frecce e pagination sincronizzate (es. BLOCK-011, BLOCK-018), caricato via CDN solo nell'HTML di quel blocco.
 
 Le classi seguono la naming convention:
 
@@ -91,7 +95,23 @@ bob__{nome_classe}_{modificatore}
 
 Es. `.bob__product_card`, `.bob__product_card_img_wrap`, `.bob__product_card_badge_discount`.
 
-Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` (inclusi i primitivi condivisi come `bob__cta_pill`, `bob__nav_arrow`, `bob__avatar`, `bob__rail`) se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso).
+Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` (inclusi i primitivi condivisi come `bob__cta_pill`, `bob__nav_arrow`, `bob__avatar`, `bob__rail`, `bob__badge_arrow`) se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso).
+
+---
+
+## Skill: `layout-capture`
+
+Per aggiungere un nuovo blocco alla collezione — a partire da una **descrizione testuale** o da uno **screenshot** di un layout osservato — usa la skill **`layout-capture`**, disponibile in questa repo in [`.claude/skills/layout-capture/SKILL.md`](.claude/skills/layout-capture/SKILL.md) (project skill: si attiva automaticamente per chi lavora su questa repo con Claude Code).
+
+Cosa fa, in sintesi:
+
+1. **Analizza il layout** (testo o screenshot) applicando uno **schema fisso in stile wiki**: gli stessi campi di ogni scheda esistente (Descrizione, Geometrie precise, Ratio immagini, Target devices, Posizione tipica, Formato compatto, Fonte), invece di una descrizione libera — così ogni nuovo blocco resta comparabile e cross-referenziabile con quelli già in collezione, riusando vocabolario e classi CSS già stabiliti invece di inventarne di nuovi.
+2. **Assegna il prossimo numero `BLOCK-0XX`** leggendo `docs/ui-spec/README.md` e sceglie (o crea) il file tematico giusto.
+3. **Scrive la scheda di specifica** con lo stesso formato esatto delle altre.
+4. **Crea la demo HTML**, riusando `bob__demo.css` e la naming convention `bob__{nome_classe}_{modificatore}` (vedi sopra).
+5. **Aggiorna `docs/ui-spec/README.md` e `index.html`** così l'indice resta sempre allineato.
+
+Prima di scrivere qualsiasi file, la skill presenta un riepilogo strutturato dell'analisi per la revisione dell'utente. Attivala descrivendo un nuovo layout da catturare (es. "aggiungi questo layout alla collezione", "cattura questo blocco da screenshot") — non serve nominarla esplicitamente.
 
 ---
 
@@ -109,6 +129,8 @@ Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob
 ---
 
 ## Come aggiungere un nuovo blocco
+
+Il modo più rapido è usare la skill [`layout-capture`](#skill-layout-capture) descritta sopra, che segue automaticamente tutti i passaggi. In alternativa, manualmente:
 
 1. Scegli il file tematico corretto in `docs/ui-spec/`
 2. Aggiungi la scheda con tutti i campi obbligatori
