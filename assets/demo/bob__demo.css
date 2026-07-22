@@ -536,3 +536,283 @@ a { color: inherit; }
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-007 — Destination detail card
+   ══════════════════════════════════════════════════════════ */
+
+.bob__dest_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.bob__dest_card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.bob__dest_card_vertical {
+  flex-direction: column;
+  aspect-ratio: 4 / 5;
+}
+
+.bob__dest_card_horizontal {
+  flex-direction: row;
+  min-height: 12rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.bob__dest_card_media {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bob__dest_card_vertical .bob__dest_card_media { position: absolute; inset: 0; }
+.bob__dest_card_horizontal .bob__dest_card_media { width: 38%; }
+
+.bob__dest_card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bob__dest_card_gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) 55%);
+}
+
+.bob__dest_card_body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1rem;
+}
+
+.bob__dest_card_vertical .bob__dest_card_body { margin-top: auto; color: #fff; }
+.bob__dest_card_horizontal .bob__dest_card_body { flex: 1; justify-content: center; }
+
+.bob__dest_card_title { font-size: 1.125rem; font-weight: 700; margin: 0; }
+
+.bob__dest_card_subtitle { font-size: 0.8125rem; margin: 0; opacity: 0.85; }
+.bob__dest_card_horizontal .bob__dest_card_subtitle { color: #777; opacity: 1; }
+
+.bob__dest_card_desc { font-size: 0.8125rem; line-height: 1.5; margin: 0; opacity: 0.9; }
+.bob__dest_card_horizontal .bob__dest_card_desc {
+  color: #555;
+  opacity: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bob__dest_card_meta {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+}
+.bob__dest_card_horizontal .bob__dest_card_meta { color: #777; opacity: 1; }
+
+.bob__dest_card_heart {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bob__dest_card_cta { align-self: flex-start; margin-top: 0.25rem; }
+
+@media (min-width: 36rem) {
+  .bob__dest_grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-016 — Brand mini bar
+   ══════════════════════════════════════════════════════════ */
+
+.bob__brand_bar {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.bob__brand_bar_visual {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.bob__brand_bar_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__brand_bar_swatch {
+  position: absolute;
+  bottom: -18%;
+  right: 6%;
+  width: 42%;
+  aspect-ratio: 1 / 1;
+  border: 0.25rem solid #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bob__brand_bar_swatch_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__brand_bar_data { padding: 1.75rem 1rem 1rem; }
+
+.bob__brand_bar_badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6c757d;
+}
+
+.bob__brand_bar_title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0.25rem 0 0.75rem;
+  line-height: 1.05;
+}
+
+.bob__brand_bar_specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.bob__brand_bar_spec_label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+  display: block;
+}
+
+.bob__brand_bar_spec_value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.bob__brand_bar_colors { display: flex; gap: 0.375rem; }
+
+.bob__brand_bar_color_dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 48rem) {
+  .bob__brand_bar { display: flex; align-items: stretch; }
+  .bob__brand_bar_visual { width: 57%; aspect-ratio: auto; }
+  .bob__brand_bar_swatch { bottom: 8%; right: -8%; width: 34%; }
+  .bob__brand_bar_data { width: 43%; padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-012 — Masonry inspiration grid
+   ══════════════════════════════════════════════════════════ */
+
+.bob__masonry_grid {
+  columns: 2;
+  column-gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.bob__masonry_grid_img {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 0.5rem;
+  border-radius: 0.625rem;
+  display: block;
+}
+
+@media (min-width: 48rem) {
+  .bob__masonry_grid { columns: 3; padding: 0.75rem; }
+}
+
+@media (min-width: 75rem) {
+  .bob__masonry_grid { columns: 4; max-width: 75rem; margin: 0 auto; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-005 — Editorial stacked banner stack
+   ══════════════════════════════════════════════════════════ */
+
+.bob__banner_stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.bob__banner_stack_item {
+  position: relative;
+  display: block;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.bob__banner_stack_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.bob__banner_stack_item:hover .bob__banner_stack_img { transform: scale(1.02); }
+
+.bob__banner_stack_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.bob__banner_stack_title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 0.25rem;
+  line-height: 1.25;
+}
+
+.bob__banner_stack_title_accent { color: #ff7a3d; }
+
+.bob__banner_stack_subtitle {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.bob__banner_stack_subtitle_link { color: #ff7a3d; text-decoration: underline; }
+
+@media (min-width: 48rem) {
+  .bob__banner_stack_item { aspect-ratio: 21 / 9; }
+}
