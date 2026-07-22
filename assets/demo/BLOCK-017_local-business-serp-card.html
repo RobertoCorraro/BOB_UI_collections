@@ -1,0 +1,101 @@
+<!--
+  Demo HTML — BLOCK-017 Local Business SERP card
+  Derivata da: docs/ui-spec/serp-e-ads.md
+  Layout nativo Google Maps / Local Pack, dark mode.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-017 — Local Business SERP card · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/serp-e-ads.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-017 — Local Business SERP card</h1>
+    <p class="bob__demo_intro_desc">
+      Layout nativo di Google Maps / Local Pack su mobile in dark mode: rating, distanza, orari, snippet e CTA inline.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: Google Maps — SERP locale, mobile browser iOS</p>
+  </header>
+
+  <div class="bob__serp_wrap">
+
+    <div class="bob__serp_filters">
+      <span class="bob__serp_filter_pill bob__serp_filter_pill_active">Tutti</span>
+      <span class="bob__serp_filter_pill">Aperto ora</span>
+      <span class="bob__serp_filter_pill">Consigliati</span>
+      <span class="bob__serp_filter_pill">Prenotabile online</span>
+      <span class="bob__serp_filter_pill">Prezzo $</span>
+    </div>
+
+    <article class="bob__serp_card">
+      <div class="bob__serp_card_main">
+        <p class="bob__serp_card_sponsor">Sponsorizzato</p>
+        <h2 class="bob__serp_card_name">Ristorante Da Marco</h2>
+        <p class="bob__serp_card_rating"><span class="bob__serp_card_stars">★★★★☆</span> 4.3 <span class="bob__serp_card_reviews">(842)</span></p>
+        <p class="bob__serp_card_meta">Ristorante italiano · <span class="bob__serp_card_open">Aperto</span> · chiude 23:00</p>
+        <p class="bob__serp_card_meta">1,2 km · in auto</p>
+        <p class="bob__serp_card_snippet">Cucina tradizionale romana in un ambiente accogliente. Prenotazione consigliata nel weekend.</p>
+        <div class="bob__serp_card_ctas">
+          <button class="bob__serp_card_cta" type="button">Indicazioni</button>
+          <button class="bob__serp_card_cta" type="button">Sito web</button>
+          <button class="bob__serp_card_cta" type="button">Chiama</button>
+        </div>
+      </div>
+      <div class="bob__serp_card_thumbs">
+        <img class="bob__serp_card_thumb" src="https://picsum.photos/seed/serp1a/120/120" alt="Interno del ristorante" loading="lazy" />
+        <img class="bob__serp_card_thumb" src="https://picsum.photos/seed/serp1b/120/120" alt="Piatto tipico" loading="lazy" />
+      </div>
+    </article>
+
+    <article class="bob__serp_card">
+      <div class="bob__serp_card_main">
+        <h2 class="bob__serp_card_name">Trattoria Il Cortile</h2>
+        <p class="bob__serp_card_rating"><span class="bob__serp_card_stars">★★★★★</span> 4.7 <span class="bob__serp_card_reviews">(1.204)</span></p>
+        <p class="bob__serp_card_meta">Trattoria · <span class="bob__serp_card_closed">Chiuso</span> · riapre 12:30</p>
+        <p class="bob__serp_card_meta">2,4 km · a piedi</p>
+        <p class="bob__serp_card_snippet">Piatti della tradizione con dehor estivo. Menu del giorno a pranzo.</p>
+        <div class="bob__serp_card_ctas">
+          <button class="bob__serp_card_cta" type="button">Indicazioni</button>
+          <button class="bob__serp_card_cta" type="button">Sito web</button>
+          <button class="bob__serp_card_cta" type="button">Chiama</button>
+        </div>
+      </div>
+      <div class="bob__serp_card_thumbs">
+        <img class="bob__serp_card_thumb" src="https://picsum.photos/seed/serp2a/120/120" alt="Dehor esterno" loading="lazy" />
+        <img class="bob__serp_card_thumb" src="https://picsum.photos/seed/serp2b/120/120" alt="Tavolo apparecchiato" loading="lazy" />
+      </div>
+    </article>
+
+    <article class="bob__serp_card">
+      <div class="bob__serp_card_main">
+        <h2 class="bob__serp_card_name">Osteria del Borgo</h2>
+        <p class="bob__serp_card_rating"><span class="bob__serp_card_stars">★★★★☆</span> 4.1 <span class="bob__serp_card_reviews">(356)</span></p>
+        <p class="bob__serp_card_meta">Osteria · <span class="bob__serp_card_open">Aperto</span> · chiude 22:30</p>
+        <p class="bob__serp_card_meta">3,1 km · in auto</p>
+        <p class="bob__serp_card_snippet">Ambiente informale, ottimo rapporto qualità prezzo, cantina selezionata.</p>
+        <div class="bob__serp_card_ctas">
+          <button class="bob__serp_card_cta" type="button">Indicazioni</button>
+          <button class="bob__serp_card_cta" type="button">Sito web</button>
+          <button class="bob__serp_card_cta" type="button">Chiama</button>
+        </div>
+      </div>
+      <div class="bob__serp_card_thumbs">
+        <img class="bob__serp_card_thumb" src="https://picsum.photos/seed/serp3a/120/120" alt="Sala interna" loading="lazy" />
+        <img class="bob__serp_card_thumb" src="https://picsum.photos/seed/serp3b/120/120" alt="Cantina vini" loading="lazy" />
+      </div>
+    </article>
+
+    <div class="bob__serp_search_bar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ddd" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <span class="bob__serp_search_text">ristoranti vicino a me</span>
+    </div>
+  </div>
+
+</body>
+</html>
