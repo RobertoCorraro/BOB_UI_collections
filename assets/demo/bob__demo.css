@@ -816,3 +816,276 @@ a { color: inherit; }
 @media (min-width: 48rem) {
   .bob__banner_stack_item { aspect-ratio: 21 / 9; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-002 — Horizontal discovery rail + suggestion list
+   ══════════════════════════════════════════════════════════ */
+
+.bob__discovery_rail_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  width: 5.5rem;
+  text-decoration: none;
+}
+
+.bob__discovery_rail_img_wrap {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.bob__discovery_rail_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__discovery_rail_label {
+  font-size: 0.75rem;
+  color: #1a1a1a;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.bob__suggestion_list { display: flex; flex-direction: column; }
+
+.bob__suggestion_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bob__suggestion_text { font-size: 0.9375rem; }
+
+.bob__suggestion_icon { color: #999; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-008 — Filtered category carousel con frecce prev/next
+   ══════════════════════════════════════════════════════════ */
+
+.bob__filtered_carousel_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 0.75rem;
+}
+
+.bob__filtered_carousel_title { font-size: 1.25rem; font-weight: 700; margin: 0; }
+
+.bob__filtered_carousel_segment { display: flex; gap: 0.375rem; }
+
+.bob__filtered_carousel_track {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 1rem;
+  scroll-padding-left: 1rem;
+}
+.bob__filtered_carousel_track::-webkit-scrollbar { display: none; }
+
+.bob__filtered_carousel_card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 62%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bob__filtered_carousel_img_wrap {
+  aspect-ratio: 3 / 4;
+  border-radius: 0.875rem;
+  overflow: hidden;
+}
+
+.bob__filtered_carousel_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__filtered_carousel_label {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0;
+}
+
+.bob__filtered_carousel_nav {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-009 — Category showcase numerato
+   ══════════════════════════════════════════════════════════ */
+
+.bob__showcase_rail {
+  display: flex;
+  gap: 0.3125rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.75rem 0.625rem;
+}
+.bob__showcase_rail::-webkit-scrollbar { display: none; }
+
+.bob__showcase_card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 17%;
+  min-width: 5.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bob__showcase_img_wrap {
+  position: relative;
+  aspect-ratio: 2 / 5;
+  border-radius: 0.625rem 0.625rem 0 0;
+  overflow: hidden;
+}
+
+.bob__showcase_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__showcase_number {
+  position: absolute;
+  left: 0.375rem;
+  bottom: 0.25rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.bob__showcase_name {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  margin: 0.375rem 0 0.125rem;
+  line-height: 1.3;
+}
+
+.bob__showcase_tags {
+  font-size: 0.575rem;
+  color: #888;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-004 — People suggestion carousel
+   ══════════════════════════════════════════════════════════ */
+
+.bob__people_rail {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 1rem;
+}
+.bob__people_rail::-webkit-scrollbar { display: none; }
+
+.bob__people_card {
+  position: relative;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 46vw;
+  max-width: 11.25rem;
+  min-height: 14rem;
+  background: #fff;
+  border-radius: 0.875rem;
+  padding: 1.75rem 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.bob__people_card_close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background: none;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bob__people_card_name { font-size: 0.875rem; font-weight: 700; margin: 0; }
+
+.bob__people_card_sub {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.bob__people_card_cta { width: 100%; margin-top: auto; }
+
+/* ══════════════════════════════════════════════════════════
+   BLOCK-013 — Article teaser carousel
+   ══════════════════════════════════════════════════════════ */
+
+.bob__article_rail {
+  display: flex;
+  gap: 0.875rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 1rem;
+}
+.bob__article_rail::-webkit-scrollbar { display: none; }
+
+.bob__article_card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 87%;
+  max-width: 24rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #eee;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bob__article_card_img_wrap { aspect-ratio: 16 / 9; overflow: hidden; }
+.bob__article_card_img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.bob__article_card_body { padding: 0.875rem 1rem 1rem; }
+
+.bob__article_card_meta {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+  margin: 0 0 0.375rem;
+}
+
+.bob__article_card_title {
+  font-size: 1.3125rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
