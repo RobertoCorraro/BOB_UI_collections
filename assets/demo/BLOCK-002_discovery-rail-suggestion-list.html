@@ -1,0 +1,86 @@
+<!--
+  Demo HTML — BLOCK-002 Horizontal discovery rail + suggestion list
+  Derivata da: docs/ui-spec/loop-categorie.md
+  Rail orizzontale (scroll-snap, zero JS) seguita da una lista verticale
+  di query tappabili.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-002 — Discovery rail + suggestion list · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-categorie.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-002 — Horizontal discovery rail + suggestion list</h1>
+    <p class="bob__demo_intro_desc">
+      Rail orizzontale di card con immagine e label, seguita da una lista verticale di query tappabili.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: Google — sito mobile</p>
+  </header>
+
+  <main>
+    <div class="bob__rail" style="padding: 1rem;">
+      <a class="bob__discovery_rail_card bob__rail_item" href="#">
+        <div class="bob__discovery_rail_img_wrap"><img class="bob__discovery_rail_img" src="https://picsum.photos/seed/rail1/200/200" alt="Categoria sneaker" loading="lazy" /></div>
+        <span class="bob__discovery_rail_label">Sneaker</span>
+      </a>
+      <a class="bob__discovery_rail_card bob__rail_item" href="#">
+        <div class="bob__discovery_rail_img_wrap"><img class="bob__discovery_rail_img" src="https://picsum.photos/seed/rail2/200/200" alt="Categoria borse" loading="lazy" /></div>
+        <span class="bob__discovery_rail_label">Borse</span>
+      </a>
+      <a class="bob__discovery_rail_card bob__rail_item" href="#">
+        <div class="bob__discovery_rail_img_wrap"><img class="bob__discovery_rail_img" src="https://picsum.photos/seed/rail3/200/200" alt="Categoria orologi" loading="lazy" /></div>
+        <span class="bob__discovery_rail_label">Orologi</span>
+      </a>
+      <a class="bob__discovery_rail_card bob__rail_item" href="#">
+        <div class="bob__discovery_rail_img_wrap"><img class="bob__discovery_rail_img" src="https://picsum.photos/seed/rail4/200/200" alt="Categoria occhiali" loading="lazy" /></div>
+        <span class="bob__discovery_rail_label">Occhiali</span>
+      </a>
+      <a class="bob__discovery_rail_card bob__rail_item" href="#">
+        <div class="bob__discovery_rail_img_wrap"><img class="bob__discovery_rail_img" src="https://picsum.photos/seed/rail5/200/200" alt="Categoria giacche" loading="lazy" /></div>
+        <span class="bob__discovery_rail_label">Giacche</span>
+      </a>
+      <a class="bob__discovery_rail_card bob__rail_item" href="#">
+        <div class="bob__discovery_rail_img_wrap"><img class="bob__discovery_rail_img" src="https://picsum.photos/seed/rail6/200/200" alt="Categoria cappelli" loading="lazy" /></div>
+        <span class="bob__discovery_rail_label">Cappelli</span>
+      </a>
+    </div>
+
+    <hr class="bob__divider" style="margin: 0.75rem 0;" />
+
+    <nav class="bob__suggestion_list">
+      <a class="bob__suggestion_item" href="#">
+        <span class="bob__suggestion_text">sneaker bianche uomo</span>
+        <svg class="bob__suggestion_icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8L6 20M18 8v8M18 8h-8"/></svg>
+      </a>
+      <hr class="bob__divider" />
+      <a class="bob__suggestion_item" href="#">
+        <span class="bob__suggestion_text">borse a tracolla donna</span>
+        <svg class="bob__suggestion_icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8L6 20M18 8v8M18 8h-8"/></svg>
+      </a>
+      <hr class="bob__divider" />
+      <a class="bob__suggestion_item" href="#">
+        <span class="bob__suggestion_text">orologi automatici</span>
+        <svg class="bob__suggestion_icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8L6 20M18 8v8M18 8h-8"/></svg>
+      </a>
+      <hr class="bob__divider" />
+      <a class="bob__suggestion_item" href="#">
+        <span class="bob__suggestion_text">occhiali da sole polarizzati</span>
+        <svg class="bob__suggestion_icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8L6 20M18 8v8M18 8h-8"/></svg>
+      </a>
+      <hr class="bob__divider" />
+      <a class="bob__suggestion_item" href="#">
+        <span class="bob__suggestion_text">giacche tecniche impermeabili</span>
+        <svg class="bob__suggestion_icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8L6 20M18 8v8M18 8h-8"/></svg>
+      </a>
+    </nav>
+  </main>
+
+</body>
+</html>
