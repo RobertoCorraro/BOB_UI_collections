@@ -1,0 +1,66 @@
+<!--
+  Demo HTML — BLOCK-016 Brand mini bar
+  Derivata da: docs/ui-spec/loop-prodotti.md
+  Zona visiva (immagine ambientazione + campione 1:1 sovrapposto) impilata
+  sopra la zona dati su mobile; affiancate da 48rem in su.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-016 — Brand mini bar · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-prodotti.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-016 — Brand mini bar</h1>
+    <p class="bob__demo_intro_desc">
+      Blocco orizzontale compatto a due zone: immagine di ambientazione con campione quadrato
+      sovrapposto sopra, zona dati strutturata sotto. Da 48rem le due zone si affiancano.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito ceramiche/piastrelle — scheda prodotto mobile</p>
+  </header>
+
+  <main style="padding: 1rem; max-width: 40rem; margin: 0 auto;">
+
+    <div class="bob__brand_bar">
+      <div class="bob__brand_bar_visual">
+        <img class="bob__brand_bar_img" src="https://picsum.photos/seed/brandbar1/800/450" alt="Ambientazione bagno in marmo travertino" loading="lazy" />
+        <div class="bob__brand_bar_swatch">
+          <img class="bob__brand_bar_swatch_img" src="https://picsum.photos/seed/brandbar1swatch/200/200" alt="Campione texture marmo travertino" loading="lazy" />
+        </div>
+      </div>
+      <div class="bob__brand_bar_data">
+        <span class="bob__brand_bar_badge">Collezione Marmi</span>
+        <h2 class="bob__brand_bar_title">Travertino Classico</h2>
+        <div class="bob__brand_bar_specs">
+          <div>
+            <span class="bob__brand_bar_spec_label">Formato</span>
+            <span class="bob__brand_bar_spec_value">60×60 cm</span>
+          </div>
+          <div>
+            <span class="bob__brand_bar_spec_label">Finitura</span>
+            <span class="bob__brand_bar_spec_value">Naturale</span>
+          </div>
+          <div>
+            <span class="bob__brand_bar_spec_label">Spessore</span>
+            <span class="bob__brand_bar_spec_value">9.5 mm</span>
+          </div>
+        </div>
+        <div class="bob__brand_bar_colors">
+          <span class="bob__brand_bar_color_dot" style="background:#d8c7a8;"></span>
+          <span class="bob__brand_bar_color_dot" style="background:#b8a888;"></span>
+          <span class="bob__brand_bar_color_dot" style="background:#8f8168;"></span>
+          <span class="bob__brand_bar_color_dot" style="background:#e8e2d4;"></span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
