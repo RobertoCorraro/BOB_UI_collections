@@ -1,0 +1,43 @@
+<!--
+  Demo HTML — BLOCK-015 Hero collezione con CTA pill
+  Derivata da: docs/ui-spec/hero.md
+  Hero fullscreen narrativo/conversion-oriented: brand + nome collezione +
+  sottotitolo + CTA pill outline, nessun elemento di navigazione.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-015 — Hero collezione con CTA pill · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/hero.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-015 — Hero collezione con CTA pill</h1>
+    <p class="bob__demo_intro_desc">
+      Hero fullscreen dark, puramente narrativo e conversion-oriented: brand name, nome collezione,
+      sottotitolo e bottone CTA pill outline bianco.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito ceramiche/piastrelle — landing collezione, mobile</p>
+  </header>
+
+  <section class="bob__hero_collection">
+    <img class="bob__hero_collection_bg" src="https://picsum.photos/seed/herocoll1/900/1600" alt="Ambientazione notturna collezione Kronos" loading="lazy" />
+    <div class="bob__hero_collection_overlay"></div>
+    <div class="bob__hero_collection_content">
+      <p class="bob__hero_collection_brand">Kronos</p>
+      <h1 class="bob__hero_collection_title">Collezione Onyx</h1>
+      <p class="bob__hero_collection_subtitle">Superfici scure che catturano la luce, ispirate alla pietra vulcanica.</p>
+      <a class="bob__cta_pill bob__cta_pill_outline_light" href="#">Scopri la collezione</a>
+    </div>
+    <div class="bob__hero_collection_scroll" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </section>
+
+</body>
+</html>
