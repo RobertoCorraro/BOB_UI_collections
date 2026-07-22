@@ -1,0 +1,97 @@
+<!--
+  Demo HTML — BLOCK-010 Sliding panel navigation (drill-down)
+  Derivata da: docs/ui-spec/navigation.md
+  Pattern a pannelli sovrapposti: il tap su una voce L1 sostituisce
+  lateralmente il viewport con il pannello L2 (back per tornare).
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-010 — Sliding panel navigation (drill-down) · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/navigation.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-010 — Sliding panel navigation (drill-down)</h1>
+    <p class="bob__demo_intro_desc">
+      Tap su una voce di primo livello (L1) per aprire il pannello L2 con le sotto-voci, slide orizzontale.
+      Tap su "Materiali" in L2 per espandere l'accordion L3 inline.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: knoll.com — menu mobile</p>
+  </header>
+
+  <main style="padding: 1rem;">
+    <div class="bob__drilldown" id="drilldown" data-panel="l1">
+
+      <!-- L1 — Root -->
+      <div class="bob__drilldown_panel bob__drilldown_panel_l1">
+        <button class="bob__drilldown_row" type="button" data-open-l2>
+          Sedute
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <a class="bob__drilldown_row" href="#">
+          Tavoli
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+        <a class="bob__drilldown_row" href="#">
+          Contenitori
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+        <a class="bob__drilldown_row" href="#">
+          Illuminazione
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </div>
+
+      <!-- L2 — Sub -->
+      <div class="bob__drilldown_panel bob__drilldown_panel_l2">
+        <div class="bob__drilldown_header">
+          <button class="bob__drilldown_back" type="button" data-close-l2 aria-label="Torna indietro">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          Sedute
+        </div>
+        <a class="bob__drilldown_row" href="#">Sedie da ufficio</a>
+        <a class="bob__drilldown_row" href="#">Poltrone lounge</a>
+        <button class="bob__drilldown_row" type="button" data-toggle-l3>
+          Materiali
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="bob__drilldown_row_l3" id="l3Panel" style="display: none;">
+          <a class="bob__drilldown_row bob__drilldown_row_l3" href="#">Tessuto</a>
+          <a class="bob__drilldown_row bob__drilldown_row_l3" href="#">Pelle</a>
+          <a class="bob__drilldown_row bob__drilldown_row_l3" href="#">Legno</a>
+        </div>
+        <a class="bob__drilldown_row" href="#">Sgabelli</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const drilldown = document.getElementById('drilldown');
+
+    document.querySelectorAll('[data-open-l2]').forEach((btn) => {
+      btn.addEventListener('click', () => drilldown.setAttribute('data-panel', 'l2'));
+    });
+
+    document.querySelectorAll('[data-close-l2]').forEach((btn) => {
+      btn.addEventListener('click', () => drilldown.setAttribute('data-panel', 'l1'));
+    });
+
+    const l3Toggle = document.querySelector('[data-toggle-l3]');
+    const l3Panel = document.getElementById('l3Panel');
+    l3Toggle.addEventListener('click', () => {
+      const isOpen = l3Panel.style.display !== 'none';
+      l3Panel.style.display = isOpen ? 'none' : 'block';
+      l3Toggle.querySelector('span').textContent = isOpen ? '+' : '−';
+    });
+  </script>
+
+</body>
+</html>
