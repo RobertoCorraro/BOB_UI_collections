@@ -1,0 +1,91 @@
+<!--
+  Demo HTML — BLOCK-008 Filtered category carousel con frecce prev/next
+  Derivata da: docs/ui-spec/loop-categorie.md
+  Header con segmented control + carousel scroll-snap pilotato da frecce
+  prev/next (vanilla JS, nessuna libreria).
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-008 — Filtered category carousel · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-categorie.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-008 — Filtered category carousel con frecce prev/next</h1>
+    <p class="bob__demo_intro_desc">
+      Carosello di card categoria con filtro inline nell'header e navigazione esplicita tramite frecce prev/next in basso.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito web piastrelle/ceramica — mobile, sezione Ambienti</p>
+  </header>
+
+  <main>
+    <div class="bob__filtered_carousel_header">
+      <h2 class="bob__filtered_carousel_title">Ambienti</h2>
+      <div class="bob__filtered_carousel_segment">
+        <button class="bob__chip bob__chip_active" type="button">Bagno</button>
+        <button class="bob__chip" type="button">Cucina</button>
+      </div>
+    </div>
+
+    <div class="bob__filtered_carousel_track" id="filteredTrack">
+      <a class="bob__filtered_carousel_card" href="#">
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt1/450/600" alt="Bagno in marmo travertino" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Travertino</p>
+      </a>
+      <a class="bob__filtered_carousel_card" href="#">
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt2/450/600" alt="Bagno con piastrelle esagonali" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Esagono</p>
+      </a>
+      <a class="bob__filtered_carousel_card" href="#">
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt3/450/600" alt="Bagno effetto cemento" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Cemento</p>
+      </a>
+      <a class="bob__filtered_carousel_card" href="#">
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt4/450/600" alt="Bagno effetto legno" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Legno</p>
+      </a>
+    </div>
+
+    <div class="bob__filtered_carousel_nav">
+      <button class="bob__nav_arrow bob__nav_arrow_ghost" id="filteredPrev" type="button" aria-label="Precedente">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="bob__nav_arrow bob__nav_arrow_ghost" id="filteredNext" type="button" aria-label="Successivo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <script>
+    // Nessuna libreria: le frecce scrollano il track di una "pagina" di card,
+    // lo scroll-snap CSS si occupa dell'allineamento finale.
+    const track = document.getElementById('filteredTrack');
+    const prevBtn = document.getElementById('filteredPrev');
+    const nextBtn = document.getElementById('filteredNext');
+
+    function scrollByCard(direction) {
+      const card = track.querySelector('.bob__filtered_carousel_card');
+      const distance = card ? card.getBoundingClientRect().width + 10 : track.clientWidth * 0.6;
+      track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => scrollByCard(-1));
+    nextBtn.addEventListener('click', () => scrollByCard(1));
+
+    const segmentButtons = document.querySelectorAll('.bob__filtered_carousel_segment .bob__chip');
+    segmentButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        segmentButtons.forEach((b) => b.classList.remove('bob__chip_active'));
+        btn.classList.add('bob__chip_active');
+      });
+    });
+  </script>
+
+</body>
+</html>
