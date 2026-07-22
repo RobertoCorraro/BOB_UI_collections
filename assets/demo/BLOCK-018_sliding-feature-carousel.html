@@ -1,0 +1,76 @@
+<!--
+  Demo HTML — BLOCK-018 Sliding feature carousel
+  Derivata da: docs/ui-spec/hero.md
+  Card principale dominante (~68%) + due pannelli laterali attenuati che
+  anticipano gli altri contenuti. Usa Swiper.js in modalità centeredSlides:
+  l'effetto "card attiva + laterali sfumate" non è pulito in puro CSS.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-018 — Sliding feature carousel · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/hero.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-018 — Sliding feature carousel</h1>
+    <p class="bob__demo_intro_desc">
+      Hero di scelta tra segmenti: card principale dominante (~68% larghezza) con titolo, sottotitolo
+      e CTA, pannelli laterali attenuati che anticipano le alternative.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: app fintech — hero onboarding scelta piano, desktop</p>
+  </header>
+
+  <main style="background: #111; padding: 1rem 0;">
+    <div class="swiper bob__feature_swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide bob__feature_slide">
+          <img class="bob__feature_slide_img" src="https://picsum.photos/seed/feature1/600/800" alt="Piano Personal" loading="lazy" />
+          <div class="bob__feature_slide_overlay">
+            <h2 class="bob__feature_slide_title">Personal</h2>
+            <p class="bob__feature_slide_subtitle">Gestisci le tue finanze quotidiane in totale semplicità.</p>
+            <a class="bob__cta_pill bob__cta_pill_outline_light bob__feature_slide_cta" href="#">Scegli</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide bob__feature_slide">
+          <img class="bob__feature_slide_img" src="https://picsum.photos/seed/feature2/600/800" alt="Piano Business" loading="lazy" />
+          <div class="bob__feature_slide_overlay">
+            <h2 class="bob__feature_slide_title">Business</h2>
+            <p class="bob__feature_slide_subtitle">Strumenti avanzati per gestire il tuo team e i pagamenti.</p>
+            <a class="bob__cta_pill bob__cta_pill_outline_light bob__feature_slide_cta" href="#">Scegli</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide bob__feature_slide">
+          <img class="bob__feature_slide_img" src="https://picsum.photos/seed/feature3/600/800" alt="Piano Freelance" loading="lazy" />
+          <div class="bob__feature_slide_overlay">
+            <h2 class="bob__feature_slide_title">Freelance</h2>
+            <p class="bob__feature_slide_subtitle">Fatturazione, tasse e pagamenti in un'unica dashboard.</p>
+            <a class="bob__cta_pill bob__cta_pill_outline_light bob__feature_slide_cta" href="#">Scegli</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.bob__feature_swiper', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 12,
+      grabCursor: true,
+    });
+  </script>
+
+</body>
+</html>
