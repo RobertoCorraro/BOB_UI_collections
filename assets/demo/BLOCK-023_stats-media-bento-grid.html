@@ -1,0 +1,69 @@
+<!--
+  Demo HTML — BLOCK-023 Stats & media bento grid
+  Derivata da: docs/ui-spec/sezioni-testo.md
+  Bento grid 2×3 asimmetrica: alterna stat card dark, celle foto e un
+  blocco testuale light a peso misto.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-023 — Stats &amp; media bento grid · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/sezioni-testo.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-023 — Stats &amp; media bento grid</h1>
+    <p class="bob__demo_intro_desc">
+      Bento grid 2×3 asimmetrica che alterna stat card numeriche (con badge ↗), blocchi fotografici
+      e un blocco testuale a peso misto.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: sito agency / studio design — sezione About Us, desktop</p>
+  </header>
+
+  <main class="bob__bento_grid">
+
+    <div class="bob__bento_cell bob__bento_cell_dark">
+      <span class="bob__badge_arrow bob__badge_arrow_dark" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </span>
+      <p class="bob__bento_stat_value">2x</p>
+      <p class="bob__bento_stat_label">Tasso di conversione rispetto alla media di settore</p>
+    </div>
+
+    <div class="bob__bento_cell bob__bento_cell_photo bob__bento_cell_photo_1">
+      <img src="https://picsum.photos/seed/bento1/700/500" alt="Team al lavoro in studio" loading="lazy" />
+    </div>
+
+    <div class="bob__bento_cell bob__bento_cell_dark">
+      <span class="bob__badge_arrow bob__badge_arrow_dark" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </span>
+      <p class="bob__bento_stat_value">90%</p>
+      <p class="bob__bento_stat_label">Clienti che rinnovano la collaborazione</p>
+    </div>
+
+    <div class="bob__bento_cell bob__bento_cell_light">
+      <p class="bob__bento_text"><strong>Costruiamo relazioni durature</strong> con i nostri clienti, basate su trasparenza e risultati misurabili.</p>
+    </div>
+
+    <div class="bob__bento_cell bob__bento_cell_dark">
+      <span class="bob__badge_arrow bob__badge_arrow_dark" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </span>
+      <p class="bob__bento_stat_value">120+</p>
+      <p class="bob__bento_stat_label">Progetti completati dal 2018</p>
+    </div>
+
+    <div class="bob__bento_cell bob__bento_cell_photo bob__bento_cell_photo_2">
+      <img src="https://picsum.photos/seed/bento2/700/500" alt="Dettaglio prodotto finito" loading="lazy" />
+    </div>
+
+  </main>
+
+</body>
+</html>
