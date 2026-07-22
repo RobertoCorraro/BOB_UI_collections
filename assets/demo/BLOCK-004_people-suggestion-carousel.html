@@ -1,0 +1,84 @@
+<!--
+  Demo HTML — BLOCK-004 People suggestion carousel
+  Derivata da: docs/ui-spec/loop-post-editoriali.md
+  Carosello orizzontale di card persone con overflow intenzionale della
+  card successiva.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-004 — People suggestion carousel · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-post-editoriali.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-004 — People suggestion carousel</h1>
+    <p class="bob__demo_intro_desc">
+      Carosello orizzontale di card persone: avatar circolare grande, titolo, sottotitolo con avatar piccolo, CTA full-width.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: app Instagram — sezione "Suggeriti per te"</p>
+  </header>
+
+  <main>
+    <div class="bob__people_rail">
+      <article class="bob__people_card">
+        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=12" alt="Foto profilo Marco Rossi" loading="lazy" />
+        <p class="bob__people_card_name">Marco Rossi</p>
+        <p class="bob__people_card_sub">
+          <img class="bob__avatar bob__avatar_sm" src="https://i.pravatar.cc/60?img=33" alt="" />
+          Seguito da Giulia
+        </p>
+        <a class="bob__cta_pill bob__cta_pill_filled bob__people_card_cta" href="#">Segui</a>
+      </article>
+
+      <article class="bob__people_card">
+        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=25" alt="Foto profilo Elena Conti" loading="lazy" />
+        <p class="bob__people_card_name">Elena Conti</p>
+        <p class="bob__people_card_sub">
+          <img class="bob__avatar bob__avatar_sm" src="https://i.pravatar.cc/60?img=44" alt="" />
+          Seguito da Luca
+        </p>
+        <a class="bob__cta_pill bob__cta_pill_filled bob__people_card_cta" href="#">Segui</a>
+      </article>
+
+      <article class="bob__people_card">
+        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=8" alt="Foto profilo Davide Bianchi" loading="lazy" />
+        <p class="bob__people_card_name">Davide Bianchi</p>
+        <p class="bob__people_card_sub">
+          <img class="bob__avatar bob__avatar_sm" src="https://i.pravatar.cc/60?img=5" alt="" />
+          Seguito da Sara
+        </p>
+        <a class="bob__cta_pill bob__cta_pill_filled bob__people_card_cta" href="#">Segui</a>
+      </article>
+
+      <article class="bob__people_card">
+        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=47" alt="Foto profilo Chiara Verdi" loading="lazy" />
+        <p class="bob__people_card_name">Chiara Verdi</p>
+        <p class="bob__people_card_sub">
+          <img class="bob__avatar bob__avatar_sm" src="https://i.pravatar.cc/60?img=15" alt="" />
+          Seguito da Marco
+        </p>
+        <a class="bob__cta_pill bob__cta_pill_filled bob__people_card_cta" href="#">Segui</a>
+      </article>
+    </div>
+  </main>
+
+</body>
+</html>
