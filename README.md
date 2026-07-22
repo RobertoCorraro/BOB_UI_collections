@@ -9,8 +9,7 @@ Raccolta di blocchi UI di riferimento ispirati a pattern reali trovati su app e 
 ```
 BOB_UI_collections/
 ├── README.md
-├── agent.md                # Skills di web design e UI/UX per l'utilizzo dei blocchi
-├── CLAUDE.md                # Regole per agenti AI sul foglio di stile condiviso delle demo
+├── agent.md                # Skills di web design e UI/UX, incluse le regole per le demo HTML
 ├── docs/
 │   └── ui-spec/
 │       ├── README.md           # Indice dei blocchi per numero e file
@@ -79,7 +78,7 @@ bob__{nome_classe}_{modificatore}
 
 Es. `.bob__product_card`, `.bob__product_card_img_wrap`, `.bob__product_card_badge_discount`.
 
-Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`CLAUDE.md`](CLAUDE.md).
+Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob__demo.css` se coprono il bisogno; se non esiste una classe adatta, estendere `bob__demo.css` con nuove classi/modificatori coerenti con la convenzione, invece di creare un nuovo file CSS. La regola completa, pensata per agenti AI, è in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso).
 
 ---
 
@@ -102,5 +101,5 @@ Quando si aggiunge un nuovo blocco demo: riusare le classi già presenti in `bob
 2. Aggiungi la scheda con tutti i campi obbligatori
 3. Usa **solo unità relative** nelle geometrie
 4. Carica lo screenshot in `assets/screenshots/` con la naming convention
-5. Se aggiungi anche una demo HTML, seguine le regole in [`CLAUDE.md`](CLAUDE.md): stesso `bob__demo.css`, naming `bob__{nome_classe}_{modificatore}`
+5. Se aggiungi anche una demo HTML, seguine le regole in [`agent.md`](agent.md#demo-html--foglio-di-stile-condiviso): stesso `bob__demo.css`, naming `bob__{nome_classe}_{modificatore}`
 6. Aggiorna l'indice in `docs/ui-spec/README.md`
