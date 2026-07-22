@@ -1,0 +1,43 @@
+<!--
+  Demo HTML — BLOCK-001 Asymmetric media collage
+  Derivata da: docs/ui-spec/loop-post-editoriali.md
+  2 colonne 50/50 edge-to-edge: card dominante a sinistra, 2 card
+  quadrate impilate a destra. Nessun testo, nessun border-radius.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-001 — Asymmetric media collage · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/loop-post-editoriali.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-001 — Asymmetric media collage</h1>
+    <p class="bob__demo_intro_desc">
+      Layout a due colonne 50/50 edge-to-edge: colonna sinistra con blocco verticale dominante,
+      colonna destra con due blocchi quadrati impilati. Nessun testo sovrapposto.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: app Facebook — mobile</p>
+  </header>
+
+  <main class="bob__collage">
+    <a class="bob__collage_item" href="#">
+      <img class="bob__collage_img" src="https://picsum.photos/seed/collage1/500/700" alt="Foto di gruppo evento serale" loading="lazy" />
+    </a>
+    <div class="bob__collage_col_right">
+      <a class="bob__collage_item" href="#">
+        <img class="bob__collage_img" src="https://picsum.photos/seed/collage2/500/500" alt="Dettaglio piatto servito" loading="lazy" />
+      </a>
+      <a class="bob__collage_item" href="#">
+        <img class="bob__collage_img" src="https://picsum.photos/seed/collage3/500/500" alt="Momento tra amici" loading="lazy" />
+      </a>
+    </div>
+  </main>
+
+</body>
+</html>
