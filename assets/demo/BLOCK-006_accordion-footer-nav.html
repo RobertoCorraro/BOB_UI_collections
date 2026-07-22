@@ -1,0 +1,79 @@
+<!--
+  Demo HTML — BLOCK-006 Accordion footer nav
+  Derivata da: docs/ui-spec/navigation.md
+  Footer mobile a fisarmonica: più sezioni possono essere aperte
+  contemporaneamente, animazione slide-down via max-height.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-006 — Accordion footer nav · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/navigation.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-006 — Accordion footer nav</h1>
+    <p class="bob__demo_intro_desc">
+      Navigazione da footer mobile a fisarmonica. Ogni sezione ha un titolo uppercase con chevron
+      che indica lo stato aperto/chiuso. Più sezioni possono restare aperte insieme.
+    </p>
+    <p class="bob__demo_intro_source">Fonte ispirazione: deghi.it — footer homepage mobile</p>
+  </header>
+
+  <footer class="bob__accordion_footer">
+    <div class="bob__accordion_footer_section" data-open="true">
+      <button class="bob__accordion_footer_header" type="button" aria-expanded="true">
+        Assistenza
+        <svg class="bob__accordion_footer_chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="bob__accordion_footer_panel">
+        <a class="bob__accordion_footer_link" href="#">Contattaci</a>
+        <a class="bob__accordion_footer_link" href="#">Domande frequenti</a>
+        <a class="bob__accordion_footer_link" href="#">Stato dell'ordine</a>
+        <a class="bob__accordion_footer_link" href="#">Resi e rimborsi</a>
+      </div>
+    </div>
+
+    <div class="bob__accordion_footer_section" data-open="false">
+      <button class="bob__accordion_footer_header" type="button" aria-expanded="false">
+        Azienda
+        <svg class="bob__accordion_footer_chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="bob__accordion_footer_panel">
+        <a class="bob__accordion_footer_link" href="#">Chi siamo</a>
+        <a class="bob__accordion_footer_link" href="#">Lavora con noi</a>
+        <a class="bob__accordion_footer_link" href="#">Sostenibilità</a>
+      </div>
+    </div>
+
+    <div class="bob__accordion_footer_section" data-open="false">
+      <button class="bob__accordion_footer_header" type="button" aria-expanded="false">
+        Legale
+        <svg class="bob__accordion_footer_chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="bob__accordion_footer_panel">
+        <a class="bob__accordion_footer_link" href="#">Termini di servizio</a>
+        <a class="bob__accordion_footer_link bob__accordion_footer_link_active" href="#">Privacy policy</a>
+        <a class="bob__accordion_footer_link" href="#">Cookie policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.bob__accordion_footer_header').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('.bob__accordion_footer_section');
+        const isOpen = section.getAttribute('data-open') === 'true';
+        section.setAttribute('data-open', String(!isOpen));
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
+
+</body>
+</html>
