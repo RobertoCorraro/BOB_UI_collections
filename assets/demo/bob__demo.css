@@ -8,6 +8,8 @@ body {
   color: #1a1a1a;
 }
 
+a { color: inherit; }
+
 /* ─── Sezione introduttiva ──────────────────────────────── */
 .bob__demo_intro {
   padding: 1.25rem 1rem 0.75rem;
@@ -44,6 +46,18 @@ body {
   color: #999;
   margin-top: 0.5rem;
 }
+
+.bob__demo_intro_back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+}
+.bob__demo_intro_back:hover { color: #1a1a1a; }
 
 /* ─── Filtri / header di sezione (placeholder) ──────────── */
 .bob__section_header {
@@ -210,5 +224,315 @@ body {
 
   .bob__demo_intro {
     padding: 1.75rem 2rem 1.25rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PRIMITIVI CONDIVISI
+   Building block riusabili tra più demo (bottoni, avatar,
+   rail orizzontali, chip, divisori). Vedi agent.md prima di
+   aggiungere una nuova classe: riusa questi se possibile.
+   ══════════════════════════════════════════════════════════ */
+
+/* ─── CTA pill ───────────────────────────────────────────── */
+.bob__cta_pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2.25rem;
+  padding: 0 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.bob__cta_pill_filled {
+  background: #1a1a1a;
+  color: #fff;
+}
+.bob__cta_pill_filled:hover { background: #333; }
+
+.bob__cta_pill_outline {
+  background: transparent;
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+.bob__cta_pill_outline:hover { background: rgba(0, 0, 0, 0.05); }
+
+.bob__cta_pill_outline_light {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #fff;
+}
+.bob__cta_pill_outline_light:hover { background: rgba(255, 255, 255, 0.15); }
+
+.bob__cta_pill_ghost {
+  background: transparent;
+  border-color: #d9d9d9;
+  color: #1a1a1a;
+}
+.bob__cta_pill_ghost:hover { border-color: #1a1a1a; }
+
+/* ─── Frecce di navigazione (carousel prev/next) ────────── */
+.bob__nav_arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.bob__nav_arrow:hover { background: #333; }
+
+.bob__nav_arrow_ghost {
+  background: transparent;
+  border: 1px solid #d9d9d9;
+  color: #1a1a1a;
+}
+.bob__nav_arrow_ghost:hover { border-color: #1a1a1a; }
+
+.bob__nav_arrow[disabled] {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ─── Avatar circolare ───────────────────────────────────── */
+.bob__avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+.bob__avatar_lg { width: 5rem; height: 5rem; }
+.bob__avatar_md { width: 2.75rem; height: 2.75rem; }
+.bob__avatar_sm { width: 1.75rem; height: 1.75rem; }
+
+/* ─── Divisore ───────────────────────────────────────────── */
+.bob__divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 0;
+}
+.bob__divider_light { border-top-color: rgba(255, 255, 255, 0.15); }
+
+/* ─── Rail orizzontale (scroll-snap, senza JS) ───────────── */
+.bob__rail {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 0.875rem;
+}
+.bob__rail::-webkit-scrollbar { display: none; }
+
+.bob__rail_item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ─── Chip / segmented control ──────────────────────────── */
+.bob__chip {
+  display: inline-flex;
+  align-items: center;
+  height: 2.125rem;
+  padding: 0 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: #f0f0f0;
+  color: #555;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.bob__chip_active { background: #1a1a1a; color: #fff; }
+
+/* ══════════════════════════════════════════════════════════
+   CATALOGO — index.html
+   ══════════════════════════════════════════════════════════ */
+
+.bob__catalog_header {
+  padding: 2rem 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.bob__catalog_header_eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.bob__catalog_header_title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.bob__catalog_header_desc {
+  font-size: 0.875rem;
+  color: #555;
+  max-width: 34rem;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.bob__catalog_main {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.bob__catalog_section {
+  margin-bottom: 2rem;
+}
+
+.bob__catalog_section_title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.bob__catalog_section_desc {
+  font-size: 0.8125rem;
+  color: #777;
+  margin: 0 0 0.875rem;
+}
+
+.bob__catalog_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.bob__catalog_card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bob__catalog_card_ready {
+  cursor: pointer;
+}
+.bob__catalog_card_ready:hover {
+  border-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.bob__catalog_card_pending {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.bob__catalog_card_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.bob__catalog_card_number {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+}
+
+.bob__catalog_card_status {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.1875rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.bob__catalog_card_status_ready {
+  background: #e6f4ea;
+  color: #2d6a4f;
+}
+
+.bob__catalog_card_status_pending {
+  background: #f0f0f0;
+  color: #888;
+}
+
+.bob__catalog_card_title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin: 0 0 0.375rem;
+  line-height: 1.35;
+}
+
+.bob__catalog_card_desc {
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+  flex-grow: 1;
+}
+
+.bob__catalog_card_meta {
+  font-size: 0.6875rem;
+  color: #999;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.625rem;
+}
+
+/* ─── Catalogo responsive ────────────────────────────────── */
+@media (min-width: 36rem) {
+  .bob__catalog_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 48rem) {
+  .bob__catalog_header {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .bob__catalog_header_title {
+    font-size: 2rem;
+  }
+
+  .bob__catalog_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 75rem) {
+  .bob__catalog_grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
