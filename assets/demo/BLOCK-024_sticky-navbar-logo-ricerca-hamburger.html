@@ -1,0 +1,119 @@
+<!--
+  Demo HTML — BLOCK-024 Sticky top navbar: logo + ricerca + hamburger
+  Derivata da: docs/ui-spec/navigation.md
+  Barra sticky sempre visibile: logo a sinistra, ricerca a pillola al
+  centro, hamburger a destra che si anima in X al click e apre un
+  pannello menu slide-down.
+-->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLOCK-024 — Sticky navbar: logo + ricerca + hamburger · Demo</title>
+  <link rel="stylesheet" href="bob__demo.css" />
+</head>
+<body>
+
+  <header class="bob__demo_intro">
+    <a class="bob__demo_intro_back" href="../../index.html">← Indice blocchi</a>
+    <span class="bob__demo_intro_badge">Demo · docs/ui-spec/navigation.md</span>
+    <h1 class="bob__demo_intro_title">BLOCK-024 — Sticky navbar: logo + ricerca + hamburger</h1>
+    <p class="bob__demo_intro_desc">
+      Barra di navigazione sticky sempre visibile: logo a sinistra, campo di ricerca a pillola
+      al centro, icona hamburger a destra che si anima in una X al click e apre il menu.
+    </p>
+    <p class="bob__demo_intro_source">
+      Fonte: pattern sintetizzato da richiesta diretta (navbar mobile-first generica stile app/e-commerce)
+    </p>
+  </header>
+
+  <nav class="bob__mobile_navbar" aria-label="Navigazione principale">
+    <a class="bob__mobile_navbar_logo" href="#">Bob&nbsp;Store</a>
+
+    <div class="bob__mobile_navbar_search">
+      <svg class="bob__mobile_navbar_search_icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input class="bob__mobile_navbar_search_input" type="search" placeholder="Cerca prodotti, brand, categorie…" aria-label="Cerca" />
+    </div>
+
+    <button class="bob__mobile_navbar_burger" type="button" aria-expanded="false" aria-controls="bob-navbar-menu" aria-label="Apri menu">
+      <span class="bob__mobile_navbar_burger_lines">
+        <span class="bob__mobile_navbar_burger_line"></span>
+        <span class="bob__mobile_navbar_burger_line"></span>
+        <span class="bob__mobile_navbar_burger_line"></span>
+      </span>
+    </button>
+  </nav>
+
+  <div class="bob__mobile_navbar_menu" id="bob-navbar-menu" data-open="false">
+    <a class="bob__mobile_navbar_menu_link" href="#">Novità</a>
+    <a class="bob__mobile_navbar_menu_link" href="#">Donna</a>
+    <a class="bob__mobile_navbar_menu_link" href="#">Uomo</a>
+    <a class="bob__mobile_navbar_menu_link" href="#">Accessori</a>
+    <a class="bob__mobile_navbar_menu_link" href="#">Saldi</a>
+  </div>
+
+  <!-- ── Contenuto placeholder per mostrare il comportamento sticky ── -->
+  <main class="bob__product_grid" aria-label="Contenuto di esempio">
+    <article class="bob__product_card">
+      <div class="bob__product_card_img_wrap">
+        <img class="bob__product_card_img" src="https://picsum.photos/seed/navbar1/400/500" alt="Prodotto di esempio 1" loading="lazy" />
+      </div>
+      <div class="bob__product_card_body">
+        <h2 class="bob__product_card_title">Sneaker Urban Run edizione primavera</h2>
+        <p class="bob__product_card_meta">Nike · Taglia 40–46</p>
+        <p class="bob__product_card_price">€ 89,99</p>
+      </div>
+    </article>
+
+    <article class="bob__product_card">
+      <div class="bob__product_card_img_wrap">
+        <img class="bob__product_card_img" src="https://picsum.photos/seed/navbar2/400/500" alt="Prodotto di esempio 2" loading="lazy" />
+      </div>
+      <div class="bob__product_card_body">
+        <h2 class="bob__product_card_title">Borsa Tote Canvas naturale</h2>
+        <p class="bob__product_card_meta">Arket · Vari colori</p>
+        <p class="bob__product_card_price">€ 39,99</p>
+      </div>
+    </article>
+
+    <article class="bob__product_card">
+      <div class="bob__product_card_img_wrap">
+        <img class="bob__product_card_img" src="https://picsum.photos/seed/navbar3/400/500" alt="Prodotto di esempio 3" loading="lazy" />
+      </div>
+      <div class="bob__product_card_body">
+        <h2 class="bob__product_card_title">Giacca tecnica impermeabile antivento</h2>
+        <p class="bob__product_card_meta">Patagonia · XS–XXL</p>
+        <p class="bob__product_card_price">€ 149,00</p>
+      </div>
+    </article>
+
+    <article class="bob__product_card">
+      <div class="bob__product_card_img_wrap">
+        <img class="bob__product_card_img" src="https://picsum.photos/seed/navbar4/400/500" alt="Prodotto di esempio 4" loading="lazy" />
+      </div>
+      <div class="bob__product_card_body">
+        <h2 class="bob__product_card_title">Cappello bucket reversibile</h2>
+        <p class="bob__product_card_meta">Uniqlo · Taglia unica</p>
+        <p class="bob__product_card_price">€ 19,90</p>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const burger = document.querySelector('.bob__mobile_navbar_burger');
+    const menu = document.getElementById('bob-navbar-menu');
+
+    burger.addEventListener('click', () => {
+      const isOpen = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!isOpen));
+      menu.setAttribute('data-open', String(!isOpen));
+    });
+  </script>
+
+</body>
+</html>

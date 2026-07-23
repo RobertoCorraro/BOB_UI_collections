@@ -100,3 +100,57 @@ Overlay `100vw`. Navbar fissa alta `2.75rem–3.5rem`. Righe navigazione alte `3
 
 ### Fonte
 knoll.com — menu mobile (browser iOS Safari)
+
+---
+
+## BLOCK-024 — Sticky top navbar: logo + ricerca + hamburger animato
+
+### Descrizione
+Barra di navigazione sticky in cima al viewport, sempre visibile durante lo scroll. Tre zone allineate in riga: logo a sinistra, campo di ricerca a pillola al centro (occupa lo spazio residuo), icona hamburger a destra che si anima trasformandosi in una X al click, per aprire il menu principale.
+
+### Geometrie precise
+
+| Elemento | Misura relativa |
+|---|---|
+| Altezza barra | `3.5rem–4rem` |
+| Padding laterale | `1rem–1.25rem` |
+| Gap tra le tre zone | `0.75rem–1rem` |
+| Logo font-size | `1.125rem–1.25rem` · bold |
+| Barra ricerca — altezza | `2.5rem` |
+| Barra ricerca — border-radius | `9999px` (pill) |
+| Barra ricerca — larghezza | flex-grow su mobile, max `28rem` da tablet in su |
+| Font placeholder ricerca | `0.8125rem` |
+| Icona lente | `1rem` |
+| Hamburger — touch target | `2.75rem × 2.75rem` (Apple HIG) |
+| Hamburger — larghezza linee | `1.375rem` |
+| Hamburger — spessore linee | `0.125rem` |
+| Hamburger — gap tra linee | `0.3125rem` |
+| Sfondo barra | Bianco, ombra leggera |
+| Z-index | Sopra il contenuto scrollabile |
+
+### Stati hamburger
+| Stato | Aspetto | Animazione |
+|---|---|---|
+| Chiuso | 3 linee orizzontali parallele | — |
+| Aperto | X (linea 1 e 3 ruotate 45°/−45°, linea 2 dissolta) | `250ms ease` |
+
+### Comportamento
+- `position: sticky; top: 0`, sempre visibile indipendentemente dallo scroll
+- Click/tap sull'hamburger: toggla stato aperto/chiuso, animazione CSS pura (transform + opacity), zero JS per la grafica dell'icona — solo un toggle di classe/attributo
+- Touch target minimo rispettato anche se le linee visive sono più piccole
+- Barra di ricerca: focus state con bordo/ombra accentuata
+
+### Target devices
+Mobile-first: barra compatta sempre visibile da `375px`. Tablet (`≥48rem`) e desktop (`≥75rem`): stessa struttura a 3 zone, ricerca centrale con larghezza massima e contenuto centrato nel container.
+
+### Posizione tipica
+Header — prima riga della pagina, sticky in cima, sopra hero/contenuto.
+
+### Formato compatto
+Barra sticky alta `3.5rem–4rem`, padding laterale `1rem–1.25rem`. Logo bold a sinistra, search pill (`h 2.5rem`) al centro flex-grow, hamburger animato (linee → X, `250ms ease`) a destra in touch target `2.75rem`.
+
+### Differenza da BLOCK-020
+BLOCK-020 (Split hero navbar) vive dentro l'hero con menu orizzontale nascosto su mobile e nessuna ricerca. BLOCK-024 è una navbar standalone sempre sticky, con ricerca integrata al centro e hamburger animato, pensata per restare visibile indipendentemente da un hero.
+
+### Fonte
+Pattern sintetizzato da richiesta diretta dell'utente (navbar mobile-first generica in stile app/e-commerce) — nessuno screenshot o sito specifico da citare come fonte.
