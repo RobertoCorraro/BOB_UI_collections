@@ -48,3 +48,4 @@ Questa cartella raccoglie le specifiche dei blocchi UI suddivise per tipo di pat
 | BLOCK-021 | Editorial mission block con video embed e social proof card | sezioni-testo.md |
 | BLOCK-022 | Tabella servizi testuale a tre colonne | sezioni-testo.md |
 | BLOCK-023 | Stats & media bento grid | sezioni-testo.md |
+| BLOCK-024 | Sticky top navbar: logo + ricerca + hamburger animato | navigation.md |
