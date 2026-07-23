@@ -959,10 +959,18 @@ a { color: inherit; }
 .bob__showcase_card {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 17%;
-  min-width: 5.5rem;
+  width: 36%;
+  min-width: 7.5rem;
   text-decoration: none;
   color: inherit;
+}
+
+@media (min-width: 30rem) {
+  .bob__showcase_card { width: 23%; min-width: 6.5rem; }
+}
+
+@media (min-width: 48rem) {
+  .bob__showcase_card { width: 17%; min-width: 5.5rem; }
 }
 
 .bob__showcase_img_wrap {
@@ -1228,6 +1236,13 @@ a { color: inherit; }
   font-size: 0.875rem;
   height: 2.75rem;
 }
+
+.bob__drilldown_l3_wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+.bob__drilldown_l3_wrap[data-open="true"] { max-height: 12rem; }
 
 /* ══════════════════════════════════════════════════════════
    BLOCK-011 — Service card carousel (Swiper)
