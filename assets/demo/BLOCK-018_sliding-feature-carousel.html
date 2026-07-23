@@ -4,6 +4,9 @@
   Card principale dominante (~68%) + due pannelli laterali attenuati che
   anticipano gli altri contenuti. Usa Swiper.js in modalità centeredSlides:
   l'effetto "card attiva + laterali sfumate" non è pulito in puro CSS.
+  Su mobile la vista è a colonna singola (solo la slide successiva
+  "sbircia" a destra); da tablet in su torna il centeredSlides con
+  entrambi i lati attenuati, come da spec.
 -->
 <!doctype html>
 <html lang="it">
@@ -66,9 +69,12 @@
   <script>
     new Swiper('.bob__feature_swiper', {
       slidesPerView: 'auto',
-      centeredSlides: true,
+      centeredSlides: false,
       spaceBetween: 12,
       grabCursor: true,
+      breakpoints: {
+        768: { centeredSlides: true },
+      },
     });
   </script>
 
