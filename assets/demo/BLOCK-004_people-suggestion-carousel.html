@@ -25,9 +25,9 @@
   </header>
 
   <main>
-    <div class="bob__people_rail">
+    <div class="bob__people_rail" id="peopleRail">
       <article class="bob__people_card">
-        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+        <button class="bob__people_card_close" type="button" aria-label="Chiudi suggerimento">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=12" alt="Foto profilo Marco Rossi" loading="lazy" />
@@ -40,7 +40,7 @@
       </article>
 
       <article class="bob__people_card">
-        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+        <button class="bob__people_card_close" type="button" aria-label="Chiudi suggerimento">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=25" alt="Foto profilo Elena Conti" loading="lazy" />
@@ -53,7 +53,7 @@
       </article>
 
       <article class="bob__people_card">
-        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+        <button class="bob__people_card_close" type="button" aria-label="Chiudi suggerimento">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=8" alt="Foto profilo Davide Bianchi" loading="lazy" />
@@ -66,7 +66,7 @@
       </article>
 
       <article class="bob__people_card">
-        <button class="bob__people_card_close" aria-label="Chiudi suggerimento">
+        <button class="bob__people_card_close" type="button" aria-label="Chiudi suggerimento">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <img class="bob__avatar bob__avatar_lg" src="https://i.pravatar.cc/160?img=47" alt="Foto profilo Chiara Verdi" loading="lazy" />
@@ -79,6 +79,14 @@
       </article>
     </div>
   </main>
+
+  <script>
+    document.querySelectorAll('.bob__people_card_close').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.closest('.bob__people_card').remove();
+      });
+    });
+  </script>
 
 </body>
 </html>
