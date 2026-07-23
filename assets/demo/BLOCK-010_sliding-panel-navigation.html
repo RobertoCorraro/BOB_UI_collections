@@ -58,11 +58,11 @@
         </div>
         <a class="bob__drilldown_row" href="#">Sedie da ufficio</a>
         <a class="bob__drilldown_row" href="#">Poltrone lounge</a>
-        <button class="bob__drilldown_row" type="button" data-toggle-l3>
+        <button class="bob__drilldown_row" type="button" data-toggle-l3 aria-expanded="false">
           Materiali
           <span aria-hidden="true">+</span>
         </button>
-        <div class="bob__drilldown_row_l3" id="l3Panel" style="display: none;">
+        <div class="bob__drilldown_l3_wrap" id="l3Panel" data-open="false">
           <a class="bob__drilldown_row bob__drilldown_row_l3" href="#">Tessuto</a>
           <a class="bob__drilldown_row bob__drilldown_row_l3" href="#">Pelle</a>
           <a class="bob__drilldown_row bob__drilldown_row_l3" href="#">Legno</a>
@@ -87,8 +87,9 @@
     const l3Toggle = document.querySelector('[data-toggle-l3]');
     const l3Panel = document.getElementById('l3Panel');
     l3Toggle.addEventListener('click', () => {
-      const isOpen = l3Panel.style.display !== 'none';
-      l3Panel.style.display = isOpen ? 'none' : 'block';
+      const isOpen = l3Panel.getAttribute('data-open') === 'true';
+      l3Panel.setAttribute('data-open', String(!isOpen));
+      l3Toggle.setAttribute('aria-expanded', String(!isOpen));
       l3Toggle.querySelector('span').textContent = isOpen ? '+' : '−';
     });
   </script>
