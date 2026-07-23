@@ -28,27 +28,43 @@
     <div class="bob__filtered_carousel_header">
       <h2 class="bob__filtered_carousel_title">Ambienti</h2>
       <div class="bob__filtered_carousel_segment">
-        <button class="bob__chip bob__chip_active" type="button">Bagno</button>
-        <button class="bob__chip" type="button">Cucina</button>
+        <button class="bob__chip bob__chip_active" type="button" data-category="bagno">Bagno</button>
+        <button class="bob__chip" type="button" data-category="cucina">Cucina</button>
       </div>
     </div>
 
     <div class="bob__filtered_carousel_track" id="filteredTrack">
-      <a class="bob__filtered_carousel_card" href="#">
+      <a class="bob__filtered_carousel_card" data-category="bagno" href="#">
         <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt1/450/600" alt="Bagno in marmo travertino" loading="lazy" /></div>
         <p class="bob__filtered_carousel_label">Travertino</p>
       </a>
-      <a class="bob__filtered_carousel_card" href="#">
+      <a class="bob__filtered_carousel_card" data-category="bagno" href="#">
         <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt2/450/600" alt="Bagno con piastrelle esagonali" loading="lazy" /></div>
         <p class="bob__filtered_carousel_label">Esagono</p>
       </a>
-      <a class="bob__filtered_carousel_card" href="#">
+      <a class="bob__filtered_carousel_card" data-category="bagno" href="#">
         <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt3/450/600" alt="Bagno effetto cemento" loading="lazy" /></div>
         <p class="bob__filtered_carousel_label">Cemento</p>
       </a>
-      <a class="bob__filtered_carousel_card" href="#">
+      <a class="bob__filtered_carousel_card" data-category="bagno" href="#">
         <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt4/450/600" alt="Bagno effetto legno" loading="lazy" /></div>
         <p class="bob__filtered_carousel_label">Legno</p>
+      </a>
+      <a class="bob__filtered_carousel_card" data-category="cucina" href="#" hidden>
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt5/450/600" alt="Cucina con top in marmo" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Marmo</p>
+      </a>
+      <a class="bob__filtered_carousel_card" data-category="cucina" href="#" hidden>
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt6/450/600" alt="Cucina con isola centrale" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Isola</p>
+      </a>
+      <a class="bob__filtered_carousel_card" data-category="cucina" href="#" hidden>
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt7/450/600" alt="Cucina con rivestimento a mosaico" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Mosaico</p>
+      </a>
+      <a class="bob__filtered_carousel_card" data-category="cucina" href="#" hidden>
+        <div class="bob__filtered_carousel_img_wrap"><img class="bob__filtered_carousel_img" src="https://picsum.photos/seed/filt8/450/600" alt="Cucina in legno naturale" loading="lazy" /></div>
+        <p class="bob__filtered_carousel_label">Rovere</p>
       </a>
     </div>
 
@@ -68,21 +84,30 @@
     const track = document.getElementById('filteredTrack');
     const prevBtn = document.getElementById('filteredPrev');
     const nextBtn = document.getElementById('filteredNext');
+    const cards = track.querySelectorAll('.bob__filtered_carousel_card');
+    const segmentButtons = document.querySelectorAll('.bob__filtered_carousel_segment .bob__chip');
 
     function scrollByCard(direction) {
-      const card = track.querySelector('.bob__filtered_carousel_card');
+      const card = track.querySelector('.bob__filtered_carousel_card:not([hidden])');
       const distance = card ? card.getBoundingClientRect().width + 10 : track.clientWidth * 0.6;
       track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+    }
+
+    function setCategory(category) {
+      cards.forEach((card) => {
+        card.hidden = card.dataset.category !== category;
+      });
+      track.scrollTo({ left: 0, behavior: 'auto' });
     }
 
     prevBtn.addEventListener('click', () => scrollByCard(-1));
     nextBtn.addEventListener('click', () => scrollByCard(1));
 
-    const segmentButtons = document.querySelectorAll('.bob__filtered_carousel_segment .bob__chip');
     segmentButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         segmentButtons.forEach((b) => b.classList.remove('bob__chip_active'));
         btn.classList.add('bob__chip_active');
+        setCategory(btn.dataset.category);
       });
     });
   </script>
